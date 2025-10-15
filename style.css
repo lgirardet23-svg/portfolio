@@ -141,7 +141,7 @@ a {
     text-align: center;
     color: var(--color-white);
     /* Placeholder for the bionic hand image. Add background-image: url('images/main-bionique-fond.jpg'); here */
-    background: linear-gradient(rgba(44,62,80,0.7), rgba(32,51,71,0.7)), url('images/Biomedical.jpg'); 
+    background: linear-gradient(rgba(44,62,80,0.7), rgba(32,51,71,0.7)), url('https://github.com/lgirardet23-svg/images/blob/main/Biomedical.jpg?raw=true'); 
     background: linear-gradient(135deg, #2c3e50, #203347); 
     background-size: cover;
     background-position: center;
@@ -200,7 +200,7 @@ a {
     background-color: var(--color-primary); 
     border: 5px solid var(--color-primary);
     /* Add background-image: url('images/profil.jpg'); here */
-    background-image: url('images/profile-pic.png');
+    background-image: url('https://github.com/lgirardet23-svg/images/blob/main/profile-pic.png');
     background-size: cover;
     background-position: center;
 }
