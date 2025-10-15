@@ -1,12 +1,13 @@
 :root {
-    --color-primary: #3498db; /* Bleu vif pour les boutons et les icônes */
-    --color-secondary: #f39c12; /* Jaune pour le texte surligné (highlight) */
+    --color-primary: #3498db; 
+    --color-secondary: #f39c12; 
     --color-dark: #333;
     --color-light: #f9f9f9;
     --color-grey: #eee;
     --color-white: #fff;
     --font-family: 'Poppins', sans-serif;
     --max-width: 1200px;
+    --border-radius: 12px;
 }
 
 /* Base Styles */
@@ -97,7 +98,7 @@ a {
     color: var(--color-white);
     border: none;
     padding: 12px 28px;
-    margin-left: 15px; /* Pour séparer du dernier lien de navigation */
+    margin-left: 15px;
 }
 
 /* --- NAVIGATION BAR --- */
@@ -139,10 +140,11 @@ a {
     justify-content: center;
     text-align: center;
     color: var(--color-white);
-    /* Fond bleu-gris foncé imitant la capture (la main est dans l'image de fond) */
+    /* Fond bleu-gris foncé + Placeholder pour l'image de fond (la main bionique) */
     background: linear-gradient(135deg, #2c3e50, #203347); 
     background-size: cover;
     background-position: center;
+    /* Vous pouvez ajouter l'image de la main ici: background-image: url('path/to/hand_image.jpg'); */
 }
 
 .hero-content {
@@ -197,23 +199,10 @@ a {
     border-radius: 50%;
     background-color: var(--color-primary); 
     border: 5px solid var(--color-primary);
-    /* Ajoutez ici votre image de profil en utilisant background-image: url('chemin/vers/votre_image.jpg'); */
+    /* Add your profile image here */
 }
 
-.stats {
-    display: flex;
-    margin-top: 30px;
-    gap: 40px;
-    text-align: left;
-}
-
-.stats h3 {
-    font-size: 2em;
-    color: var(--color-primary);
-    margin-bottom: 5px;
-}
-
-/* --- EDUCATION & CERTIFICATIONS (Adapté pour 3 cartes) --- */
+/* --- EDUCATION --- */
 .cards-container {
     display: flex;
     justify-content: center;
@@ -224,13 +213,13 @@ a {
 }
 
 .education-cards .card {
-    max-width: 350px; /* Taille ajustée pour 3 colonnes */
+    max-width: 350px; 
 }
 
 .card {
     background-color: var(--color-white);
     padding: 30px;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     text-align: center;
     width: 100%;
@@ -247,39 +236,33 @@ a {
 }
 
 /* Styles spécifiques aux cartes d'éducation */
-.card-isifc {
-    background-color: #e3f2fd; /* Bleu très clair */
-}
+.card-isifc { background-color: #e3f2fd; }
 .card-isifc i { color: #2196f3; }
 
-.card-dublin {
-    background-color: #fce4ec; /* Rose/Rouge très clair */
-}
+.card-dublin { background-color: #fce4ec; }
 .card-dublin i { color: #e91e63; }
 
-.card-bachelor {
-    background-color: #e8f5e9; /* Vert très clair */
-}
+.card-bachelor { background-color: #e8f5e9; }
 .card-bachelor i { color: #4caf50; }
 
 
-/* --- SKILLS & EXPERTISE SECTION --- */
+/* --- SKILLS & EXPERTISE SECTION (New List Layout) --- */
 .skills-container {
     display: flex;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: center;
+    gap: 30px;
     flex-wrap: wrap;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .skills-column {
     background-color: var(--color-white);
     padding: 30px;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     flex: 1;
-    min-width: 280px;
+    min-width: 200px; /* Adjusted min-width for 4 columns */
 }
 
 .skills-column h3 {
@@ -288,30 +271,30 @@ a {
     color: var(--color-primary);
 }
 
-.skill-item {
-    margin-bottom: 20px;
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
 }
 
-.skill-item span {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
+.skills-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--color-grey);
+    font-weight: 500;
 }
 
-.progress-bar {
-    background-color: var(--color-grey);
-    height: 8px;
-    border-radius: 4px;
+.skills-list li:last-child {
+    border-bottom: none;
 }
 
-.progress-bar div {
-    height: 100%;
-    background-color: var(--color-primary);
-    border-radius: 4px;
-    transition: width 0.8s ease-in-out;
+.skills-list .level {
+    font-weight: 400;
+    color: #666;
+    float: right;
 }
 
-/* --- PROJECTS SECTION --- */
+/* --- PROJECTS SECTION (Horizontal Scroll) --- */
 .project-filters {
     text-align: center;
     margin-bottom: 40px;
@@ -334,30 +317,28 @@ a {
     border-color: var(--color-primary);
 }
 
+/* SCROLL CONTAINER CSS */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex; /* Key for horizontal layout */
+    overflow-x: scroll; /* Key for horizontal scrolling */
+    scroll-snap-type: x mandatory;
     gap: 30px;
+    padding-bottom: 20px; /* space for scrollbar */
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
 }
 
-.project-card {
-    background-color: var(--color-white);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: left;
-    transition: transform 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+/* Individual Project Card in the scroll container */
+.projects-grid .project-card {
+    min-width: 300px; /* Ensures a fixed width for scrolling */
+    max-width: 300px;
+    flex-shrink: 0; /* Prevents cards from shrinking */
+    scroll-snap-align: start;
+    display: block; /* Overrides display: none from JS filter */
 }
 
 .project-image-placeholder {
     height: 200px;
     background-color: #ddd; 
-    /* Ajoutez ici l'image de couverture du projet */
 }
 
 .project-card h3 {
@@ -386,7 +367,7 @@ a {
     text-align: left;
     background-color: var(--color-white);
     padding: 30px;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -412,7 +393,6 @@ a {
     margin-right: 15px;
 }
 
-/* Styles pour les liens cliquables dans la section contact */
 .contact-link {
     color: inherit; 
     text-decoration: none; 
@@ -423,7 +403,6 @@ a {
     text-decoration: underline;
 }
 
-/* Couleur LinkedIn */
 .fa-linkedin {
     color: #0a66c2; 
 }
@@ -454,7 +433,7 @@ a {
     font-size: 1.1em;
 }
 
-/* --- FOOTER --- */
+/* --- FOOTER / WIDGET --- */
 .footer {
     text-align: center;
     padding: 20px;
@@ -463,7 +442,6 @@ a {
     font-size: 0.9em;
 }
 
-/* --- CHAT WIDGET (simulé) --- */
 .chat-widget {
     position: fixed;
     bottom: 20px;
@@ -480,50 +458,16 @@ a {
 
 /* --- MEDIA QUERIES (Responsiveness) --- */
 @media (max-width: 900px) {
-    .hero-section h1 {
-        font-size: 3em;
-    }
-
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-image-column {
-        order: -1; 
-        margin-bottom: 30px;
-    }
-    
-    .stats {
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .skills-container {
-        flex-direction: column;
-    }
-
-    .contact-container {
-        flex-direction: column;
-    }
-
-    .contact-info {
-        margin-bottom: 40px;
-    }
+    .about-content { flex-direction: column; text-align: center; }
+    .about-image-column { order: -1; margin-bottom: 30px; }
+    .education-cards .card { max-width: 100%; }
+    .skills-container { flex-direction: column; }
+    .contact-container { flex-direction: column; }
+    .contact-info { margin-bottom: 40px; }
 }
-
 @media (max-width: 600px) {
-    .navbar {
-        padding: 15px 5%;
-    }
-    /* Menu à simplifier ou masquer sur très petit écran */
-    .navbar nav {
-        display: none; 
-    }
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
+    .hero-section h1 { font-size: 3em; }
+    .navbar nav { display: none; }
+    .hero-buttons { display: flex; flex-direction: column; gap: 15px; }
+    .project-card { min-width: 80%; max-width: 80%; } /* Smaller card width on tiny screens */
 }
