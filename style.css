@@ -200,7 +200,7 @@ a {
     background-color: var(--color-primary); 
     border: 5px solid var(--color-primary);
     /* Add background-image: url('images/profil.jpg'); here */
-    background-image: url('https://github.com/lgirardet23-svg/images/blob/main/profile-pic.png');
+    background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/profile-pic.png');
     background-size: cover;
     background-position: center;
 }
