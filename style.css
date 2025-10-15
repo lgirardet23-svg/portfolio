@@ -132,15 +132,15 @@ a {
 /* --- HOME / HERO SECTION --- */
 .hero-section {
     position: relative;
-    padding-top: 80px; /* Espace pour la barre de navigation fixe */
+    padding-top: 80px; 
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--color-white);
-    /* Placeholder pour l'image de fond (la main bionique) */
-    background: linear-gradient(135deg, #2c3e50, #203347); /* Fond bleu-gris foncé */
+    /* Fond bleu-gris foncé imitant la capture (la main est dans l'image de fond) */
+    background: linear-gradient(135deg, #2c3e50, #203347); 
     background-size: cover;
     background-position: center;
 }
@@ -148,7 +148,7 @@ a {
 .hero-content {
     max-width: 800px;
     padding: 20px;
-    position: relative; /* Pour positionner le contenu au-dessus du placeholder de la main */
+    position: relative; 
     z-index: 10;
 }
 
@@ -195,9 +195,9 @@ a {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background-color: var(--color-primary); /* Fond bleu pour l'image */
+    background-color: var(--color-primary); 
     border: 5px solid var(--color-primary);
-    /* Ajouter ici l'image de profil si disponible */
+    /* Ajoutez ici votre image de profil en utilisant background-image: url('chemin/vers/votre_image.jpg'); */
 }
 
 .stats {
@@ -213,14 +213,18 @@ a {
     margin-bottom: 5px;
 }
 
-/* --- EDUCATION & CERTIFICATIONS --- */
+/* --- EDUCATION & CERTIFICATIONS (Adapté pour 3 cartes) --- */
 .cards-container {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap;
-    max-width: 900px;
+    flex-wrap: wrap; 
+    max-width: var(--max-width); 
     margin: 0 auto;
+}
+
+.education-cards .card {
+    max-width: 350px; /* Taille ajustée pour 3 colonnes */
 }
 
 .card {
@@ -230,7 +234,6 @@ a {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     text-align: center;
     width: 100%;
-    max-width: 400px;
     transition: transform 0.3s;
 }
 
@@ -244,17 +247,21 @@ a {
 }
 
 /* Styles spécifiques aux cartes d'éducation */
-.card-education i {
-    color: var(--color-primary); /* Bleu */
+.card-isifc {
+    background-color: #e3f2fd; /* Bleu très clair */
 }
+.card-isifc i { color: #2196f3; }
 
-.card-certification {
+.card-dublin {
+    background-color: #fce4ec; /* Rose/Rouge très clair */
+}
+.card-dublin i { color: #e91e63; }
+
+.card-bachelor {
     background-color: #e8f5e9; /* Vert très clair */
 }
+.card-bachelor i { color: #4caf50; }
 
-.card-certification i {
-    color: #4caf50; /* Vert pour AWS */
-}
 
 /* --- SKILLS & EXPERTISE SECTION --- */
 .skills-container {
@@ -349,8 +356,8 @@ a {
 
 .project-image-placeholder {
     height: 200px;
-    background-color: #ddd; /* Placeholder color */
-    /* Ici, l'image du projet sera placée */
+    background-color: #ddd; 
+    /* Ajoutez ici l'image de couverture du projet */
 }
 
 .project-card h3 {
@@ -404,6 +411,23 @@ a {
     font-size: 1.5em;
     margin-right: 15px;
 }
+
+/* Styles pour les liens cliquables dans la section contact */
+.contact-link {
+    color: inherit; 
+    text-decoration: none; 
+}
+
+.contact-link:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Couleur LinkedIn */
+.fa-linkedin {
+    color: #0a66c2; 
+}
+
 
 .contact-form {
     flex: 1;
@@ -466,7 +490,7 @@ a {
     }
 
     .about-image-column {
-        order: -1; /* Place l'image au-dessus du texte sur mobile */
+        order: -1; 
         margin-bottom: 30px;
     }
     
@@ -493,8 +517,9 @@ a {
     .navbar {
         padding: 15px 5%;
     }
+    /* Menu à simplifier ou masquer sur très petit écran */
     .navbar nav {
-        display: none; /* Simplification radicale du menu sur très petit écran */
+        display: none; 
     }
     .hero-buttons {
         display: flex;
