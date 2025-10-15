@@ -42,7 +42,7 @@
             <div class="about-text-column">
                 <p>As a biomedical engineering student, I am passionate about new medical technologies, mechanical design, and industrial innovation.</p>
                 <p>Throughout my studies, I have developed solid knowledge in medical devices, as well as strong skills in CAD, technical analysis, and mechanical engineering. My approach combines academic learning with hands-on projects, focusing on technical problem-solving and the application of engineering principles in a real-world context.</p>
-                </div>
+            </div>
             <div class="about-image-column">
                 <div class="profile-image-placeholder"></div>
             </div>
@@ -133,25 +133,25 @@
         </div>
 
         <div class="projects-grid scroll-container">
-            <div class="project-card" data-category="research programming">
+            <div class="project-card" data-category="research programming" data-modal-target="modal-project-1">
                 <div class="project-image-placeholder"></div>
                 <h3>Magnetic Tracking System for Surgical Navigation</h3>
                 <p>Research project (Incoming) at Western University involving programming and testing a "GPS for surgery" interacting with a medical robot.</p>
             </div>
             
-            <div class="project-card" data-category="cad prototyping">
+            <div class="project-card" data-category="cad prototyping" data-modal-target="modal-project-2">
                 <div class="project-image-placeholder"></div>
                 <h3>Pressure-Regulating Valve System (R&D Project)</h3>
                 <p>Full design cycle from needs analysis to final assembly using CAD modeling, 3D printing, and machining techniques for stand-up paddleboards.</p>
             </div>
 
-            <div class="project-card" data-category="cad">
+            <div class="project-card" data-category="cad" data-modal-target="modal-project-3">
                 <div class="project-image-placeholder"></div>
                 <h3>3D-Printed Prosthetic Arm Prototype</h3>
                 <p>Fictional project: Concept and mechanical design of a low-cost, multi-articulated prosthetic arm using advanced CAD and FDM printing.</p>
             </div>
 
-             <div class="project-card" data-category="programming">
+             <div class="project-card" data-category="programming" data-modal-target="modal-project-4">
                 <div class="project-image-placeholder"></div>
                 <h3>MATLAB Data Analysis for Biomechanics</h3>
                 <p>Fictional project: Developed MATLAB scripts to analyze gait data and visualize joint stress points for injury prevention studies.</p>
@@ -216,9 +216,88 @@
         <p>&copy; 2024 Lucas Girardet. All rights reserved.</p>
     </footer>
 
-    <div class="chat-widget">Talk With Us</div>
-    
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-details">
+                </div>
+        </div>
+    </div>
     <script>
+        // --- DATA FOR MODALS (Detailed content for each project) ---
+        // You MUST replace the 'images/placeholder_...' paths with your actual image paths (e.g., images/valve-design-1.jpg).
+        const projectData = {
+            'modal-project-1': {
+                title: 'Magnetic Tracking System for Surgical Navigation',
+                subtitle: 'R&D Internship at Western University (Incoming)',
+                category: 'Research & Programming',
+                description: [
+                    'This project focuses on developing and optimizing a magnetic tracking system used for guiding surgical instruments. The core task involves refining the localization algorithm using Python and C++ to minimize drift and improve accuracy during complex procedures.',
+                    'Key activities include testing the system\'s real-time accuracy on a specialized medical robot platform (ROS2 environment), performing rigorous data analysis, and integrating advanced algorithms (such as Kalman filters) to ensure reliable performance in a clinical setting.',
+                    'My role is centered on technical implementation and validation, bridging mechanical systems with software control. This work is critical for advancing minimally invasive surgical techniques, potentially reducing patient recovery times.',
+                    'Skills used: Python, C++, ROS2, Data Analysis, Medical Robotics, Localization Algorithms, Git.'
+                ],
+                images: [
+                    { src: 'images/placeholder_surgical_1.jpg', alt: 'Robotic surgical arm setup' },
+                    { src: 'images/placeholder_surgical_2.jpg', alt: 'Localization sensor diagram' },
+                    { src: 'images/placeholder_surgical_3.jpg', alt: 'ROS2 environment code snippet' },
+                    { src: 'images/placeholder_surgical_4.jpg', alt: 'Accuracy test results chart' }
+                ]
+            },
+            'modal-project-2': {
+                title: 'Pressure-Regulating Valve System',
+                subtitle: 'Bachelor\'s Engineering Project',
+                category: 'CAD, Prototyping & Mechanical Design',
+                description: [
+                    'My main Bachelor’s project involved the end-to-end design and prototyping of an integrated valve system for stand-up paddleboards. The primary objective was to prevent structural damage caused by air overinflation due to thermal expansion in direct sunlight.',
+                    'The design process began with deep dive into fluid mechanics and material stress analysis. I utilized **SolidWorks** for 3D modeling and detailed **Catia V5** for precise manufacturing drawings. The design features a two-stage relief mechanism for redundancy and safety.',
+                    'I personally managed the prototype fabrication, using both **3D printing (SLA)** for complex internal geometries and traditional **CNC machining** for high-stress components. The final system was validated through thermal chamber testing, demonstrating a 15% improvement in pressure consistency compared to conventional solutions.',
+                    'Skills used: SolidWorks, Catia V5, Finite Element Analysis (FEA), Technical Drawing (ISO standard), 3D Printing, Machining, Prototyping, Stress Analysis.'
+                ],
+                images: [
+                    { src: 'images/placeholder_valve_1.jpg', alt: 'SolidWorks assembly view' },
+                    { src: 'images/placeholder_valve_2.jpg', alt: '3D printed prototype in hand' },
+                    { src: 'images/placeholder_valve_3.jpg', alt: 'FEA stress simulation result' },
+                    { src: 'images/placeholder_valve_4.jpg', alt: 'Final technical drawing' }
+                ]
+            },
+            'modal-project-3': {
+                title: '3D-Printed Prosthetic Arm Prototype',
+                subtitle: 'Conceptual Mechanical Design Project',
+                category: 'CAD & Prototyping',
+                description: [
+                    'Conceptual design and mechanical modeling of a low-cost, externally powered prosthetic arm. The project aimed to create an easily reproducible device for use in regions with limited access to specialized medical technologies.',
+                    'I used **PTC Creo** for the intricate surface modeling of the forearm socket and **SolidWorks** for the internal mechanism, focusing on weight reduction and structural integrity. The design incorporates a simplified myoelectric interface and a robust cable-driven system for finger articulation.',
+                    'Challenges included ensuring maximum range of motion with minimal material, and designing parts optimized for low-cost Fused Deposition Modeling (FDM) 3D printing. The design files are open-source and ready for preliminary field testing.',
+                    'Skills used: PTC Creo, SolidWorks, Mechanical Design, FDM Optimization, Kinematics, Biomedical Device Design.'
+                ],
+                images: [
+                    { src: 'images/placeholder_arm_1.jpg', alt: 'Concept CAD rendering of the full arm' },
+                    { src: 'images/placeholder_arm_2.jpg', alt: 'Exploded view of the wrist joint' },
+                    { src: 'images/placeholder_arm_3.jpg', alt: 'Detailed rendering of the terminal device (hand)' }
+                ]
+            },
+            'modal-project-4': {
+                title: 'MATLAB Data Analysis for Biomechanics',
+                subtitle: 'Advanced Programming Tool Development',
+                category: 'Programming & Data Analysis',
+                description: [
+                    'Developed a comprehensive **MATLAB** script package to streamline the processing and analysis of raw motion capture data (kinetics and kinematics) collected from human subjects during gait analysis studies.',
+                    'The tool automated several time-consuming steps, including data cleaning, noise reduction, and signal normalization across different subjects. It features a graphical user interface (GUI) built with MATLAB App Designer for intuitive operation by research staff.',
+                    'The script package calculates and visualizes key biomechanical parameters, such as joint angles over the gait cycle, angular momentum, and time-series analysis of ground reaction forces. This automation reduced post-processing time by approximately 60%.',
+                    'Skills used: MATLAB, Data Processing, Signal Analysis, GUI Development, Biomechanics Principles, Statistical Analysis, Data Visualization.'
+                ],
+                images: [
+                    { src: 'images/placeholder_matlab_1.jpg', alt: 'MATLAB script interface example' },
+                    { src: 'images/placeholder_matlab_2.jpg', alt: 'Example of generated gait analysis graph' },
+                    { src: 'images/placeholder_matlab_3.jpg', alt: 'Data processing flow chart' }
+                ]
+            }
+        };
+
+
+        // --- CORE JAVASCRIPT LOGIC ---
+        
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -229,7 +308,7 @@
             });
         });
 
-        // Basic Project Filtering/Scrolling
+        // Project Filtering/Scrolling Logic
         const filterButtons = document.querySelectorAll('.filter-btn');
         const projectContainer = document.querySelector('.projects-grid');
         const projects = document.querySelectorAll('.project-card');
@@ -238,37 +317,25 @@
             button.addEventListener('click', () => {
                 const filter = button.getAttribute('data-filter');
 
-                // Update active button state
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
 
-                let targetProjectIndex = 0; // Default to the first project
-
-                projects.forEach((card, index) => {
+                projects.forEach(card => {
                     const categories = card.getAttribute('data-category');
                     const isVisible = filter === 'all' || categories.includes(filter);
-
-                    card.style.display = isVisible ? 'block' : 'none'; // Basic visibility filtering
-
-                    // Find the index of the first visible project after filtering
-                    if (isVisible && targetProjectIndex === 0 && filter !== 'all') {
-                        targetProjectIndex = index;
-                    }
+                    // Use a class to hide/show and maintain correct CSS width
+                    card.classList.toggle('hidden', !isVisible); 
                 });
                 
-                // Horizontal scrolling effect (simulates 'defilement')
-                // Scroll to the first visible item for the selected category.
-                if (filter !== 'all') {
-                    const firstVisibleProject = projects[targetProjectIndex];
-                    if (firstVisibleProject) {
-                        const scrollPosition = firstVisibleProject.offsetLeft - 30; // 30px padding
-                        projectContainer.scrollTo({
-                            left: scrollPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                } else {
-                    // For 'All Projects', scroll back to the start
+                // Horizontal scrolling effect (to the first visible card)
+                const firstVisibleProject = Array.from(projects).find(p => !p.classList.contains('hidden'));
+                if (firstVisibleProject) {
+                    const scrollPosition = firstVisibleProject.offsetLeft - 30;
+                    projectContainer.scrollTo({
+                        left: scrollPosition,
+                        behavior: 'smooth'
+                    });
+                } else if (filter === 'all') {
                     projectContainer.scrollTo({
                         left: 0,
                         behavior: 'smooth'
@@ -276,6 +343,73 @@
                 }
             });
         });
+
+
+        // --- MODAL LOGIC ---
+        const modal = document.getElementById('project-modal');
+        const closeBtn = document.querySelector('.close-btn');
+        const modalDetails = document.getElementById('modal-details');
+
+        // Function to build and show the modal
+        function openModal(projectId) {
+            const data = projectData[projectId];
+            if (!data) return;
+
+            // 1. Build Image Gallery HTML (with 4 photos)
+            const galleryHtml = data.images.map(img => `
+                <div class="modal-image-item">
+                    <img src="${img.src}" alt="${img.alt}">
+                    <p class="image-caption">${img.alt}</p>
+                </div>
+            `).join('');
+
+            // 2. Build Description HTML (paragraphed)
+            const descriptionHtml = data.description.map(p => `<p class="modal-text-paragraph">${p}</p>`).join('');
+
+            // 3. Assemble all content
+            modalDetails.innerHTML = `
+                <h2 class="modal-title">${data.title}</h2>
+                <h3 class="modal-subtitle">${data.subtitle}</h3>
+                <p class="modal-category">Category: <strong>${data.category}</strong></p>
+                
+                <div class="modal-gallery">
+                    ${galleryHtml}
+                </div>
+                
+                <div class="modal-description">
+                    ${descriptionHtml}
+                </div>
+            `;
+
+            // 4. Show the modal
+            modal.classList.add('is-visible');
+            document.body.style.overflow = 'hidden'; // Prevent body scrolling
+        }
+
+        // Add click event listeners to all project cards
+        projects.forEach(card => {
+            card.addEventListener('click', () => {
+                const modalId = card.getAttribute('data-modal-target');
+                if (modalId) {
+                    openModal(modalId);
+                }
+            });
+        });
+
+        // Close modal when clicking the 'X' button
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('is-visible');
+            document.body.style.overflow = ''; // Re-enable body scrolling
+        });
+
+        // Close modal when clicking outside of the modal content
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.classList.remove('is-visible');
+                document.body.style.overflow = '';
+            }
+        });
+
     </script>
 </body>
 </html>
