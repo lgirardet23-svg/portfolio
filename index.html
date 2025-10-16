@@ -439,19 +439,23 @@
             const modals = document.querySelectorAll('.modal');
             const fullscreenModal = document.getElementById('fullscreenImageModal');
             const fullscreenCloseBtn = fullscreenModal.querySelector('.fullscreen-modal-close');
-            
-            const projectCards = document.querySelectorAll('.projects-grid .project-card'); 
+            const projectsGrid = document.querySelector('.projects-grid'); // Conteneur parent pour délégation
+            const projectCards = document.querySelectorAll('.projects-grid .project-card'); // Pour le filtrage
 
             
-            // 1. GESTION DES CLICS SUR LES CARTES DE PROJET
-            projectCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    const targetId = card.getAttribute('data-modal-target');
-                    if (targetId) {
-                        openModal(targetId);
+            // 1. GESTION DES CLICS SUR LES CARTES DE PROJET (FIX ÉVÉNEMENT DÉLÉGUÉ)
+            if (projectsGrid) {
+                projectsGrid.addEventListener('click', (event) => {
+                    // event.target.closest trouve l'élément ancêtre qui correspond au sélecteur
+                    let card = event.target.closest('.project-card'); 
+                    if (card) {
+                        const targetId = card.getAttribute('data-modal-target');
+                        if (targetId) {
+                            openModal(targetId);
+                        }
                     }
                 });
-            });
+            }
 
 
             // 2. GESTION DU FILTRAGE DES PROJETS (Utilisation de la classe .hidden fixée dans <style>)
@@ -466,55 +470,3 @@
 
                     projectCards.forEach(card => {
                         const categories = card.getAttribute('data-category').split(' ');
-
-                        if (filterValue === 'all' || categories.includes(filterValue)) {
-                            card.classList.remove('hidden');
-                            // Fix potentiel pour animation/transition (si nécessaire dans style.css)
-                            card.style.opacity = 1; 
-                        } else {
-                            card.classList.add('hidden');
-                            // Fix potentiel pour animation/transition
-                            card.style.opacity = 0; 
-                        }
-                    });
-                });
-            });
-
-
-            // 3. GESTION DE LA FERMETURE DES MODALES PRINCIPALES
-            modals.forEach(modal => {
-                const closeBtn = modal.querySelector('.close-btn');
-                
-                if (closeBtn) {
-                    closeBtn.onclick = () => {
-                        closeModal(modal);
-                    };
-                }
-                
-                modal.onclick = (event) => {
-                    if (event.target === modal) { 
-                        closeModal(modal);
-                    }
-                };
-
-                window.addEventListener('keydown', (event) => {
-                    // Vérifie l'état par la propriété de style définie par JS
-                    if (event.key === 'Escape' && modal.style.display === 'flex') {
-                        closeModal(modal);
-                    }
-                });
-            });
-
-            // 4. GESTION DE LA FERMETURE DE LA MODALE PLEIN ÉCRAN
-             if (fullscreenCloseBtn) {
-                fullscreenCloseBtn.onclick = (event) => {
-                    event.stopPropagation(); 
-                    document.getElementById('fullscreenImageModal').style.display = 'none';
-                    document.body.style.overflow = ''; 
-                };
-            }
-        });
-    </script>
-
-</body>
-</html>
