@@ -1,407 +1,688 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Girardet | Biomedical Engineering Student</title>
-    <link rel="stylesheet" href="style.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <header class="navbar">
-        <div class="logo">L.<span class="highlight">G</span></div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-        </nav>
-        <a href="#contact" class="btn-contact">Contact Me</a>
-    </header>
+:root {
+    --color-primary: #3498db; 
+    --color-secondary: #f39c12; 
+    --color-dark: #333;
+    --color-light: #f9f9f9;
+    --color-grey: #eee;
+    --color-white: #fff;
+    --font-family: 'Poppins', sans-serif;
+    --max-width: 1200px;
+    --border-radius: 12px;
+}
 
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <h1>Hi, I'm Lucas <span class="highlight">Girardet</span></h1>
-            <p>Biomedical Engineering Student | Dedicated to Innovation in Medical Technology and Mechanical Design.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn-primary">View Portfolio</a>
-                <a href="URL_DU_VOTRE_CV" class="btn-secondary" target="_blank">Download Resume</a> 
-            </div>
-        </div>
-    </section>
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <section id="about" class="about-section section-padding">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-text-column">
-                <p>
-                    As a biomedical engineering student, I am passionate about new medical technologies, mechanical design, and industrial innovation. Throughout my studies, I have developed solid knowledge in medical devices, as well as strong skills in CAD, technical analysis, and mechanical engineering.
-                </p>
-                <p>
-                    Curious, ambitious, and motivated, I am seeking a challenging 3-month minimum R&D internship in the biomedical field to apply and strengthen my competencies as an engineer, in a real-world research or innovation environment, and further develop my biomedical and technical expertise.
-                </p>
-            </div>
-            <div class="about-image-column">
-                <div class="profile-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/profile-pic.png'); background-size: cover; background-position: center;"></div>
-            </div>
-        </div>
-    </section>
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--color-dark);
+}
 
-    <section id="education" class="section-padding section-grey education-cards">
-        <h2 class="section-title">Education</h2>
-        <p class="subtitle-text">My academic path in Biomedical Engineering.</p>
-        <div class="cards-container">
-            <div class="card card-isifc">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Engineering Degree</h3>
-                <p>ISIFC | Engineering School in Biomedical Technologies</p>
-                <p>Besançon, France | 2024 - Present</p>
-            </div>
-            <div class="card card-dublin">
-                <i class="fas fa-plane-departure"></i>
-                <h3>Erasmus+ Semester</h3>
-                <p>Technological University of Dublin</p>
-                <p>Dublin, Ireland | Jan - June 2024</p>
-            </div>
-            <div class="card card-bachelor">
-                <i class="fas fa-microscope"></i>
-                <h3>Bachelor's Degree in Engineering Sciences</h3>
-                <p>University of Franche-Comté</p>
-                <p>Besançon, France | 2022 - 2024</p>
-            </div>
-        </div>
-    </section>
+h1, h2, h3 {
+    font-weight: 700;
+}
 
-    <section id="skills" class="section-padding">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <p class="subtitle-text">Technical and professional skills developed during my studies.</p>
-        <div class="skills-container">
-            <div class="skills-column">
-                <h3>CAD & Mechanical Design</h3>
-                <ul class="skills-list">
-                    <li>SolidWorks</li>
-                    <li>Catia V5</li>
-                    <li>PTC Creo</li>
-                    <li>Technical Drawings</li>
-                    <li>3D Printing & Machining</li>
-                </ul>
-            </div>
-            <div class="skills-column">
-                <h3>Programming & Software</h3>
-                <ul class="skills-list">
-                    <li>MATLAB</li>
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>ROS2 / C++</li>
-                    <li>Data Analysis</li>
-                </ul>
-            </div>
-            <div class="skills-column">
-                <h3>Professional Skills</h3>
-                <ul class="skills-list">
-                    <li>Technical Problem Solving</li>
-                    <li>Quality Control</li>
-                    <li>Industrial Processes</li>
-                    <li>Teamwork & Reliability</li>
-                    <li>Organization & Initiative</li>
-                </ul>
-            </div>
-            <div class="skills-column">
-                <h3>Languages</h3>
-                <ul class="skills-list">
-                    <li>French (Native)</li>
-                    <li>English (C1 - Fluent)</li>
-                    <li>Spanish (B1)</li>
-                    <li>Italian (Basic Knowledge)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 0.5em;
+    color: var(--color-dark);
+}
 
-    <section id="projects" class="section-padding section-grey">
-        <h2 class="section-title">My Projects</h2>
-        <p class="subtitle-text">A selection of my technical and design works.</p>
-        <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="cad">CAD / Design</button>
-            <button class="filter-btn" data-filter="programming">Programming</button>
-            <button class="filter-btn" data-filter="biomedical">Biomedical</button>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card" data-category="cad biomedical" data-modal-target="modal-syringe-packaging">
-                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png'); background-size: cover; background-position: center;"></div>
-                <h3>Syringe & Packaging System</h3>
-                <p>Full CAD modeling of a safety needle and a custom 7-unit thermal packaging box for veterinarians.</p>
-            </div>
-            <div class="project-card" data-category="cad design" data-modal-target="modal-paddle-valve">
-                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve.jpg'); background-size: cover; background-position: center;"></div>
-                <h3>Paddleboard Safety Valve</h3>
-                <p>Developed and prototyped a pressure-regulating valve system for stand-up paddleboards.</p>
-            </div>
-            <div class="project-card" data-category="programming software" data-modal-target="modal-ludo-game">
-                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/3.png'); background-size: cover; background-position: center;"></div>
-                <h3>Ludo Game | Petits Chevaux Implementation</h3>
-                <p>Full Java implementation of the classic board game, featuring graphic and console modes, and scoring history.</p>
-            </div>
-        </div>
-    </section>
+p.subtitle-text {
+    text-align: center;
+    color: #666;
+    margin-bottom: 3em;
+    font-weight: 400;
+}
 
-    <section id="contact" class="section-padding">
-        <h2 class="section-title">Contact Me</h2>
-        <p class="subtitle-text">Feel free to contact me for an internship, project collaboration, or any technical discussion.</p>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Get in touch</h3>
-                <p>I'm available to discuss collaboration, new projects, or any technical challenge.</p>
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Besançon, France</p>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <p><a href="mailto:l.girardet23@gmail.com" class="contact-link">l.girardet23@gmail.com</a></p>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-phone"></i>
-                    <p><a href="tel:+33620870890" class="contact-link">+33 (0)6 20 87 08 90</a></p>
-                </div>
-                <div class="info-item">
-                    <i class="fab fa-linkedin"></i>
-                    <p><a href="https://www.linkedin.com/in/lucas-girardet-79057217a/" target="_blank" class="contact-link">Lucas Girardet on LinkedIn</a></p>
-                </div>
-            </div>
-            <form class="contact-form" action="VOTRE_LIEN_FORMULAIRE_DE_CONTACT" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <input type="text" name="subject" placeholder="Subject">
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
-        </div>
-    </section>
+a {
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+.section-padding {
+    padding: 60px 20px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.section-grey {
+    background-color: var(--color-light);
+}
+
+.highlight {
+    color: var(--color-secondary);
+}
+
+/* --- BUTTONS & NAV --- */
+.btn-primary, .btn-secondary, .btn-contact {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+.btn-contact {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 12px 28px;
+    margin-left: 15px;
+}
+
+/* --- NAVIGATION BAR --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--color-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.navbar nav a {
+    margin-left: 30px;
+    font-weight: 600;
+}
+
+.navbar nav a:hover {
+    color: var(--color-primary);
+}
+
+
+/* --- HOME / HERO SECTION --- */
+.hero-section {
+    position: relative;
+    padding-top: 80px; 
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
     
-    <div class="footer">
-        <p>&copy; 2025 Lucas Girardet. All rights reserved.</p>
-    </div>
+    /* Image de fond avec l'URL RAW */
+    background: linear-gradient(rgba(44,62,80,0.7), rgba(32,51,71,0.7)), url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Biomedical.jpg'); 
+    
+    background-size: cover;
+    background-position: center;
+}
 
-    <div class="chat-widget">
-        <i class="fas fa-comment-dots"></i> Chat
-    </div>
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+    position: relative; 
+    z-index: 10;
+}
 
-    <div id="modal-syringe-packaging" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 class="modal-title">CAD Project: Syringe & Packaging System</h2>
-            <p class="modal-subtitle">Full modeling from single parts to final assembly, including design validation.</p>
-            <p class="modal-category">Category: CAD / Biomedical Engineering</p>
-            <div class="modal-gallery">
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png" alt="Detailed view of the syringe">
-                    <p class="image-caption">1. Detailed view of the syringe (CAD modeling).</p>
-                </div>
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue2.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue2.png" alt="Closed box with syringes inside">
-                    <p class="image-caption">2. Closed packaging box, containing the syringes.</p>
-                </div>
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue3.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue3.png" alt="Open box showing the packaging">
-                    <p class="image-caption">3. View of the open box with the assembled syringe and needle sets.</p>
-                </div>
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue4.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue4.png" alt="Needle with safety cap">
-                    <p class="image-caption">4. Modeling of the needle with its safety cap.</p>
-                </div>
-            </div>
-            <div class="modal-description">
-                <p class="modal-text-paragraph">
-                    This project was completed in collaboration with a colleague to meet the specific needs of veterinarians during herd vaccination campaigns, focusing on safety and practical weekly conditioning.
-                </p>
-                <p class="modal-text-paragraph">
-                    My initial step involved the <strong>CAD modeling of the needle and its safety cap</strong>, first as a single "monoblock" part, then broken down into its industrial components: the biocompatible metal cannula and the plastic insert. This decomposition was essential for accurately representing the manufacturing constraints.
-                </p>
-                <p class="modal-text-paragraph">
-                    The second phase focused on <strong>packaging design</strong>. I modeled a simple, secure box in Polystyrene to hold seven complete, unassembled syringe-needle sets. The choice of Polystyrene addresses the manufacturer's requirement for thermal insulation during transport.
-                </p>
-                <p class="modal-text-paragraph">
-                    <strong>Validation</strong> was carried out through assembly checks (syringe + capped needle) and a cross-section view of the final packaging containing all seven sets, ensuring <strong>zero interference</strong> between the parts during transport.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div id="modal-paddle-valve" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 class="modal-title">Paddleboard Pressure-Regulating Valve</h2>
-            <p class="modal-subtitle">Details on the pressure-regulating valve project.</p>
-            <p class="modal-category">Category: CAD / Design</p>
-            <div class="modal-gallery">
-                 <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve-details.jpg')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve-details.jpg" alt="Valve Mechanism">
-                    <p class="image-caption">Detailed view of the internal pressure regulation mechanism.</p>
-                </div>
-            </div>
-            <div class="modal-description">
-                <p class="modal-text-paragraph">
-                    As part of my Bachelor's engineering project, I co-led the design, prototyping, and validation of a pressure-regulating valve system for inflatable stand-up paddleboards. The objective was to automatically prevent overinflation caused by solar heating during use. The project involved a full design cycle from needs analysis to final assembly using CAD modeling, 3D printing, and machining techniques.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div id="modal-ludo-game" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 class="modal-title">Software Project: Ludo Game (Jeu des Petits Chevaux)</h2>
-            <p class="modal-subtitle">Full implementation of the classic French board game in Java.</p>
-            <p class="modal-category">Category: Programming / Software Development</p>
-            <div class="modal-gallery">
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/3.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/3.png" alt="Graphical view of the Ludo game board">
-                    <p class="image-caption">1. Overview of the board game layout (Graphical version).</p>
-                </div>
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/4.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/4.png" alt="Difficulty selection menu">
-                    <p class="image-caption">2. Difficulty selection menu (Beginner, Pro, Legend).</p>
-                </div>
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/6.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/6.png" alt="Console mode display">
-                    <p class="image-caption">3. Non-graphic console mode during a two-player game.</p>
-                </div>
-            </div>
-            <div class="modal-description">
-                <p class="modal-text-paragraph">
-                    This academic project involved the comprehensive implementation of the classic French board game, <em>Jeu des Petits Chevaux</em> (similar to Ludo), in Java. The project was developed by Lucas Girardet, in collaboration with a colleague, as part of the Algorithmic and Programming coursework.
-                </p>
-                <p class="modal-text-paragraph">
-                    The application features both a <strong>non-graphic (console) version</strong> and a <strong>graphical user interface (GUI) version</strong>. The game supports two primary modes: a <strong>Solo mode</strong> (where the player must reach the finish line in a minimum number of turns) and a <strong>Two-player Race mode</strong> (the first player to reach the final square wins).
-                </p>
-                <p class="modal-text-paragraph">
-                    Players can select between three difficulty levels—<strong>Beginner, Pro, and Legend</strong>—which dynamically adjust the size of the game board and the maximum number of allowed moves in Solo mode. The game also includes special squares that act as <strong>Bonus or Penalty</strong> zones, allowing players to jump ahead or be sent back.
-                </p>
-                <p class="modal-text-paragraph">
-                    A core feature is the <strong>file management system</strong> used to save a complete history of all games played. This includes player names, the final board matrix, and the winner, stored in separate files for solo and duo games.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div id="fullscreenImageModal" class="fullscreen-modal">
-        <span class="fullscreen-modal-close">&times;</span>
-        <img class="fullscreen-modal-content" id="fullImage">
-    </div>
+.hero-section h1 {
+    font-size: 4.5em;
+    margin-bottom: 0.1em;
+}
 
-    <script>
-        // Fonction pour ouvrir la modale d'image en plein écran
-        function showFullScreen(imgSrc) {
-            const modal = document.getElementById('fullscreenImageModal');
-            const fullImage = document.getElementById('fullImage');
-            fullImage.src = imgSrc;
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Empêche le scroll du body derrière la modale
-        }
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    font-weight: 300;
+}
 
-        // Fonction pour ouvrir la modale de projet
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.add('is-visible');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-        
-        // Fonction pour fermer la modale
-        function closeModal(modal) {
-            if (modal) {
-                modal.classList.remove('is-visible');
-                document.body.style.overflow = '';
-            }
-        }
+.hero-buttons a {
+    margin: 0 10px;
+}
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. Gestion de l'ouverture des modales de projet
-            const projectsGrid = document.querySelector('.projects-grid');
-            if (projectsGrid) {
-                projectsGrid.addEventListener('click', (event) => {
-                    const card = event.target.closest('.project-card');
-                    if (card) {
-                        const targetId = card.getAttribute('data-modal-target');
-                        if (targetId) {
-                            openModal(targetId);
-                        }
-                    }
-                });
-            }
+/* --- ABOUT ME SECTION --- */
+.about-section {
+    padding: 100px 20px 60px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
 
-            // 2. Gestion de la fermeture des modales de projet
-            const modals = document.querySelectorAll('.modal');
-            modals.forEach(modal => {
-                const closeBtn = modal.querySelector('.close-btn');
-                if (closeBtn) {
-                    closeBtn.addEventListener('click', (e) => {
-                        closeModal(modal);
-                    });
-                }
-                // Fermeture en cliquant en dehors du modal-content
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        closeModal(modal);
-                    }
-                });
-            });
+.about-content {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
 
-            // 3. Gestion de la fermeture de la modale image fullscreen
-            const fullscreenModal = document.getElementById('fullscreenImageModal');
-            if (fullscreenModal) {
-                const fullscreenCloseBtn = fullscreenModal.querySelector('.fullscreen-modal-close');
-                if (fullscreenCloseBtn) {
-                    fullscreenCloseBtn.addEventListener('click', (e) => {
-                        fullscreenModal.style.display = 'none';
-                        document.body.style.overflow = '';
-                    });
-                }
-                // Fermeture en cliquant sur l'overlay (l'image ne doit pas fermer)
-                fullscreenModal.addEventListener('click', (e) => {
-                    if (e.target === fullscreenModal) {
-                        fullscreenModal.style.display = 'none';
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
+.about-text-column {
+    flex: 2;
+}
 
-            // 4. Filtrage des projets
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const projectCards = document.querySelectorAll('.projects-grid .project-card');
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    const filterValue = button.getAttribute('data-filter');
-                    projectCards.forEach(card => {
-                        const categories = card.getAttribute('data-category').split(' ');
-                        if (filterValue === 'all' || categories.includes(filterValue)) {
-                            card.classList.remove('hidden');
-                        } else {
-                            card.classList.add('hidden');
-                        }
-                    });
-                });
-            });
+.about-image-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-            // 5. Fermeture modale avec "Escape"
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    // Fermer les modales de projet
-                    document.querySelectorAll('.modal.is-visible').forEach(modal => {
-                        closeModal(modal);
-                    });
-                    // Fermer la modale fullscreen
-                    if (fullscreenModal && fullscreenModal.style.display === 'flex') {
-                        fullscreenModal.style.display = 'none';
-                        document.body.style.overflow = '';
-                    }
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+.profile-image-placeholder {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: var(--color-primary); 
+    border: 5px solid var(--color-primary);
+    
+    /* Photo de profil avec l'URL RAW */
+    background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/profile-pic.png'); 
+    
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- EDUCATION --- */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; 
+    max-width: var(--max-width); 
+    margin: 0 auto;
+}
+
+.education-cards .card {
+    max-width: 350px; 
+}
+
+.card {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card i {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+/* Card specific colors */
+.card-isifc { background-color: #e3f2fd; }
+.card-isifc i { color: #2196f3; }
+
+.card-dublin { background-color: #fce4ec; }
+.card-dublin i { color: #e91e63; }
+
+.card-bachelor { background-color: #e8f5e9; }
+.card-bachelor i { color: #4caf50; }
+
+
+/* --- SKILLS & EXPERTISE SECTION (List Layout) --- */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.skills-column {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 200px; 
+}
+
+.skills-column h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--color-primary);
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.skills-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--color-grey);
+    font-weight: 500;
+}
+
+.skills-list li:last-child {
+    border-bottom: none;
+}
+
+/* The .level CSS is kept but not used anymore as the span is removed. */
+.skills-list .level { 
+    font-weight: 400;
+    color: #666;
+    float: right;
+}
+
+/* --- PROJECTS SECTION (Horizontal Scroll) --- */
+.project-filters {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: 2px solid var(--color-grey);
+    background-color: var(--color-white);
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+/* Hides the card when filtered (used by JS) */
+.project-card.hidden {
+    display: none !important;
+}
+
+/* Cliquable card style */
+.project-card {
+    cursor: pointer; 
+    background-color: var(--color-white);
+    padding: 0; 
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* SCROLL CONTAINER CSS */
+.projects-grid {
+    display: flex; 
+    overflow-x: scroll; 
+    scroll-snap-type: x mandatory;
+    gap: 30px;
+    padding-bottom: 20px; 
+    -webkit-overflow-scrolling: touch; 
+}
+
+/* Individual Project Card in the scroll container */
+.projects-grid .project-card {
+    min-width: 300px; 
+    max-width: 300px;
+    flex-shrink: 0; 
+    scroll-snap-align: start;
+    display: block; 
+}
+
+.project-image-placeholder {
+    height: 200px;
+    background-color: #ddd; 
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.project-card h3 {
+    padding: 15px 20px 5px;
+    font-size: 1.3em;
+    text-align: left;
+}
+
+.project-card p {
+    padding: 0 20px 20px;
+    color: #666;
+    text-align: left;
+}
+
+
+/* --- CONTACT SECTION --- */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    flex: 1;
+    text-align: left;
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* MODIFICATION HERE: increased margin-bottom for spacing */
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px; 
+}
+
+.info-item i {
+    font-size: 1.2em;
+    color: var(--color-primary);
+    margin-right: 15px;
+    min-width: 20px; 
+}
+
+.info-item p {
+    margin: 0;
+}
+
+.contact-link {
+    color: var(--color-dark);
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    color: var(--color-primary);
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    border: 1px solid var(--color-grey);
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* --- FOOTER & WIDGET --- */
+.footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 15px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.3s;
+    z-index: 1000;
+}
+
+.chat-widget:hover {
+    transform: scale(1.05);
+}
+
+.chat-widget i {
+    margin-right: 8px;
+}
+
+/* --- MODAL STYLES --- */
+.modal {
+    display: none; /* Cache par défaut */
+    position: fixed;
+    z-index: 2000; /* Assure qu'il est au-dessus de tout */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond sombre transparent */
+    padding-top: 50px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal.is-visible {
+    display: block; 
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--color-white);
+    margin: 10% auto; 
+    padding: 30px;
+    border-radius: var(--border-radius);
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2.modal-title {
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 2em;
+}
+
+.modal-subtitle {
+    text-align: left;
+    color: var(--color-primary);
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.modal-category {
+    text-align: left;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--color-dark);
+    text-decoration: none;
+}
+
+.modal-gallery {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 15px; 
+    margin-bottom: 30px;
+    border-top: 1px solid var(--color-grey);
+    padding-top: 20px;
+}
+
+.modal-image-item {
+    flex-shrink: 0; 
+    width: 250px;
+    text-align: center;
+    cursor: pointer; /* Added cursor for better UX when clicking for fullscreen */
+}
+
+.modal-image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.image-caption {
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.modal-description {
+    text-align: justify;
+}
+
+.modal-text-paragraph {
+    margin-bottom: 15px;
+}
+
+
+/* --- MEDIA QUERIES (Responsive Design) --- */
+@media (max-width: 1024px) {
+    .navbar nav {
+        display: none; 
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 80vh; 
+    }
+    
+    .hero-section h1 {
+        font-size: 3em;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image-column {
+        order: -1; 
+        margin-bottom: 30px;
+    }
+
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-info {
+        margin-bottom: 20px;
+    }
+    
+    .contact-info p {
+        text-align: center;
+    }
+
+    .info-item {
+        justify-content: center;
+    }
+
+    .modal-content {
+        margin: 5% 10px;
+        max-width: 95%;
+    }
+
+    .modal-gallery {
+        flex-direction: row; 
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+
+    .modal-image-item {
+        width: 180px; 
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero-buttons a {
+        margin: 0;
+    }
+}
