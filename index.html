@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
+        /* Styles pour la modale plein écran */
         .fullscreen-modal {
             display: none;
             position: fixed;
@@ -49,6 +50,53 @@
         .fullscreen-modal-close:hover,
         .fullscreen-modal-close:focus {
             color: #bbb;
+            text-decoration: none;
+        }
+        
+        /* FIX ESSENTIEL : Styles pour les modales de projet standard */
+        .modal {
+            display: none; /* Caché par défaut */
+            position: fixed;
+            z-index: 2000; /* Moins que le fullscreen-modal (3000) */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll; 
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.is-visible {
+            display: flex; /* Affiché lorsque la classe 'is-visible' est ajoutée par JS */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            padding: 20px;
+            margin: 5% auto; /* Marge supérieure réduite pour centrer et laisser de l'espace */
+            border-radius: 8px;
+            width: 90%;
+            max-width: 900px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,.5);
+            position: relative;
+        }
+
+        .close-btn {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #333;
             text-decoration: none;
         }
     </style>
@@ -261,3 +309,51 @@
 
             <div class="modal-gallery">
                 <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png" alt="Detailed view of the syringe">
+                    <p class="image-caption">1. Detailed view of the syringe (CAD modeling).</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue2.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue2.png" alt="Closed box with syringes inside">
+                    <p class="image-caption">2. Closed packaging box, containing the syringes.</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue3.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue3.png" alt="Open box showing the packaging">
+                    <p class="image-caption">3. View of the open box with the assembled syringe and needle sets.</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue4.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue4.png" alt="Needle with safety cap">
+                    <p class="image-caption">4. Modeling of the needle with its safety cap.</p>
+                </div>
+            </div>
+
+            <div class="modal-description">
+                <p class="modal-text-paragraph">
+                    This project was completed in collaboration with a colleague to meet the specific needs of veterinarians during herd vaccination campaigns, focusing on safety and practical weekly conditioning.
+                </p>
+                <p class="modal-text-paragraph">
+                    My initial step involved the **CAD modeling of the needle and its safety cap**, first as a single "monoblock" part, then broken down into its industrial components: the biocompatible metal cannula and the plastic insert. This decomposition was essential for accurately representing the manufacturing constraints.
+                </p>
+                <p class="modal-text-paragraph">
+                    The second phase focused on **packaging design**. I modeled a simple, secure box in Polystyrene to hold seven complete, unassembled syringe-needle sets. The choice of Polystyrene addresses the manufacturer's requirement for thermal insulation during transport.
+                </p>
+                <p class="modal-text-paragraph">
+                    **Validation** was carried out through assembly checks (syringe + capped needle) and a cross-section view of the final packaging containing all seven sets, ensuring **zero interference** between the parts during transport.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="modal-paddle-valve" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Paddleboard Pressure-Regulating Valve</h2>
+            <p class="modal-subtitle">Details on the pressure-regulating valve project.</p>
+            <p class="modal-category">Category: CAD / Design</p>
+            
+            <div class="modal-gallery">
+                 <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve-details.jpg')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve-details.jpg" alt="Valve Mechanism">
+                    <p class="image-caption">Detailed view of the internal pressure regulation mechanism.</p>
+                </div>
+            </div>
+            
+            <div class="modal-description
