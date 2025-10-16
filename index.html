@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Mets ici tout ton CSS inline si tu ne veux pas charger style.css en externe */
-    </style>
 </head>
 <body>
     <header class="navbar">
@@ -289,14 +286,14 @@
             </div>
         </div>
     </div>
-    <div id="fullscreenImageModal" class="fullscreen-modal" onclick="document.getElementById('fullscreenImageModal').style.display='none'">
+    <div id="fullscreenImageModal" class="fullscreen-modal">
         <span class="fullscreen-modal-close">&times;</span>
         <img class="fullscreen-modal-content" id="fullImage">
     </div>
 
-    <!-- SCRIPT FONCTIONNEL POUR LES MODALES ET LE FILTRAGE -->
+    <!-- SCRIPT POUR MODALES ET FILTRAGE -->
     <script>
-        // Fonction pour afficher une image en plein écran
+        // Pour la modale fullscreen image
         function showFullScreen(imgSrc) {
             const modal = document.getElementById('fullscreenImageModal');
             const fullImage = document.getElementById('fullImage');
@@ -305,17 +302,22 @@
             document.body.style.overflow = 'hidden';
         }
 
-        // Fonction pour ouvrir une modale projet
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             if (modal) {
-                modal.style.display = 'flex';
+                modal.classList.add('is-visible');
                 document.body.style.overflow = 'hidden';
+            }
+        }
+        function closeModal(modal) {
+            if (modal) {
+                modal.classList.remove('is-visible');
+                document.body.style.overflow = '';
             }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Ouvrir la modale projet au clic sur project-card
+            // Projet : ouverture modale
             const projectsGrid = document.querySelector('.projects-grid');
             if (projectsGrid) {
                 projectsGrid.addEventListener('click', (event) => {
@@ -329,25 +331,23 @@
                 });
             }
 
-            // 2. Fermer les modales projet (croix ou clic hors contenu)
+            // Fermeture modale projet
             const modals = document.querySelectorAll('.modal');
             modals.forEach(modal => {
                 const closeBtn = modal.querySelector('.close-btn');
                 if (closeBtn) {
                     closeBtn.addEventListener('click', (e) => {
-                        modal.style.display = 'none';
-                        document.body.style.overflow = '';
+                        closeModal(modal);
                     });
                 }
                 modal.addEventListener('click', (e) => {
                     if (e.target === modal) {
-                        modal.style.display = 'none';
-                        document.body.style.overflow = '';
+                        closeModal(modal);
                     }
                 });
             });
 
-            // 3. Fermer la modale d'image fullscreen (croix ou clic hors image)
+            // Fermeture modale image fullscreen
             const fullscreenModal = document.getElementById('fullscreenImageModal');
             if (fullscreenModal) {
                 const fullscreenCloseBtn = fullscreenModal.querySelector('.fullscreen-modal-close');
@@ -365,16 +365,14 @@
                 });
             }
 
-            // 4. Filtrage des projets
+            // Filtrage projets
             const filterButtons = document.querySelectorAll('.filter-btn');
             const projectCards = document.querySelectorAll('.projects-grid .project-card');
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Active le bouton sélectionné
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
                     const filterValue = button.getAttribute('data-filter');
-                    // Filtre les cartes
                     projectCards.forEach(card => {
                         const categories = card.getAttribute('data-category').split(' ');
                         if (filterValue === 'all' || categories.includes(filterValue)) {
@@ -386,16 +384,80 @@
                 });
             });
 
-            // 5. Fermer modale avec "Escape"
+            // Fermeture modale avec "Escape"
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
-                    document.querySelectorAll('.modal, .fullscreen-modal').forEach(modal => {
-                        modal.style.display = 'none';
-                        document.body.style.overflow = '';
+                    document.querySelectorAll('.modal.is-visible').forEach(modal => {
+                        closeModal(modal);
                     });
+                    if (fullscreenModal && fullscreenModal.style.display === 'flex') {
+                        fullscreenModal.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
                 }
             });
         });
     </script>
+    <style>
+        /* Correction du CSS modale pour la classe is-visible */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding-top: 50px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .modal.is-visible {
+            display: flex;
+            opacity: 1;
+            visibility: visible;
+        }
+        .fullscreen-modal {
+            display: none;
+            position: fixed;
+            z-index: 3000; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .fullscreen-modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        .fullscreen-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .fullscreen-modal-close:hover,
+        .fullscreen-modal-close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+        /* Ajoute ici éventuellement le reste de ton CSS */
+    </style>
 </body>
 </html>
