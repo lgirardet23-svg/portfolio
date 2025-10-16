@@ -4,106 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucas Girardet | Biomedical Engineering Student</title>
-    
     <link rel="stylesheet" href="style.css"> 
-    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
     <style>
-        /* Styles pour la modale plein écran */
-        .fullscreen-modal {
-            display: none;
-            position: fixed;
-            z-index: 3000; 
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .fullscreen-modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-            max-height: 90vh;
-            object-fit: contain;
-        }
-
-        .fullscreen-modal-close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .fullscreen-modal-close:hover,
-        .fullscreen-modal-close:focus {
-            color: #bbb;
-            text-decoration: none;
-        }
-        
-        /* FIX ESSENTIEL 1 : Styles pour les modales de projet standard */
-        .modal {
-            display: none; /* Caché par défaut, affiché par JS avec display: flex */
-            position: fixed;
-            z-index: 2000; 
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow-y: scroll; 
-            background-color: rgba(0, 0, 0, 0.8);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            padding: 20px;
-            margin: 5% auto; 
-            border-radius: 8px;
-            width: 90%;
-            max-width: 900px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,.5);
-            position: relative;
-        }
-
-        .close-btn {
-            color: #aaa;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            top: 15px;
-            right: 30px;
-            transition: color 0.3s;
-        }
-
-        .close-btn:hover,
-        .close-btn:focus {
-            color: #333;
-            text-decoration: none;
-        }
-        
-        /* FIX ESSENTIEL 2 : CSS pour le masquage des cartes lors du filtrage */
-        .projects-grid .project-card.hidden {
-            display: none !important; /* Force la suppression de la carte */
-        }
+        /* Mets ici tout ton CSS inline si tu ne veux pas charger style.css en externe */
     </style>
 </head>
 <body>
-
     <header class="navbar">
         <div class="logo">L.<span class="highlight">G</span></div>
         <nav>
@@ -147,7 +55,6 @@
     <section id="education" class="section-padding section-grey education-cards">
         <h2 class="section-title">Education</h2>
         <p class="subtitle-text">My academic path in Biomedical Engineering.</p>
-
         <div class="cards-container">
             <div class="card card-isifc">
                 <i class="fas fa-graduation-cap"></i>
@@ -155,14 +62,12 @@
                 <p>ISIFC | Engineering School in Biomedical Technologies</p>
                 <p>Besançon, France | 2024 - Present</p>
             </div>
-
             <div class="card card-dublin">
                 <i class="fas fa-plane-departure"></i>
                 <h3>Erasmus+ Semester</h3>
                 <p>Technological University of Dublin</p>
                 <p>Dublin, Ireland | Jan - June 2024</p>
             </div>
-
             <div class="card card-bachelor">
                 <i class="fas fa-microscope"></i>
                 <h3>Bachelor's Degree in Engineering Sciences</h3>
@@ -175,7 +80,6 @@
     <section id="skills" class="section-padding">
         <h2 class="section-title">Skills & Expertise</h2>
         <p class="subtitle-text">Technical and professional skills developed during my studies.</p>
-
         <div class="skills-container">
             <div class="skills-column">
                 <h3>CAD & Mechanical Design</h3>
@@ -187,7 +91,6 @@
                     <li>3D Printing & Machining</li>
                 </ul>
             </div>
-
             <div class="skills-column">
                 <h3>Programming & Software</h3>
                 <ul class="skills-list">
@@ -198,7 +101,6 @@
                     <li>Data Analysis</li>
                 </ul>
             </div>
-
             <div class="skills-column">
                 <h3>Professional Skills</h3>
                 <ul class="skills-list">
@@ -209,7 +111,6 @@
                     <li>Organization & Initiative</li>
                 </ul>
             </div>
-
             <div class="skills-column">
                 <h3>Languages</h3>
                 <ul class="skills-list">
@@ -225,40 +126,34 @@
     <section id="projects" class="section-padding section-grey">
         <h2 class="section-title">My Projects</h2>
         <p class="subtitle-text">A selection of my technical and design works.</p>
-
         <div class="project-filters">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="cad">CAD / Design</button>
             <button class="filter-btn" data-filter="programming">Programming</button>
             <button class="filter-btn" data-filter="biomedical">Biomedical</button>
         </div>
-
         <div class="projects-grid">
-
             <div class="project-card" data-category="cad biomedical" data-modal-target="modal-syringe-packaging">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png'); background-size: cover; background-position: center;"></div>
                 <h3>Syringe & Packaging System</h3>
                 <p>Full CAD modeling of a safety needle and a custom 7-unit thermal packaging box for veterinarians.</p>
             </div>
-            
             <div class="project-card" data-category="cad design" data-modal-target="modal-paddle-valve">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve.jpg'); background-size: cover; background-position: center;"></div>
                 <h3>Paddleboard Safety Valve</h3>
                 <p>Developed and prototyped a pressure-regulating valve system for stand-up paddleboards.</p>
             </div>
-
             <div class="project-card" data-category="programming software" data-modal-target="modal-ludo-game">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/3.png'); background-size: cover; background-position: center;"></div>
                 <h3>Ludo Game | Petits Chevaux Implementation</h3>
                 <p>Full Java implementation of the classic board game, featuring graphic and console modes, and scoring history.</p>
             </div>
-
-            </div>
+        </div>
     </section>
+
     <section id="contact" class="section-padding">
         <h2 class="section-title">Contact Me</h2>
         <p class="subtitle-text">Feel free to contact me for an internship, project collaboration, or any technical discussion.</p>
-
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Get in touch</h3>
@@ -280,7 +175,6 @@
                     <p><a href="https://www.linkedin.com/in/lucas-girardet-79057217a/" target="_blank" class="contact-link">Lucas Girardet on LinkedIn</a></p>
                 </div>
             </div>
-            
             <form class="contact-form" action="VOTRE_LIEN_FORMULAIRE_DE_CONTACT" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
@@ -299,15 +193,13 @@
         <i class="fas fa-comment-dots"></i> Chat
     </div>
 
-
+    <!-- MODALS PROJECT -->
     <div id="modal-syringe-packaging" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-
             <h2 class="modal-title">CAD Project: Syringe & Packaging System</h2>
             <p class="modal-subtitle">Full modeling from single parts to final assembly, including design validation.</p>
             <p class="modal-category">Category: CAD / Biomedical Engineering</p>
-
             <div class="modal-gallery">
                 <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png')">
                     <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png" alt="Detailed view of the syringe">
@@ -326,19 +218,18 @@
                     <p class="image-caption">4. Modeling of the needle with its safety cap.</p>
                 </div>
             </div>
-
             <div class="modal-description">
                 <p class="modal-text-paragraph">
                     This project was completed in collaboration with a colleague to meet the specific needs of veterinarians during herd vaccination campaigns, focusing on safety and practical weekly conditioning.
                 </p>
                 <p class="modal-text-paragraph">
-                    My initial step involved the **CAD modeling of the needle and its safety cap**, first as a single "monoblock" part, then broken down into its industrial components: the biocompatible metal cannula and the plastic insert. This decomposition was essential for accurately representing the manufacturing constraints.
+                    My initial step involved the <strong>CAD modeling of the needle and its safety cap</strong>, first as a single "monoblock" part, then broken down into its industrial components: the biocompatible metal cannula and the plastic insert. This decomposition was essential for accurately representing the manufacturing constraints.
                 </p>
                 <p class="modal-text-paragraph">
-                    The second phase focused on **packaging design**. I modeled a simple, secure box in Polystyrene to hold seven complete, unassembled syringe-needle sets. The choice of Polystyrene addresses the manufacturer's requirement for thermal insulation during transport.
+                    The second phase focused on <strong>packaging design</strong>. I modeled a simple, secure box in Polystyrene to hold seven complete, unassembled syringe-needle sets. The choice of Polystyrene addresses the manufacturer's requirement for thermal insulation during transport.
                 </p>
                 <p class="modal-text-paragraph">
-                    **Validation** was carried out through assembly checks (syringe + capped needle) and a cross-section view of the final packaging containing all seven sets, ensuring **zero interference** between the parts during transport.
+                    <strong>Validation</strong> was carried out through assembly checks (syringe + capped needle) and a cross-section view of the final packaging containing all seven sets, ensuring <strong>zero interference</strong> between the parts during transport.
                 </p>
             </div>
         </div>
@@ -349,14 +240,12 @@
             <h2 class="modal-title">Paddleboard Pressure-Regulating Valve</h2>
             <p class="modal-subtitle">Details on the pressure-regulating valve project.</p>
             <p class="modal-category">Category: CAD / Design</p>
-            
             <div class="modal-gallery">
                  <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve-details.jpg')">
                     <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve-details.jpg" alt="Valve Mechanism">
                     <p class="image-caption">Detailed view of the internal pressure regulation mechanism.</p>
                 </div>
             </div>
-            
             <div class="modal-description">
                 <p class="modal-text-paragraph">
                     As part of my Bachelor's engineering project, I co-led the design, prototyping, and validation of a pressure-regulating valve system for inflatable stand-up paddleboards. The objective was to automatically prevent overinflation caused by solar heating during use. The project involved a full design cycle from needs analysis to final assembly using CAD modeling, 3D printing, and machining techniques.
@@ -367,11 +256,9 @@
     <div id="modal-ludo-game" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-
             <h2 class="modal-title">Software Project: Ludo Game (Jeu des Petits Chevaux)</h2>
             <p class="modal-subtitle">Full implementation of the classic French board game in Java.</p>
             <p class="modal-category">Category: Programming / Software Development</p>
-
             <div class="modal-gallery">
                 <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/3.png')">
                     <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/3.png" alt="Graphical view of the Ludo game board">
@@ -386,19 +273,18 @@
                     <p class="image-caption">3. Non-graphic console mode during a two-player game.</p>
                 </div>
             </div>
-
             <div class="modal-description">
                 <p class="modal-text-paragraph">
-                    This academic project involved the comprehensive implementation of the classic French board game, *Jeu des Petits Chevaux* (similar to Ludo), in Java. The project was developed by Lucas Girardet, in collaboration with a colleague, as part of the Algorithmic and Programming coursework.
+                    This academic project involved the comprehensive implementation of the classic French board game, <em>Jeu des Petits Chevaux</em> (similar to Ludo), in Java. The project was developed by Lucas Girardet, in collaboration with a colleague, as part of the Algorithmic and Programming coursework.
                 </p>
                 <p class="modal-text-paragraph">
-                    The application features both a **non-graphic (console) version** and a **graphical user interface (GUI) version**. The game supports two primary modes: a **Solo mode** (where the player must reach the finish line in a minimum number of turns) and a **Two-player Race mode** (the first player to reach the final square wins).
+                    The application features both a <strong>non-graphic (console) version</strong> and a <strong>graphical user interface (GUI) version</strong>. The game supports two primary modes: a <strong>Solo mode</strong> (where the player must reach the finish line in a minimum number of turns) and a <strong>Two-player Race mode</strong> (the first player to reach the final square wins).
                 </p>
                 <p class="modal-text-paragraph">
-                    Players can select between three difficulty levels—**Beginner, Pro, and Legend**—which dynamically adjust the size of the game board and the maximum number of allowed moves in Solo mode. The game also includes special squares that act as **Bonus or Penalty** zones, allowing players to jump ahead or be sent back.
+                    Players can select between three difficulty levels—<strong>Beginner, Pro, and Legend</strong>—which dynamically adjust the size of the game board and the maximum number of allowed moves in Solo mode. The game also includes special squares that act as <strong>Bonus or Penalty</strong> zones, allowing players to jump ahead or be sent back.
                 </p>
                 <p class="modal-text-paragraph">
-                    A core feature is the **file management system** used to save a complete history of all games played. This includes player names, the final board matrix, and the winner, stored in separate files for solo and duo games.
+                    A core feature is the <strong>file management system</strong> used to save a complete history of all games played. This includes player names, the final board matrix, and the winner, stored in separate files for solo and duo games.
                 </p>
             </div>
         </div>
@@ -408,46 +294,32 @@
         <img class="fullscreen-modal-content" id="fullImage">
     </div>
 
-
+    <!-- SCRIPT FONCTIONNEL POUR LES MODALES ET LE FILTRAGE -->
     <script>
-        // FUNCTION TO OPEN IMAGE IN FULLSCREEN
+        // Fonction pour afficher une image en plein écran
         function showFullScreen(imgSrc) {
             const modal = document.getElementById('fullscreenImageModal');
             const fullImage = document.getElementById('fullImage');
             fullImage.src = imgSrc;
-            modal.style.display = 'flex'; 
+            modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
-        // JS for Project Modals
+        // Fonction pour ouvrir une modale projet
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             if (modal) {
-                // Utilisation de display:flex direct pour garantir l'affichage
-                modal.style.display = 'flex'; 
-                document.body.style.overflow = 'hidden'; 
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
             }
         }
 
-        function closeModal(modal) {
-            // Utilisation de display:none direct pour garantir le masquage
-            modal.style.display = 'none'; 
-            document.body.style.overflow = '';
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
-            const modals = document.querySelectorAll('.modal');
-            const fullscreenModal = document.getElementById('fullscreenImageModal');
-            const fullscreenCloseBtn = fullscreenModal.querySelector('.fullscreen-modal-close');
-            const projectsGrid = document.querySelector('.projects-grid'); // Conteneur parent pour délégation
-            const projectCards = document.querySelectorAll('.projects-grid .project-card'); // Pour le filtrage
-
-            
-            // 1. GESTION DES CLICS SUR LES CARTES DE PROJET (FIX ÉVÉNEMENT DÉLÉGUÉ)
+            // 1. Ouvrir la modale projet au clic sur project-card
+            const projectsGrid = document.querySelector('.projects-grid');
             if (projectsGrid) {
                 projectsGrid.addEventListener('click', (event) => {
-                    // event.target.closest trouve l'élément ancêtre qui correspond au sélecteur
-                    let card = event.target.closest('.project-card'); 
+                    const card = event.target.closest('.project-card');
                     if (card) {
                         const targetId = card.getAttribute('data-modal-target');
                         if (targetId) {
@@ -457,16 +329,73 @@
                 });
             }
 
+            // 2. Fermer les modales projet (croix ou clic hors contenu)
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                const closeBtn = modal.querySelector('.close-btn');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', (e) => {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = '';
+                    });
+                }
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
 
-            // 2. GESTION DU FILTRAGE DES PROJETS (Utilisation de la classe .hidden fixée dans <style>)
+            // 3. Fermer la modale d'image fullscreen (croix ou clic hors image)
+            const fullscreenModal = document.getElementById('fullscreenImageModal');
+            if (fullscreenModal) {
+                const fullscreenCloseBtn = fullscreenModal.querySelector('.fullscreen-modal-close');
+                if (fullscreenCloseBtn) {
+                    fullscreenCloseBtn.addEventListener('click', (e) => {
+                        fullscreenModal.style.display = 'none';
+                        document.body.style.overflow = '';
+                    });
+                }
+                fullscreenModal.addEventListener('click', (e) => {
+                    if (e.target === fullscreenModal) {
+                        fullscreenModal.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            // 4. Filtrage des projets
             const filterButtons = document.querySelectorAll('.filter-btn');
-            
+            const projectCards = document.querySelectorAll('.projects-grid .project-card');
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
+                    // Active le bouton sélectionné
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
-
                     const filterValue = button.getAttribute('data-filter');
-
+                    // Filtre les cartes
                     projectCards.forEach(card => {
                         const categories = card.getAttribute('data-category').split(' ');
+                        if (filterValue === 'all' || categories.includes(filterValue)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // 5. Fermer modale avec "Escape"
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.modal, .fullscreen-modal').forEach(modal => {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = '';
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
