@@ -412,10 +412,11 @@ a {
     text-align: left;
 }
 
+/* MODIFICATION HERE: increased margin-bottom for spacing */
 .info-item {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 25px; 
 }
 
 .info-item i {
@@ -584,6 +585,7 @@ a {
     flex-shrink: 0; 
     width: 250px;
     text-align: center;
+    cursor: pointer; /* Added cursor for better UX when clicking for fullscreen */
 }
 
 .modal-image-item img {
