@@ -141,7 +141,7 @@ a {
     text-align: center;
     color: var(--color-white);
     
-    /* CORRECTION FINALE : Image de fond avec l'URL RAW */
+    /* Image de fond avec l'URL RAW */
     background: linear-gradient(rgba(44,62,80,0.7), rgba(32,51,71,0.7)), url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Biomedical.jpg'); 
     
     background-size: cover;
@@ -201,7 +201,7 @@ a {
     background-color: var(--color-primary); 
     border: 5px solid var(--color-primary);
     
-    /* CORRECTION FINALE : Photo de profil avec l'URL RAW */
+    /* Photo de profil avec l'URL RAW */
     background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/profile-pic.png'); 
     
     background-size: cover;
@@ -323,11 +323,16 @@ a {
     border-color: var(--color-primary);
 }
 
+/* Hides the card when filtered (used by JS) */
+.project-card.hidden {
+    display: none !important;
+}
+
 /* Cliquable card style */
 .project-card {
-    cursor: pointer; /* Indicates the card is clickable */
+    cursor: pointer; 
     background-color: var(--color-white);
-    padding: 0; /* Remove internal padding as content is styled inside */
+    padding: 0; 
     border-radius: var(--border-radius);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     width: 100%;
@@ -339,26 +344,21 @@ a {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Hides the card when filtered (used by JS) */
-.project-card.hidden {
-    display: none !important;
-}
-
 /* SCROLL CONTAINER CSS */
 .projects-grid {
-    display: flex; /* Key for horizontal layout */
-    overflow-x: scroll; /* Key for horizontal scrolling */
+    display: flex; 
+    overflow-x: scroll; 
     scroll-snap-type: x mandatory;
     gap: 30px;
-    padding-bottom: 20px; /* space for scrollbar */
-    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    padding-bottom: 20px; 
+    -webkit-overflow-scrolling: touch; 
 }
 
 /* Individual Project Card in the scroll container */
 .projects-grid .project-card {
-    min-width: 300px; /* Ensures a fixed width for scrolling */
+    min-width: 300px; 
     max-width: 300px;
-    flex-shrink: 0; /* Prevents cards from shrinking */
+    flex-shrink: 0; 
     scroll-snap-align: start;
     display: block; 
 }
@@ -398,3 +398,8 @@ a {
     background-color: var(--color-white);
     padding: 30px;
     border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h3 {
+    font-size: 1.5
