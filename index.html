@@ -3,45 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Lucas Girardet</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lucas Girardet | Biomedical Engineering Student</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
     <header class="navbar">
-        <div class="logo">logo</div>
+        <div class="logo">L.<span class="highlight">G</span></div>
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
+            <a href="#education">Education</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
-            <a href="#contact" class="btn-contact">Contact</a>
         </nav>
+        <a href="#contact" class="btn-contact">Contact Me</a>
     </header>
 
     <section id="home" class="hero-section">
         <div class="hero-content">
-            <div class="bionic-hand-placeholder"></div>
-            <h1>Hello, I'm <span class="highlight">Lucas Girardet</span></h1>
-            <p>Biomedical Engineering Student passionate about new medical technologies, mechanical design, and industrial innovation.</p>
+            <h1>Hello, I'm Lucas <span class="highlight">Girardet</span></h1>
+            <p>Biomedical Engineering Student | Dedicated to Innovation in Medical Technology and Mechanical Design.</p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn-primary">View My Work</a>
-                <a href="#contact" class="btn-secondary">Get In Touch</a>
+                <a href="#projects" class="btn-primary">View Portfolio</a>
+                <a href="URL_DU_VOTRE_CV" class="btn-secondary" target="_blank">Download CV</a> 
             </div>
         </div>
     </section>
 
     <section id="about" class="about-section">
-        <h2>About Me</h2>
-        <p class="subtitle-text">Biomedical Engineering Student passionate about new medical technologies, mechanical design, and industrial innovation.</p>
-
+        <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-text-column">
-                <p>As a biomedical engineering student, I am passionate about new medical technologies, mechanical design, and industrial innovation.</p>
-                <p>Throughout my studies, I have developed solid knowledge in medical devices, as well as strong skills in CAD, technical analysis, and mechanical engineering. My approach combines academic learning with hands-on projects, focusing on technical problem-solving and the application of engineering principles in a real-world context.</p>
+                <p>
+                    As a biomedical engineering student, I am driven by innovation in medical devices, mechanical design, and industrial processes. My academic journey has provided me with a strong foundation in CAD (SolidWorks, Catia V5, PTC Creo), technical analysis, and programming (MATLAB, Python, C++).
+                </p>
+                <p>
+                    I seek to combine my knowledge of engineering sciences, molecular biology, and human anatomy to tackle real-world R&D challenges. I am known for being organized, diligent, and a reliable team player, always looking for opportunities to apply my technical skills in a research or product development environment.
+                </p>
             </div>
             <div class="about-image-column">
                 <div class="profile-image-placeholder"></div>
@@ -49,367 +52,275 @@
         </div>
     </section>
 
-    <section id="education" class="section-padding">
-        <h2>Education</h2>
-        <div class="cards-container education-cards"> 
+    <section id="education" class="section-padding section-grey education-cards">
+        <h2 class="section-title">Education</h2>
+        <p class="subtitle-text">My academic path in Biomedical Engineering.</p>
+
+        <div class="cards-container">
             <div class="card card-isifc">
-                <i class="fas fa-microscope"></i>
-                <h3>Engineering Degree (Biomedical Technologies)</h3>
-                <p>ISIFC | Besançon, France • 2024-Present</p>
-            </div>
-            <div class="card card-dublin">
-                <i class="fas fa-exchange-alt"></i>
-                <h3>Erasmus+ Semester (Mechanical Design)</h3>
-                <p>Technological University of Dublin • Jan - Jun 2024</p>
-            </div>
-            <div class="card card-bachelor">
                 <i class="fas fa-graduation-cap"></i>
-                <h3>Bachelor's Degree in Engineering Sciences (Honors)</h3>
-                <p>UFR Sciences et Techniques • 2021-2024</p>
+                <h3>Engineering Degree</h3>
+                <p>ISIFC | Engineering School in Biomedical Technologies</p>
+                <p>Besançon, France | 2024 - Present</p>
+            </div>
+
+            <div class="card card-dublin">
+                <i class="fas fa-plane-departure"></i>
+                <h3>Erasmus+ Semester</h3>
+                <p>Technological University of Dublin</p>
+                <p>Dublin, Ireland | Jan - June 2024</p>
+            </div>
+
+            <div class="card card-bachelor">
+                <i class="fas fa-microscope"></i>
+                <h3>Bachelor's Degree in Engineering Sciences</h3>
+                <p>University of Franche-Comté</p>
+                <p>Besançon, France | 2022 - 2024</p>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="section-padding section-grey">
-        <h2>Skills & Expertise</h2>
-        <p class="subtitle-text">A comprehensive toolkit of professional, technical and language competencies</p>
+    <section id="skills" class="section-padding">
+        <h2 class="section-title">Skills & Expertise</h2>
+        <p class="subtitle-text">Technical and professional skills developed during my studies.</p>
 
-        <div class="skills-container skills-list-layout">
-            
+        <div class="skills-container">
             <div class="skills-column">
-                <h3>CAD & Mechanical Engineering</h3>
+                <h3>CAD & Mechanical Design</h3>
                 <ul class="skills-list">
-                    <li>SolidWorks</li>
-                    <li>Catia V5</li>
-                    <li>PTC Creo</li>
-                    <li>Mechanical Analysis</li>
-                    <li>3D Printing & Machining</li>
+                    <li>SolidWorks <span class="level">Expert</span></li>
+                    <li>Catia V5 <span class="level">Proficient</span></li>
+                    <li>PTC Creo <span class="level">Proficient</span></li>
+                    <li>Technical Drawings <span class="level">Expert</span></li>
+                    <li>3D Printing & Machining <span class="level">Intermediate</span></li>
                 </ul>
             </div>
 
             <div class="skills-column">
-                <h3>Programming & Systems</h3>
+                <h3>Programming & Software</h3>
                 <ul class="skills-list">
-                    <li>Python</li>
-                    <li>MATLAB</li>
-                    <li>ROS2 / C++</li>
-                    <li>JavaScript</li>
-                    <li>Fluid Mechanics</li>
+                    <li>MATLAB <span class="level">Proficient</span></li>
+                    <li>Python <span class="level">Intermediate</span></li>
+                    <li>JavaScript <span class="level">Intermediate</span></li>
+                    <li>ROS2 / C++ <span class="level">Basic</span></li>
+                    <li>Data Analysis <span class="level">Intermediate</span></li>
                 </ul>
             </div>
 
             <div class="skills-column">
                 <h3>Professional Skills</h3>
                 <ul class="skills-list">
-                    <li>Industrial Processes & QC</li>
-                    <li>Organization & Initiative</li>
-                    <li>Adaptability</li>
-                    <li>Technical Problem-Solving</li>
-                    <li>Quality Control</li>
-                </ul>
-            </div>
-
-            <div class="skills-column languages-column">
-                <h3>Languages</h3>
-                <ul class="skills-list">
-                    <li>French <span class="level">(Native)</span></li>
-                    <li>English <span class="level">(C1 Fluent)</span></li>
-                    <li>Spanish <span class="level">(B1 Level)</span></li>
-                    <li>Italian <span class="level">(Basic knowledge)</span></li>
+                    <li>Technical Problem-Solving <span class="level">Expert</span></li>
+                    <li>Quality Control <span class="level">Proficient</span></li>
+                    <li>Industrial Processes <span class="level">Proficient</span></li>
+                    <li>Teamwork & Reliability <span class="level">Expert</span></li>
+                    <li>Organization & Initiative <span class="level">Expert</span></li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="section-padding">
-        <h2>Featured Projects</h2>
-        <p class="subtitle-text">A showcase of my recent work and creative solutions</p>
-        
+    <section id="projects" class="section-padding section-grey">
+        <h2 class="section-title">My Projects</h2>
+        <p class="subtitle-text">A selection of my technical and design work.</p>
+
         <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="cad">CAD & Prototyping</button>
-            <button class="filter-btn" data-filter="research">R&D Biomedical</button>
-            <button class="filter-btn" data-filter="programming">Programming</button>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="cad">CAD / Design</button>
+            <button class="filter-btn" data-filter="software">Software / IT</button>
+            <button class="filter-btn" data-filter="biomedical">Biomedical</button>
         </div>
 
-        <div class="projects-grid scroll-container">
-            <div class="project-card" data-category="research programming" data-modal-target="modal-project-1">
-                <div class="project-image-placeholder"></div>
-                <h3>Magnetic Tracking System for Surgical Navigation</h3>
-                <p>Research project (Incoming) at Western University involving programming and testing a "GPS for surgery" interacting with a medical robot.</p>
-            </div>
+        <div class="projects-grid">
+
+            <a class="project-card" data-category="cad biomedical" onclick="openModal('modal-syringe-packaging')">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-seringue-complete.jpg'); background-size: cover; background-position: center;"></div>
+                <h3>Syringe & Packaging System</h3>
+                <p>Full CAD modeling of a safety needle and a custom 7-unit thermal packaging box for veterinarians.</p>
+            </a>
             
-            <div class="project-card" data-category="cad prototyping" data-modal-target="modal-project-2">
-                <div class="project-image-placeholder"></div>
-                <h3>Pressure-Regulating Valve System (R&D Project)</h3>
-                <p>Full design cycle from needs analysis to final assembly using CAD modeling, 3D printing, and machining techniques for stand-up paddleboards.</p>
+            <a class="project-card" data-category="cad design" onclick="openModal('modal-paddle-valve')">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve.jpg'); background-size: cover; background-position: center;"></div>
+                <h3>Paddleboard Safety Valve</h3>
+                <p>Bachelor's project: Design and prototyping of a pressure-regulating valve for stand-up paddleboards.</p>
+            </a>
+
             </div>
-
-            <div class="project-card" data-category="cad" data-modal-target="modal-project-3">
-                <div class="project-image-placeholder"></div>
-                <h3>3D-Printed Prosthetic Arm Prototype</h3>
-                <p>Fictional project: Concept and mechanical design of a low-cost, multi-articulated prosthetic arm using advanced CAD and FDM printing.</p>
-            </div>
-
-             <div class="project-card" data-category="programming" data-modal-target="modal-project-4">
-                <div class="project-image-placeholder"></div>
-                <h3>MATLAB Data Analysis for Biomechanics</h3>
-                <p>Fictional project: Developed MATLAB scripts to analyze gait data and visualize joint stress points for injury prevention studies.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact" class="section-padding section-grey">
-        <h2>Get In Touch</h2>
-        <p class="subtitle-text">Ready to start your next project? Let's discuss how we can work together</p>
+        </section>
+    <section id="contact" class="section-padding">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="subtitle-text">Feel free to contact me for an internship, project collaboration, or any technical discussion.</p>
 
         <div class="contact-container">
             <div class="contact-info">
-                <h3>Let's Connect</h3>
-                <p>I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!</p>
-                
+                <h3>Get in Touch</h3>
+                <p>I am actively seeking an R&D internship in the biomedical field.</p>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Besançon, France</p>
+                </div>
                 <div class="info-item">
                     <i class="fas fa-envelope"></i>
-                    <div>
-                        <strong>Email</strong>
-                        <p><a href="mailto:l.girardet23@gmail.com" class="contact-link">l.girardet23@gmail.com</a></p>
-                    </div>
+                    <p><a href="mailto:L.girardet23@gmail.com" class="contact-link">L.girardet23@gmail.com</a></p>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-phone"></i>
-                    <div>
-                        <strong>Phone</strong>
-                        <p><a href="tel:+33620870890" class="contact-link">+33 (0)6 20 87 08 90</a></p>
-                    </div>
+                    <p><a href="tel:+33620870890" class="contact-link">+33 (0)6 20 87 08 90</a></p>
                 </div>
                 <div class="info-item">
                     <i class="fab fa-linkedin"></i>
-                    <div>
-                        <strong>LinkedIn</strong>
-                        <p><a href="https://www.linkedin.com/in/lucas-girardet-79057217a/" target="_blank" class="contact-link">Lucas Girardet</a></p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <strong>Location</strong>
-                        <p>Besançon, France</p>
-                    </div>
+                    <p><a href="https://www.linkedin.com/in/lucas-girardet-79057217a/" target="_blank" class="contact-link">Lucas Girardet on LinkedIn</a></p>
                 </div>
             </div>
-
-            <div class="contact-form">
-                <form action="https://formspree.io/f/your_formspree_hash" method="POST">
-                    <input type="text" name="name" placeholder="Your full name" required>
-                    <input type="email" name="_replyto" placeholder="your.email@example.com" required> 
-                    <input type="text" name="subject" placeholder="What's this about?">
-                    <textarea name="message" placeholder="Tell me about your project..." rows="6"></textarea>
-                    <input type="hidden" name="_next" value="https://lucasgirardet.github.io/thank-you.html" /> 
-                    <button type="submit" class="btn-primary">Send Message</button>
-                </form>
-            </div>
+            
+            <form class="contact-form" action="VOTRE_LIEN_FORMULAIRE_DE_CONTACT" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject">
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
         </div>
     </section>
+    
+    <div class="footer">
+        <p>&copy; 2025 Lucas Girardet. All rights reserved.</p>
+    </div>
 
-    <footer class="footer">
-        <p>&copy; 2024 Lucas Girardet. All rights reserved.</p>
-    </footer>
+    <div class="chat-widget">
+        <i class="fas fa-comment-dots"></i> Chat
+    </div>
 
-    <div id="project-modal" class="modal">
+
+    <div id="modal-syringe-packaging" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <div id="modal-details">
+
+            <h2 class="modal-title">CAD Project: Syringe & Packaging System</h2>
+            <p class="modal-subtitle">Full modeling from single parts to final assembly, including design validation.</p>
+            <p class="modal-category">Category: CAD / Biomedical Engineering</p>
+
+            <div class="modal-gallery">
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-seringue-complete.jpg" alt="Syringe and capped needle assembly">
+                    <p class="image-caption">Syringe and capped multi-block needle assembly.</p>
                 </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-boite-vide.jpg" alt="The 7-unit packaging box">
+                    <p class="image-caption">Custom 7-unit Polystyrene packaging box (for thermal insulation).</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-boite-conditionnee.jpg" alt="Final packaged condition (cross-section)">
+                    <p class="image-caption">Final condition check with 7 sets inside, validating absence of interferences (cross-section view).</p>
+                </div>
+            </div>
+
+            <div class="modal-description">
+                <p class="modal-text-paragraph">
+                    This project was developed to meet the specific needs of veterinarians during herd vaccination campaigns, focusing on safety and practical weekly conditioning.
+                </p>
+                <p class="modal-text-paragraph">
+                    The initial step involved the **CAD modeling of the needle and its safety cap**, first as a single "monoblock" part, then broken down into its industrial components: the biocompatible metal cannula and the plastic insert. This decomposition was essential for accurately representing the manufacturing constraints.
+                </p>
+                <p class="modal-text-paragraph">
+                    The second phase focused on **packaging design**. I modeled a simple, secure box in Polystyrene to hold seven complete, unassembled syringe-needle sets. The choice of Polystyrene addresses the manufacturer's requirement for thermal insulation during transport.
+                </p>
+                <p class="modal-text-paragraph">
+                    **Validation** was carried out through assembly checks (syringe + capped needle) and a cross-section view of the final packaging containing all seven sets, ensuring **zero interference** between the parts during transport.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="modal-paddle-valve" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Paddleboard Safety Valve</h2>
+            <p class="modal-subtitle">Details about the pressure-regulating valve project.</p>
+            <p class="modal-category">Category: CAD / Design</p>
+            
+            <div class="modal-gallery">
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve-details.jpg" alt="Valve Mechanism">
+                    <p class="image-caption">Detailed view of the internal pressure-regulating mechanism.</p>
+                </div>
+            </div>
+            
+            <div class="modal-description">
+                <p class="modal-text-paragraph">
+                    As part of my Bachelor's Engineering project, I co-led the design, prototyping, and validation of a pressure-regulating valve for inflatable stand-up paddleboards. The purpose was to automatically prevent over-inflation caused by solar heating during use.
+                </p>
+            </div>
         </div>
     </div>
     <script>
-        // --- DATA FOR MODALS (Detailed content for each project) ---
-        // You MUST replace the 'images/placeholder_...' paths with your actual image paths (e.g., images/valve-design-1.jpg).
-        const projectData = {
-            'modal-project-1': {
-                title: 'Magnetic Tracking System for Surgical Navigation',
-                subtitle: 'R&D Internship at Western University (Incoming)',
-                category: 'Research & Programming',
-                description: [
-                    'This project focuses on developing and optimizing a magnetic tracking system used for guiding surgical instruments. The core task involves refining the localization algorithm using Python and C++ to minimize drift and improve accuracy during complex procedures.',
-                    'Key activities include testing the system\'s real-time accuracy on a specialized medical robot platform (ROS2 environment), performing rigorous data analysis, and integrating advanced algorithms (such as Kalman filters) to ensure reliable performance in a clinical setting.',
-                    'My role is centered on technical implementation and validation, bridging mechanical systems with software control. This work is critical for advancing minimally invasive surgical techniques, potentially reducing patient recovery times.',
-                    'Skills used: Python, C++, ROS2, Data Analysis, Medical Robotics, Localization Algorithms, Git.'
-                ],
-                images: [
-                    { src: 'images/placeholder_surgical_1.jpg', alt: 'Robotic surgical arm setup' },
-                    { src: 'images/placeholder_surgical_2.jpg', alt: 'Localization sensor diagram' },
-                    { src: 'images/placeholder_surgical_3.jpg', alt: 'ROS2 environment code snippet' },
-                    { src: 'images/placeholder_surgical_4.jpg', alt: 'Accuracy test results chart' }
-                ]
-            },
-            'modal-project-2': {
-                title: 'Pressure-Regulating Valve System',
-                subtitle: 'Bachelor\'s Engineering Project',
-                category: 'CAD, Prototyping & Mechanical Design',
-                description: [
-                    'My main Bachelor’s project involved the end-to-end design and prototyping of an integrated valve system for stand-up paddleboards. The primary objective was to prevent structural damage caused by air overinflation due to thermal expansion in direct sunlight.',
-                    'The design process began with deep dive into fluid mechanics and material stress analysis. I utilized **SolidWorks** for 3D modeling and detailed **Catia V5** for precise manufacturing drawings. The design features a two-stage relief mechanism for redundancy and safety.',
-                    'I personally managed the prototype fabrication, using both **3D printing (SLA)** for complex internal geometries and traditional **CNC machining** for high-stress components. The final system was validated through thermal chamber testing, demonstrating a 15% improvement in pressure consistency compared to conventional solutions.',
-                    'Skills used: SolidWorks, Catia V5, Finite Element Analysis (FEA), Technical Drawing (ISO standard), 3D Printing, Machining, Prototyping, Stress Analysis.'
-                ],
-                images: [
-                    { src: 'images/placeholder_valve_1.jpg', alt: 'SolidWorks assembly view' },
-                    { src: 'images/placeholder_valve_2.jpg', alt: '3D printed prototype in hand' },
-                    { src: 'images/placeholder_valve_3.jpg', alt: 'FEA stress simulation result' },
-                    { src: 'images/placeholder_valve_4.jpg', alt: 'Final technical drawing' }
-                ]
-            },
-            'modal-project-3': {
-                title: '3D-Printed Prosthetic Arm Prototype',
-                subtitle: 'Conceptual Mechanical Design Project',
-                category: 'CAD & Prototyping',
-                description: [
-                    'Conceptual design and mechanical modeling of a low-cost, externally powered prosthetic arm. The project aimed to create an easily reproducible device for use in regions with limited access to specialized medical technologies.',
-                    'I used **PTC Creo** for the intricate surface modeling of the forearm socket and **SolidWorks** for the internal mechanism, focusing on weight reduction and structural integrity. The design incorporates a simplified myoelectric interface and a robust cable-driven system for finger articulation.',
-                    'Challenges included ensuring maximum range of motion with minimal material, and designing parts optimized for low-cost Fused Deposition Modeling (FDM) 3D printing. The design files are open-source and ready for preliminary field testing.',
-                    'Skills used: PTC Creo, SolidWorks, Mechanical Design, FDM Optimization, Kinematics, Biomedical Device Design.'
-                ],
-                images: [
-                    { src: 'images/placeholder_arm_1.jpg', alt: 'Concept CAD rendering of the full arm' },
-                    { src: 'images/placeholder_arm_2.jpg', alt: 'Exploded view of the wrist joint' },
-                    { src: 'images/placeholder_arm_3.jpg', alt: 'Detailed rendering of the terminal device (hand)' }
-                ]
-            },
-            'modal-project-4': {
-                title: 'MATLAB Data Analysis for Biomechanics',
-                subtitle: 'Advanced Programming Tool Development',
-                category: 'Programming & Data Analysis',
-                description: [
-                    'Developed a comprehensive **MATLAB** script package to streamline the processing and analysis of raw motion capture data (kinetics and kinematics) collected from human subjects during gait analysis studies.',
-                    'The tool automated several time-consuming steps, including data cleaning, noise reduction, and signal normalization across different subjects. It features a graphical user interface (GUI) built with MATLAB App Designer for intuitive operation by research staff.',
-                    'The script package calculates and visualizes key biomechanical parameters, such as joint angles over the gait cycle, angular momentum, and time-series analysis of ground reaction forces. This automation reduced post-processing time by approximately 60%.',
-                    'Skills used: MATLAB, Data Processing, Signal Analysis, GUI Development, Biomechanics Principles, Statistical Analysis, Data Visualization.'
-                ],
-                images: [
-                    { src: 'images/placeholder_matlab_1.jpg', alt: 'MATLAB script interface example' },
-                    { src: 'images/placeholder_matlab_2.jpg', alt: 'Example of generated gait analysis graph' },
-                    { src: 'images/placeholder_matlab_3.jpg', alt: 'Data processing flow chart' }
-                ]
+        // JAVASCRIPT POUR LES MODALES (Fenetres contextuelles)
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('is-visible');
+                document.body.style.overflow = 'hidden'; // Empêche le défilement de la page principale
             }
-        };
-
-
-        // --- CORE JAVASCRIPT LOGIC ---
-        
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Project Filtering/Scrolling Logic
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectContainer = document.querySelector('.projects-grid');
-        const projects = document.querySelectorAll('.project-card');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const filter = button.getAttribute('data-filter');
-
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                projects.forEach(card => {
-                    const categories = card.getAttribute('data-category');
-                    const isVisible = filter === 'all' || categories.includes(filter);
-                    // Use a class to hide/show and maintain correct CSS width
-                    card.classList.toggle('hidden', !isVisible); 
-                });
-                
-                // Horizontal scrolling effect (to the first visible card)
-                const firstVisibleProject = Array.from(projects).find(p => !p.classList.contains('hidden'));
-                if (firstVisibleProject) {
-                    const scrollPosition = firstVisibleProject.offsetLeft - 30;
-                    projectContainer.scrollTo({
-                        left: scrollPosition,
-                        behavior: 'smooth'
-                    });
-                } else if (filter === 'all') {
-                    projectContainer.scrollTo({
-                        left: 0,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-
-        // --- MODAL LOGIC ---
-        const modal = document.getElementById('project-modal');
-        const closeBtn = document.querySelector('.close-btn');
-        const modalDetails = document.getElementById('modal-details');
-
-        // Function to build and show the modal
-        function openModal(projectId) {
-            const data = projectData[projectId];
-            if (!data) return;
-
-            // 1. Build Image Gallery HTML (with 4 photos)
-            const galleryHtml = data.images.map(img => `
-                <div class="modal-image-item">
-                    <img src="${img.src}" alt="${img.alt}">
-                    <p class="image-caption">${img.alt}</p>
-                </div>
-            `).join('');
-
-            // 2. Build Description HTML (paragraphed)
-            const descriptionHtml = data.description.map(p => `<p class="modal-text-paragraph">${p}</p>`).join('');
-
-            // 3. Assemble all content
-            modalDetails.innerHTML = `
-                <h2 class="modal-title">${data.title}</h2>
-                <h3 class="modal-subtitle">${data.subtitle}</h3>
-                <p class="modal-category">Category: <strong>${data.category}</strong></p>
-                
-                <div class="modal-gallery">
-                    ${galleryHtml}
-                </div>
-                
-                <div class="modal-description">
-                    ${descriptionHtml}
-                </div>
-            `;
-
-            // 4. Show the modal
-            modal.classList.add('is-visible');
-            document.body.style.overflow = 'hidden'; // Prevent body scrolling
         }
 
-        // Add click event listeners to all project cards
-        projects.forEach(card => {
-            card.addEventListener('click', () => {
-                const modalId = card.getAttribute('data-modal-target');
-                if (modalId) {
-                    openModal(modalId);
+        function closeModal(modal) {
+            modal.classList.remove('is-visible');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const modals = document.querySelectorAll('.modal');
+            
+            modals.forEach(modal => {
+                const closeBtn = modal.querySelector('.close-btn');
+                
+                // Fermer en cliquant sur le X
+                if (closeBtn) {
+                    closeBtn.onclick = () => {
+                        closeModal(modal);
+                    };
                 }
+                
+                // Fermer en cliquant en dehors
+                modal.onclick = (event) => {
+                    if (event.target === modal) {
+                        closeModal(modal);
+                    }
+                };
+
+                // Fermer en appuyant sur ESC
+                window.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape' && modal.classList.contains('is-visible')) {
+                        closeModal(modal);
+                    }
+                });
+            });
+
+            // JAVASCRIPT POUR LE FILTRAGE DES PROJETS (Facultatif, mais recommandé)
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.projects-grid .project-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Supprimer l'état actif sur tous les boutons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Ajouter l'état actif au bouton cliqué
+                    button.classList.add('active');
+
+                    const filterValue = button.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        const categories = card.getAttribute('data-category').split(' ');
+
+                        if (filterValue === 'all' || categories.includes(filterValue)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
             });
         });
-
-        // Close modal when clicking the 'X' button
-        closeBtn.addEventListener('click', () => {
-            modal.classList.remove('is-visible');
-            document.body.style.overflow = ''; // Re-enable body scrolling
-        });
-
-        // Close modal when clicking outside of the modal content
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.classList.remove('is-visible');
-                document.body.style.overflow = '';
-            }
-        });
-
     </script>
+
 </body>
 </html>
