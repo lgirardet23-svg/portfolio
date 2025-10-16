@@ -180,7 +180,7 @@
         <div class="project-filters">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="cad">CAD / Design</button>
-            <button class="filter-btn" data-filter="software">Software / IT</button>
+            <button class="filter-btn" data-filter="programming">Programming</button>
             <button class="filter-btn" data-filter="biomedical">Biomedical</button>
         </div>
 
@@ -196,6 +196,12 @@
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve.jpg'); background-size: cover; background-position: center;"></div>
                 <h3>Paddleboard Safety Valve</h3>
                 <p>Developed and prototyped a pressure-regulating valve system for stand-up paddleboards.</p>
+            </a>
+
+            <a class="project-card" data-category="programming software" data-modal-target="modal-ludo-game">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-ludo-preview.jpg'); background-size: cover; background-position: center;"></div>
+                <h3>Ludo Game | Petits Chevaux Implementation</h3>
+                <p>Full Java implementation of the classic board game, featuring graphic and console modes, and scoring history.</p>
             </a>
 
             </div>
@@ -309,6 +315,45 @@
             </div>
         </div>
     </div>
+    <div id="modal-ludo-game" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+
+            <h2 class="modal-title">Software Project: Ludo Game (Jeu des Petits Chevaux)</h2>
+            <p class="modal-subtitle">Full implementation of the classic French board game in Java.</p>
+            <p class="modal-category">Category: Programming / Software Development</p>
+
+            <div class="modal-gallery">
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/ludo-board.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ludo-board.png" alt="Graphical view of the Ludo game board">
+                    <p class="image-caption">1. Overview of the board game layout (Graphical version)[cite: 78, 291].</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/ludo-menu-difficulty.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ludo-menu-difficulty.png" alt="Difficulty selection menu">
+                    <p class="image-caption">2. Difficulty selection menu (Beginner, Pro, Legend)[cite: 299, 301, 302, 303].</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/ludo-score-history.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ludo-score-history.png" alt="Score history visualization">
+                    <p class="image-caption">3. Example of Duo score history saved in the data file[cite: 239, 240, 249].</p>
+                </div>
+            </div>
+
+            <div class="modal-description">
+                <p class="modal-text-paragraph">
+                    This academic project involved the comprehensive implementation of the classic French board game, *Jeu des Petits Chevaux* (similar to Ludo), in Java. The project was developed by Lucas Girardet and Elise Schoen.
+                </p>
+                <p class="modal-text-paragraph">
+                    The application features both a **non-graphic (console) version** and a **graphical user interface (GUI) version**[cite: 81, 291]. The game supports two primary modes: a **Solo mode** (where the player must reach the finish line in a minimum number of turns) and a **Two-player Race mode** (the first player to reach the final square wins)[cite: 85, 92].
+                </p>
+                <p class="modal-text-paragraph">
+                    Players can select between three difficulty levels—**Beginner, Pro, and Legend**—which dynamically adjust the size of the game board and the maximum number of allowed moves in Solo mode[cite: 97, 98]. The game also includes special squares that act as **Bonus or Penalty** zones, allowing players to jump ahead or be sent back[cite: 89, 93, 123, 125].
+                </p>
+                <p class="modal-text-paragraph">
+                    A core feature is the **file management system** used to save a complete history of all games played[cite: 235]. This includes player names, the final board matrix, and the winner, stored in separate files for solo and duo games (`JeuSolo.DAT` and `JeuDuo.DAT`)[cite: 236, 238].
+                </p>
+            </div>
+        </div>
+    </div>
     <div id="fullscreenImageModal" class="fullscreen-modal" onclick="document.getElementById('fullscreenImageModal').style.display='none'">
         <span class="fullscreen-modal-close">&times;</span>
         <img class="fullscreen-modal-content" id="fullImage">
@@ -346,7 +391,7 @@
             const projectCards = document.querySelectorAll('.projects-grid .project-card'); // Récupération des cartes
 
             
-            // 1. GESTION DES CLICS SUR LES CARTES DE PROJET (Correction)
+            // 1. GESTION DES CLICS SUR LES CARTES DE PROJET
             projectCards.forEach(card => {
                 card.addEventListener('click', (event) => {
                     // Récupère l'ID de la modale cible
@@ -359,7 +404,7 @@
             });
 
 
-            // 2. GESTION DU FILTRAGE DES PROJETS (Réactivation)
+            // 2. GESTION DU FILTRAGE DES PROJETS
             const filterButtons = document.querySelectorAll('.filter-btn');
             
             filterButtons.forEach(button => {
@@ -384,7 +429,7 @@
             });
 
 
-            // 3. GESTION DE LA FERMETURE DES MODALES PRINCIPALES (inchangé)
+            // 3. GESTION DE LA FERMETURE DES MODALES PRINCIPALES
             modals.forEach(modal => {
                 const closeBtn = modal.querySelector('.close-btn');
                 
@@ -407,7 +452,7 @@
                 });
             });
 
-            // 4. GESTION DE LA FERMETURE DE LA MODALE PLEIN ÉCRAN (inchangé)
+            // 4. GESTION DE LA FERMETURE DE LA MODALE PLEIN ÉCRAN
              if (fullscreenCloseBtn) {
                 fullscreenCloseBtn.onclick = (event) => {
                     event.stopPropagation(); 
