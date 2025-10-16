@@ -140,8 +140,10 @@ a {
     justify-content: center;
     text-align: center;
     color: var(--color-white);
-    /* Placeholder for the bionic hand image. Add background-image: url('images/main-bionique-fond.jpg'); here */
+    
+    /* CORRECTION FINALE : Image de fond avec l'URL RAW */
     background: linear-gradient(rgba(44,62,80,0.7), rgba(32,51,71,0.7)), url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Biomedical.jpg'); 
+    
     background-size: cover;
     background-position: center;
 }
@@ -198,8 +200,10 @@ a {
     border-radius: 50%;
     background-color: var(--color-primary); 
     border: 5px solid var(--color-primary);
-    /* Add background-image: url('images/profil.jpg'); here */
-    background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/profile-pic.png');
+    
+    /* CORRECTION FINALE : Photo de profil avec l'URL RAW */
+    background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/profile-pic.png'); 
+    
     background-size: cover;
     background-position: center;
 }
@@ -394,233 +398,3 @@ a {
     background-color: var(--color-white);
     padding: 30px;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.contact-info h3 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-.contact-info p {
-    margin-bottom: 30px;
-    text-align: left;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.info-item i {
-    color: var(--color-primary);
-    font-size: 1.5em;
-    margin-right: 15px;
-}
-
-.contact-link {
-    color: inherit; 
-    text-decoration: none; 
-}
-
-.contact-link:hover {
-    color: var(--color-primary);
-    text-decoration: underline;
-}
-
-.fa-linkedin {
-    color: #0a66c2; 
-}
-
-
-.contact-form {
-    flex: 1;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: var(--font-family);
-    font-size: 1em;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-form .btn-primary {
-    width: 100%;
-    border: none;
-    font-size: 1.1em;
-}
-
-/* --- FOOTER / WIDGET --- */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--color-dark);
-    color: var(--color-white);
-    font-size: 0.9em;
-}
-
-.chat-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--color-dark);
-    color: var(--color-white);
-    padding: 10px 15px;
-    border-radius: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-}
-
-/* ==================================== */
-/* === MODAL STYLES (NEW SECTION) === */
-/* ==================================== */
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2000; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.85); /* Black w/ opacity */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    padding: 20px;
-}
-
-.modal.is-visible {
-    display: flex;
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: var(--color-white);
-    padding: 40px;
-    border-radius: var(--border-radius);
-    width: 95%; 
-    max-width: 950px; /* Max width for large screens */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    position: relative;
-    max-height: 90vh; /* Max height to allow scrolling within the modal */
-    overflow-y: auto; /* Enable vertical scrolling */
-}
-
-/* The Close Button */
-.close-btn {
-    color: #aaa;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: var(--color-primary);
-    text-decoration: none;
-}
-
-/* Modal Header/Details */
-.modal-title {
-    text-align: left;
-    font-size: 2.2em;
-    margin-bottom: 0.2em;
-    color: var(--color-primary);
-}
-
-.modal-subtitle {
-    text-align: left;
-    font-size: 1.2em;
-    font-weight: 500;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.modal-category {
-    text-align: left;
-    margin-bottom: 25px;
-    font-size: 0.9em;
-}
-
-/* Modal Gallery */
-.modal-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.modal-image-item {
-    text-align: center;
-    background-color: var(--color-light);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.modal-gallery img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    display: block;
-}
-
-.image-caption {
-    font-size: 0.8em;
-    color: #555;
-    padding: 8px;
-    margin: 0;
-    line-height: 1.3;
-}
-
-/* Modal Description */
-.modal-description {
-    text-align: left;
-}
-
-.modal-text-paragraph {
-    margin-bottom: 1em;
-    font-size: 1em;
-    line-height: 1.7;
-    color: var(--color-dark);
-}
-
-/* --- MEDIA QUERIES (Responsiveness) --- */
-@media (max-width: 900px) {
-    .about-content { flex-direction: column; text-align: center; }
-    .about-image-column { order: -1; margin-bottom: 30px; }
-    .education-cards .card { max-width: 100%; }
-    .skills-container { flex-direction: column; }
-    .contact-container { flex-direction: column; }
-    .contact-info { margin-bottom: 40px; }
-}
-@media (max-width: 600px) {
-    .hero-section h1 { font-size: 3em; }
-    .navbar nav { display: none; }
-    .hero-buttons { display: flex; flex-direction: column; gap: 15px; }
-    .projects-grid .project-card { min-width: 80%; max-width: 80%; } 
-    
-    .modal-gallery {
-        grid-template-columns: 1fr; /* Stack images vertically on small screens */
-    }
-    .modal-content {
-        padding: 20px;
-    }
-}
