@@ -207,7 +207,7 @@
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Get in touch</h3>
-                <p>I am actively seeking an R&D internship in the biomedical field.</p>
+                <p>I'm available to discuss collaboration, new projects, or any technical challenge.</p>
                 <div class="info-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <p>Besançon, France</p>
@@ -313,3 +313,52 @@
         <span class="fullscreen-modal-close">&times;</span>
         <img class="fullscreen-modal-content" id="fullImage">
     </div>
+
+
+    <script>
+        // FUNCTION TO OPEN IMAGE IN FULLSCREEN
+        function showFullScreen(imgSrc) {
+            const modal = document.getElementById('fullscreenImageModal');
+            const fullImage = document.getElementById('fullImage');
+            fullImage.src = imgSrc;
+            modal.style.display = 'flex'; // Use flex to center the content
+            document.body.style.overflow = 'hidden';
+        }
+
+        // JS for Project Modals
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('is-visible');
+                document.body.style.overflow = 'hidden'; // Prevents main page scroll
+            }
+        }
+
+        function closeModal(modal) {
+            modal.classList.remove('is-visible');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const modals = document.querySelectorAll('.modal');
+            const fullscreenModal = document.getElementById('fullscreenImageModal');
+            const fullscreenCloseBtn = fullscreenModal.querySelector('.fullscreen-modal-close');
+            
+            // Handle closing the main project modals
+            modals.forEach(modal => {
+                const closeBtn = modal.querySelector('.close-btn');
+                
+                if (closeBtn) {
+                    closeBtn.onclick = () => {
+                        closeModal(modal);
+                    };
+                }
+                
+                modal.onclick = (event) => {
+                    // Ensures that clicking the backdrop closes the modal, but clicking the content does not
+                    if (event.target === modal) {
+                        closeModal(modal);
+                    }
+                };
+
+                window.addEventListener('keydown
