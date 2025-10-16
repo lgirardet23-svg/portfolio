@@ -190,7 +190,6 @@
         <i class="fas fa-comment-dots"></i> Chat
     </div>
 
-    <!-- MODALS PROJECT -->
     <div id="modal-syringe-packaging" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -291,7 +290,6 @@
         <img class="fullscreen-modal-content" id="fullImage">
     </div>
 
-    <!-- SCRIPT POUR MODALES ET FILTRAGE -->
     <script>
         // Pour la modale fullscreen image
         function showFullScreen(imgSrc) {
@@ -408,9 +406,14 @@
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
+            
+            /* CORRECTION: Ajout des propriétés flex pour le centrage */
+            align-items: center; 
+            justify-content: center;
+            overflow-y: scroll; /* Important si le contenu dépasse la hauteur de l'écran */
+            
             background-color: rgba(0, 0, 0, 0.7);
-            padding-top: 50px;
+            padding-top: 0; /* Important: enlève le décalage */
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s, visibility 0.3s;
@@ -420,6 +423,42 @@
             opacity: 1;
             visibility: visible;
         }
+
+        /* AJOUT: S'assurer que le contenu de la modale est bien stylisé et centré */
+        .modal-content {
+            background-color: #fefefe;
+            padding: 20px;
+            margin: 5% auto; 
+            border-radius: 8px;
+            width: 90%;
+            max-width: 900px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,.5);
+            position: relative;
+        }
+
+        .close-btn {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Styles pour le masquage des cartes lors du filtrage */
+        .projects-grid .project-card.hidden {
+            display: none !important;
+        }
+        
+        /* Styles pour la modale plein écran */
         .fullscreen-modal {
             display: none;
             position: fixed;
@@ -434,6 +473,7 @@
             align-items: center;
             cursor: pointer;
         }
+
         .fullscreen-modal-content {
             margin: auto;
             display: block;
@@ -442,6 +482,7 @@
             max-height: 90vh;
             object-fit: contain;
         }
+
         .fullscreen-modal-close {
             position: absolute;
             top: 15px;
@@ -452,12 +493,13 @@
             transition: 0.3s;
             cursor: pointer;
         }
+
         .fullscreen-modal-close:hover,
         .fullscreen-modal-close:focus {
             color: #bbb;
             text-decoration: none;
         }
-        /* Ajoute ici éventuellement le reste de ton CSS */
+
     </style>
 </body>
 </html>
