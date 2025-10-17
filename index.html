@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucas Girardet | Biomedical Engineering Student</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -27,7 +27,7 @@
             <p>Biomedical Engineering Student | Dedicated to Innovation in Medical Technology and Mechanical Design.</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn-primary">View Portfolio</a>
-                <a href="URL_DU_VOTRE_CV" class="btn-secondary" target="_blank">Download Resume</a> 
+                <a href="URL_DU_VOTRE_CV" class="btn-secondary" target="_blank">Download Resume</a> 
             </div>
         </div>
     </section>
@@ -130,6 +130,13 @@
             <button class="filter-btn" data-filter="biomedical">Biomedical</button>
         </div>
         <div class="projects-grid">
+            
+            <div class="project-card" data-category="biomedical" data-modal-target="modal-innovative-devices">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/pt-innov-visuels.png'); background-size: cover; background-position: center;"></div>
+                <h3>Innovative MDs for Visual Impairment</h3>
+                <p>Comprehensive state-of-the-art report on non-implantable and neuroprosthetic medical devices for the blind.</p>
+            </div>
+            
             <div class="project-card" data-category="cad biomedical" data-modal-target="modal-syringe-packaging">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png'); background-size: cover; background-position: center;"></div>
                 <h3>Syringe & Packaging System</h3>
@@ -181,7 +188,7 @@
             </form>
         </div>
     </section>
-    
+     
     <div class="footer">
         <p>&copy; 2025 Lucas Girardet. All rights reserved.</p>
     </div>
@@ -190,108 +197,150 @@
         <i class="fas fa-comment-dots"></i> Chat
     </div>
 
-    <!-- MODALS PROJECT -->
-    <div id="modal-syringe-packaging" class="modal">
+    <div id="modal-innovative-devices" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h2 class="modal-title">CAD Project: Syringe & Packaging System</h2>
-            <p class="modal-subtitle">Full modeling from single parts to final assembly, including design validation.</p>
-            <p class="modal-category">Category: CAD / Biomedical Engineering</p>
+            <h2 class="modal-title">Innovative MDs for Visual Impairment</h2>
+            <p class="modal-subtitle">State-of-the-Art Report on innovative medical devices for people with blindness or near blindness.</p>
+            <p class="modal-category">Category: Biomedical Engineering (Group Project)</p>
+            
             <div class="modal-gallery">
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png" alt="Detailed view of the syringe">
-                    <p class="image-caption">1. Detailed view of the syringe (CAD modeling).</p>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/pt-innov-visuels.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/pt-innov-visuels.png" alt="Rapport de projet sur les DMs innovants pour déficients visuels">
+                    <p class="image-caption">1. Project Report Cover Page (Simulated image from PDF first page).</p>
                 </div>
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue2.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue2.png" alt="Closed box with syringes inside">
-                    <p class="image-caption">2. Closed packaging box, containing the syringes.</p>
-                </div>
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue3.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue3.png" alt="Open box showing the packaging">
-                    <p class="image-caption">3. View of the open box with the assembled syringe and needle sets.</p>
-                </div>
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue4.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue4.png" alt="Needle with safety cap">
-                    <p class="image-caption">4. Modeling of the needle with its safety cap.</p>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/visuel-neuroprothese.jpg')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/visuel-neuroprothese.jpg" alt="Schéma d'une neuroprothèse visuelle">
+                    <p class="image-caption">2. Visual Neuroprosthesis scheme (Conceptual or source image).</p>
                 </div>
             </div>
+            
             <div class="modal-description">
+                
+                <h3 style="margin-top: 10px; color: var(--color-dark);">Goal of the Project 🎯</h3>
                 <p class="modal-text-paragraph">
-                    This project was completed in collaboration with a colleague to meet the specific needs of veterinarians during herd vaccination campaigns, focusing on safety and practical weekly conditioning.
+                    The main goal of this project was to conduct a comprehensive state-of-the-art review of **innovative Medical Devices (MD)** aimed at people with blindness or near blindness. The ambition was to determine how these cutting-edge technologies can promote **inclusion** and **autonomy** in the daily lives of patients.
                 </p>
+                
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Abstract (English) 🇬🇧</h3>
                 <p class="modal-text-paragraph">
-                    My initial step involved the <strong>CAD modeling of the needle and its safety cap</strong>, first as a single "monoblock" part, then broken down into its industrial components: the biocompatible metal cannula and the plastic insert. This decomposition was essential for accurately representing the manufacturing constraints.
+                    After exposing the anatomical aspect of the visual system and associated pathologies, this report presents a complete state-of-the-art of **innovative medical devices (MD) for people with blindness or near blindness**, with an objective of **inclusion and autonomy**. It distinguishes two main families: **non-implantable devices** (connected glasses, smart canes, or GPS assistants), and **implantable devices** (visual neuroprostheses). The document analyzes their functioning, clinical maturity, and performance. Particular attention is paid to technological innovations (**AI**, image processing, brain-machine interfaces) and regulatory issues (CE marking, EU regulation 2017/745). While non-implantable devices are readily available and improve daily life, implantable devices, though complex and mostly experimental, are followed with special attention as they promise to **"restore a visual sensation"**. The study concludes by suggesting that the integration of new technologies should respect ethical, social, and environmental values.
                 </p>
+                
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Summary (French) 🇫🇷</h3>
                 <p class="modal-text-paragraph">
-                    The second phase focused on <strong>packaging design</strong>. I modeled a simple, secure box in Polystyrene to hold seven complete, unassembled syringe-needle sets. The choice of Polystyrene addresses the manufacturer's requirement for thermal insulation during transport.
+                    Après avoir établi les bases anatomiques du système visuel et les pathologies associées, ce rapport présente un état de l'art complet des dispositifs médicaux (DM) innovants pour les personnes aveugles ou malvoyantes. Le travail distingue deux grandes catégories: les **DM non implantables** (lunettes connectées, cannes intelligentes) et les **DM implantables** (neuroprothèses visuelles). L'analyse couvre leur fonctionnement, leur maturité clinique, et l'intégration des innovations comme l'**Intelligence Artificielle (IA)**. Le document aborde également les enjeux réglementaires (Marquage CE) et souligne l'importance des valeurs **éthiques** et **sociales** dans le développement de ces technologies.
                 </p>
-                <p class="modal-text-paragraph">
-                    <strong>Validation</strong> was carried out through assembly checks (syringe + capped needle) and a cross-section view of the final packaging containing all seven sets, ensuring <strong>zero interference</strong> between the parts during transport.
+
+                <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
+                    <i class="fas fa-users" style="color: var(--color-primary); margin-right: 5px;"></i> **Group Project:** Realized by Odile Slifi, Lucas Girardet, and Lucas Dordor (ISIFC 1A).
                 </p>
             </div>
         </div>
+    </div>
+    
+    <div id="modal-syringe-packaging" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">CAD Project: Syringe & Packaging System</h2>
+            <p class="modal-subtitle">Full modeling from single parts to final assembly, including design validation.</p>
+            <p class="modal-category">Category: CAD / Biomedical Engineering</p>
+            <div class="modal-gallery">
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png" alt="Detailed view of the syringe">
+                    <p class="image-caption">1. Detailed view of the syringe (CAD modeling).</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue2.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue2.png" alt="Closed box with syringes inside">
+                    <p class="image-caption">2. Closed packaging box, containing the syringes.</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue3.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue3.png" alt="Open box showing the packaging">
+                    <p class="image-caption">3. View of the open box with the assembled syringe and needle sets.</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue4.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue4.png" alt="Needle with safety cap">
+                    <p class="image-caption">4. Modeling of the needle with its safety cap.</p>
+                </div>
+            </div>
+            <div class="modal-description">
+                <p class="modal-text-paragraph">
+                    This project was completed in collaboration with a colleague to meet the specific needs of veterinarians during herd vaccination campaigns, focusing on safety and practical weekly conditioning.
+                </p>
+                <p class="modal-text-paragraph">
+                    My initial step involved the <strong>CAD modeling of the needle and its safety cap</strong>, first as a single "monoblock" part, then broken down into its industrial components: the biocompatible metal cannula and the plastic insert. This decomposition was essential for accurately representing the manufacturing constraints.
+                </p>
+                <p class="modal-text-paragraph">
+                    The second phase focused on <strong>packaging design</strong>. I modeled a simple, secure box in Polystyrene to hold seven complete, unassembled syringe-needle sets. The choice of Polystyrene addresses the manufacturer's requirement for thermal insulation during transport.
+                </p>
+                <p class="modal-text-paragraph">
+                    <strong>Validation</strong> was carried out through assembly checks (syringe + capped needle) and a cross-section view of the final packaging containing all seven sets, ensuring <strong>zero interference</strong> between the parts during transport.
+                </p>
+            </div>
+        </div>
     </div>
     <div id="modal-paddle-valve" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 class="modal-title">Paddleboard Pressure-Regulating Valve</h2>
-            <p class="modal-subtitle">Details on the pressure-regulating valve project.</p>
-            <p class="modal-category">Category: CAD / Design</p>
-            <div class="modal-gallery">
-                 <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve-details.jpg')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve-details.jpg" alt="Valve Mechanism">
-                    <p class="image-caption">Detailed view of the internal pressure regulation mechanism.</p>
-                </div>
-            </div>
-            <div class="modal-description">
-                <p class="modal-text-paragraph">
-                    As part of my Bachelor's engineering project, I co-led the design, prototyping, and validation of a pressure-regulating valve system for inflatable stand-up paddleboards. The objective was to automatically prevent overinflation caused by solar heating during use. The project involved a full design cycle from needs analysis to final assembly using CAD modeling, 3D printing, and machining techniques.
-                </p>
-            </div>
-        </div>
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Paddleboard Pressure-Regulating Valve</h2>
+            <p class="modal-subtitle">Details on the pressure-regulating valve project.</p>
+            <p class="modal-category">Category: CAD / Design</p>
+            <div class="modal-gallery">
+                 <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve-details.jpg')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve-details.jpg" alt="Valve Mechanism">
+                    <p class="image-caption">Detailed view of the internal pressure regulation mechanism.</p>
+                </div>
+            </div>
+            <div class="modal-description">
+                <p class="modal-text-paragraph">
+                    As part of my Bachelor's engineering project, I co-led the design, prototyping, and validation of a pressure-regulating valve system for inflatable stand-up paddleboards. The objective was to automatically prevent overinflation caused by solar heating during use. The project involved a full design cycle from needs analysis to final assembly using CAD modeling, 3D printing, and machining techniques.
+                </p>
+            </div>
+        </div>
     </div>
     <div id="modal-ludo-game" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 class="modal-title">Software Project: Ludo Game (Jeu des Petits Chevaux)</h2>
-            <p class="modal-subtitle">Full implementation of the classic French board game in Java.</p>
-            <p class="modal-category">Category: Programming / Software Development</p>
-            <div class="modal-gallery">
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/3.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/3.png" alt="Graphical view of the Ludo game board">
-                    <p class="image-caption">1. Overview of the board game layout (Graphical version).</p>
-                </div>
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/4.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/4.png" alt="Difficulty selection menu">
-                    <p class="image-caption">2. Difficulty selection menu (Beginner, Pro, Legend).</p>
-                </div>
-                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/6.png')">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/6.png" alt="Console mode display">
-                    <p class="image-caption">3. Non-graphic console mode during a two-player game.</p>
-                </div>
-            </div>
-            <div class="modal-description">
-                <p class="modal-text-paragraph">
-                    This academic project involved the comprehensive implementation of the classic French board game, <em>Jeu des Petits Chevaux</em> (similar to Ludo), in Java. The project was developed by Lucas Girardet, in collaboration with a colleague, as part of the Algorithmic and Programming coursework.
-                </p>
-                <p class="modal-text-paragraph">
-                    The application features both a <strong>non-graphic (console) version</strong> and a <strong>graphical user interface (GUI) version</strong>. The game supports two primary modes: a <strong>Solo mode</strong> (where the player must reach the finish line in a minimum number of turns) and a <strong>Two-player Race mode</strong> (the first player to reach the final square wins).
-                </p>
-                <p class="modal-text-paragraph">
-                    Players can select between three difficulty levels—<strong>Beginner, Pro, and Legend</strong>—which dynamically adjust the size of the game board and the maximum number of allowed moves in Solo mode. The game also includes special squares that act as <strong>Bonus or Penalty</strong> zones, allowing players to jump ahead or be sent back.
-                </p>
-                <p class="modal-text-paragraph">
-                    A core feature is the <strong>file management system</strong> used to save a complete history of all games played. This includes player names, the final board matrix, and the winner, stored in separate files for solo and duo games.
-                </p>
-            </div>
-        </div>
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Software Project: Ludo Game (Jeu des Petits Chevaux)</h2>
+            <p class="modal-subtitle">Full implementation of the classic French board game in Java.</p>
+            <p class="modal-category">Category: Programming / Software Development</p>
+            <div class="modal-gallery">
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/3.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/3.png" alt="Graphical view of the Ludo game board">
+                    <p class="image-caption">1. Overview of the board game layout (Graphical version).</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/4.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/4.png" alt="Difficulty selection menu">
+                    <p class="image-caption">2. Difficulty selection menu (Beginner, Pro, Legend).</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/6.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/6.png" alt="Console mode display">
+                    <p class="image-caption">3. Non-graphic console mode during a two-player game.</p>
+                </div>
+            </div>
+            <div class="modal-description">
+                <p class="modal-text-paragraph">
+                    This academic project involved the comprehensive implementation of the classic French board game, <em>Jeu des Petits Chevaux</em> (similar to Ludo), in Java. The project was developed by Lucas Girardet, in collaboration with a colleague, as part of the Algorithmic and Programming coursework.
+                </p>
+                <p class="modal-text-paragraph">
+                    The application features both a <strong>non-graphic (console) version</strong> and a <strong>graphical user interface (GUI) version</strong>. The game supports two primary modes: a <strong>Solo mode</strong> (where the player must reach the finish line in a minimum number of turns) and a <strong>Two-player Race mode</strong> (the first player to reach the final square wins).
+                </p>
+                <p class="modal-text-paragraph">
+                    Players can select between three difficulty levels—<strong>Beginner, Pro, and Legend</strong>—which dynamically adjust the size of the game board and the maximum number of allowed moves in Solo mode. The game also includes special squares that act as <strong>Bonus or Penalty</strong> zones, allowing players to jump ahead or be sent back.
+                </p>
+                <p class="modal-text-paragraph">
+                    A core feature is the <strong>file management system</strong> used to save a complete history of all games played. This includes player names, the final board matrix, and the winner, stored in separate files for solo and duo games.
+                </p>
+            </div>
+        </div>
     </div>
+    
+    
     <div id="fullscreenImageModal" class="fullscreen-modal">
         <span class="fullscreen-modal-close">&times;</span>
         <img class="fullscreen-modal-content" id="fullImage">
     </div>
 
-    <!-- SCRIPT POUR MODALES ET FILTRAGE -->
     <script>
         // Pour la modale fullscreen image
         function showFullScreen(imgSrc) {
@@ -423,7 +472,7 @@
         .fullscreen-modal {
             display: none;
             position: fixed;
-            z-index: 3000; 
+            z-index: 3000; 
             left: 0;
             top: 0;
             width: 100%;
