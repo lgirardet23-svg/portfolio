@@ -218,42 +218,34 @@ a {
     color: #666;
 }
 
-/* --- Skills Section (Transformed into Cards) --- */
+/* --- Skills Section --- */
+/* (Ce bloc est laissé dans son état actuel pour ne pas le modifier) */
+
 .skills-container {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 30px;
 }
 
-.card-skill {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    padding: 30px;
-    width: calc(25% - 20px); /* 4 cartes par ligne sur desktop */
-    min-width: 250px; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
+.skills-column {
+    flex: 1;
+    min-width: 200px;
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-.card-skill:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.card-skill h3 {
-    color: #003366; 
-    margin-top: 0;
+.skills-column h3 {
+    color: #003366;
     margin-bottom: 15px;
-    font-size: 1.3em;
     border-bottom: 2px solid var(--color-primary);
     padding-bottom: 5px;
 }
 
 .skills-list {
-    list-style: none; 
+    list-style: none;
     padding-left: 0;
 }
 
@@ -264,14 +256,6 @@ a {
     line-height: 1.5;
 }
 
-.skills-list li::before {
-    content: "•"; 
-    color: var(--color-primary);
-    font-weight: bold;
-    display: inline-block; 
-    width: 1em;
-    margin-left: -1em;
-}
 
 /* --- Projects Section --- */
 .project-filters {
@@ -533,8 +517,8 @@ a {
     font-size: 0.9em;
 }
 
-/* --- CORRECTION ESSENTIELLE: STYLES pour la Modale d'Agrandissement (Fullscreen) --- */
-/* C'est ce bloc qui manquait et empêchait l'agrandissement des images */
+/* --- AJOUT ESSENTIEL: STYLES pour la Modale d'Agrandissement (Fullscreen) --- */
+/* Ce bloc permet aux images des projets de s'ouvrir en plein écran. */
 
 .fullscreen-modal {
     display: none; /* Caché par défaut. Rendu 'flex' par JS au clic */
@@ -583,10 +567,6 @@ a {
     }
     .hero-content h1 {
         font-size: 3.5em;
-    }
-    /* Skills */
-    .card-skill {
-        width: calc(50% - 20px); /* 2 cartes par ligne sur tablette */
     }
 }
 
@@ -669,14 +649,12 @@ a {
     .navbar {
         padding: 15px 20px;
     }
-
-    /* Skills */
-    .card-skill {
-        width: 100%; /* 1 carte par ligne sur mobile */
-        min-width: unset;
-    }
     
     .hero-content h1 {
         font-size: 2.5em;
+    }
+    
+    .skills-column {
+        min-width: unset;
     }
 }
