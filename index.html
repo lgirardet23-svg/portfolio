@@ -131,6 +131,12 @@
         </div>
         <div class="projects-grid">
             
+            <div class="project-card" data-category="cad design" data-modal-target="modal-bachelor-showcase">
+                <div class="project-image-placeholder" style="background-image: url('URL_IMAGE_COUVERTURE_LICENCE.jpg'); background-size: cover; background-position: center;"></div>
+                <h3>Bachelor's Projects Showcase</h3>
+                <p>A collection of CAD, Machining, and Prototyping projects from my engineering undergraduate degree.</p>
+            </div>
+            
             <div class="project-card" data-category="biomedical" data-modal-target="modal-innovative-devices">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut1.jpg'); background-size: cover; background-position: center;"></div>
                 <h3>Innovative MDs for Visual Impairment</h3>
@@ -197,6 +203,55 @@
 
     <div class="chat-widget">
         <i class="fas fa-comment-dots"></i> Chat
+    </div>
+
+    <div id="modal-bachelor-showcase" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Projets de Licence : CAO, Usinage & Prototypage</h2>
+            <p class="modal-subtitle">Exemples de travaux réalisés durant ma Licence Sciences pour l'Ingénieur, axés sur la conception mécanique et la fabrication.</p>
+            <p class="modal-category">Catégorie: CAO / Prototypage (Projets Individuels)</p>
+            
+            <div class="modal-gallery">
+                <div class="modal-image-item" onclick="showFullScreen('URL_IMAGE_GOODIE_1.png')">
+                    <img src="URL_IMAGE_GOODIE_1.png" alt="Projet Goodie - Pièce découpée au laser">
+                    <p class="image-caption">1. Projet Goodie : Pièce gravée et découpée au laser PMMA.</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('URL_IMAGE_SPHERE_1.png')">
+                    <img src="URL_IMAGE_SPHERE_1.png" alt="Projet Sphère - Assemblage de couches découpées">
+                    <p class="image-caption">2. Projet Sphère : Assemblage par couches découpées au laser (contreplaqué).</p>
+                </div>
+            </div>
+            
+            <div class="modal-description">
+                
+                <h3 style="margin-top: 10px; color: var(--color-dark);">Objectif Général 🎯</h3>
+                <p class="modal-text-paragraph">
+                    Ces projets ont été réalisés au cours de ma Licence pour l'Ingénieur et visaient à développer une maîtrise pratique de la <strong>Conception Assistée par Ordinateur (CAO)</strong>, de la <strong>modélisation 3D</strong> (principalement avec Catia V5), ainsi que des techniques de <strong>prototypage rapide</strong> (découpe laser) et d'<strong>usinage</strong>. L'objectif était d'intégrer les contraintes de fabrication (jeu, montage serré, tolérancement) dès la phase de conception.
+                </p>
+                
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Projet 1 : Conception & Fabrication d'un Goodie (PMMA)</h3>
+                <p class="modal-text-paragraph">
+                    L'objectif était de concevoir et de fabriquer un *goodie* en PMMA (méthacrylate de polyméthyle) en deux parties (plaque et socle) à l'aide de la découpe laser.
+                    <ul>
+                        <li><strong>CAO :</strong> Modélisation de la plaque et du socle sur Catia, en respectant des cotes imposées. Utilisation de <em>Sketch Tracer</em> pour intégrer un logo personnalisé.</li>
+                        <li><strong>Problématique :</strong> Assurer un <strong>montage serré</strong> de la plaque dans le socle.</li>
+                        <li><strong>Solution :</strong> Après une première découpe et mesure de l'épaisseur réelle de la plaque (2.8mm au lieu de 3mm), le jeu du trou du socle a été ajusté de 3mm à 2.7mm dans le logiciel de la machine laser. Cet ajustement précis a permis d'obtenir le montage serré souhaité.</li>
+                    </ul>
+                </p>
+                
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Projet 2 : Création d'une Sphère par Couches (Prototypage)</h3>
+                <p class="modal-text-paragraph">
+                    Ce projet visait à recréer une sphère de 40mm de diamètre à partir de plaques de contreplaqué de 3mm, en utilisant la découpe laser pour superposer des couches circulaires.
+                    <ul>
+                        <li><strong>Stratégie :</strong> Détermination du nombre de couches nécessaires (13 initialement, puis 15) et calcul des diamètres successifs pour approcher au mieux la forme sphérique.</li>
+                        <li><strong>Problématique :</strong> Assurer un <strong>montage serré</strong> des disques avec l'axe central.</li>
+                        <li><strong>Solution :</strong> L'axe a été modélisé sur Catia, et le diamètre des trous intérieurs des disques a été ajusté à 2.55mm (pour un axe théorique de 2.5mm) afin d'obtenir le montage serré demandé, garantissant ainsi l'empilement stable des couches.</li>
+                    </ul>
+                </p>
+
+            </div>
+        </div>
     </div>
 
     <div id="modal-innovative-devices" class="modal">
