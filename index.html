@@ -22,4 +22,528 @@
         .navbar .highlight {
             color: var(--color-primary); /* Garde la couleur de surbrillance (ex: rouge/orange) */
         }
-        .
+        .navbar a {
+            color: #ffffff; /* Liens de navigation en blanc */
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: lightgray;
+        }
+        /* Assurer que le bouton contact conserve son style s'il a une couleur de fond différente */
+        .navbar .btn-contact { 
+            color: #003366; /* Le texte du bouton est en bleu foncé pour contraster avec le fond clair du bouton (si défini par style.css) */
+            background-color: #ffffff; /* Par exemple, fond blanc pour le bouton */
+            border: 1px solid #ffffff;
+        }
+        .navbar .btn-contact:hover {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">L.<span class="highlight">G</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+        </nav>
+        <a href="#contact" class="btn-contact">Contact Me</a>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Hi, I'm Lucas <span class="highlight">Girardet</span></h1>
+            <p>Biomedical Engineering Student | Dedicated to Innovation in Medical Technology and Mechanical Design.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">View Portfolio</a>
+                <a href="URL_DU_VOTRE_CV" class="btn-secondary" target="_blank">Download Resume</a> 
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text-column">
+                <p>
+                    As a biomedical engineering student, I am passionate about new medical technologies, mechanical design, and industrial innovation. Throughout my studies, I have developed solid knowledge in medical devices, as well as strong skills in CAD, technical analysis, and mechanical engineering.
+                </p>
+                <p>
+                    Curious, ambitious, and motivated, I am seeking a challenging 3-month minimum R&D internship in the biomedical field to apply and strengthen my competencies as an engineer, in a real-world research or innovation environment, and further develop my biomedical and technical expertise.
+                </p>
+            </div>
+            <div class="about-image-column">
+                <div class="profile-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/profile-pic.png'); background-size: cover; background-position: center;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section-padding section-grey education-cards">
+        <h2 class="section-title">Education</h2>
+        <p class="subtitle-text">My academic path in Biomedical Engineering.</p>
+        <div class="cards-container">
+            <div class="card card-isifc">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Engineering Degree</h3>
+                <p>ISIFC | Engineering School in Biomedical Technologies</p>
+                <p>Besançon, France | 2024 - Present</p>
+            </div>
+            <div class="card card-dublin">
+                <i class="fas fa-plane-departure"></i>
+                <h3>Erasmus+ Semester</h3>
+                <p>Technological University of Dublin</p>
+                <p>Dublin, Ireland | Jan - June 2024</p>
+            </div>
+            <div class="card card-bachelor">
+                <i class="fas fa-microscope"></i>
+                <h3>Bachelor's Degree in Engineering Sciences</h3>
+                <p>University of Franche-Comté</p>
+                <p>Besançon, France | 2022 - 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padding">
+        <h2 class="section-title">Skills & Expertise</h2>
+        <p class="subtitle-text">Technical and professional skills developed during my studies.</p>
+        <div class="skills-container">
+            <div class="skills-column">
+                <h3>CAD & Mechanical Design</h3>
+                <ul class="skills-list">
+                    <li>SolidWorks</li>
+                    <li>Catia V5</li>
+                    <li>PTC Creo</li>
+                    <li>Technical Drawings</li>
+                    <li>3D Printing & Machining</li>
+                </ul>
+            </div>
+            <div class="skills-column">
+                <h3>Programming & Software</h3>
+                <ul class="skills-list">
+                    <li>MATLAB</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>ROS2 / C++</li>
+                    <li>Data Analysis</li>
+                </ul>
+            </div>
+            <div class="skills-column">
+                <h3>Professional Skills</h3>
+                <ul class="skills-list">
+                    <li>Technical Problem Solving</li>
+                    <li>Quality Control</li>
+                    <li>Industrial Processes</li>
+                    <li>Teamwork & Reliability</li>
+                    <li>Organization & Initiative</li>
+                </ul>
+            </div>
+            <div class="skills-column">
+                <h3>Languages</h3>
+                <ul class="skills-list">
+                    <li>French (Native)</li>
+                    <li>English (C1 - Fluent)</li>
+                    <li>Spanish (B1)</li>
+                    <li>Italian (Basic Knowledge)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-padding section-grey">
+        <h2 class="section-title">My Projects</h2>
+        <p class="subtitle-text">A selection of my technical and design works.</p>
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="biomedical">Biomedical</button>
+            <button class="filter-btn" data-filter="cad">CAD / Design</button>
+            <button class="filter-btn" data-filter="programming">Programming</button>
+        </div>
+        <div class="projects-grid">
+            
+            <div class="project-card" data-category="cad design" data-modal-target="modal-bachelor-showcase">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/universite-de-franche-comte1-1200x766.jpg'); background-size: cover; background-position: center;"></div>
+                <h3>Bachelor's Projects Showcase</h3>
+                <p>A collection of CAD, Machining, and Prototyping projects from my engineering undergraduate degree.</p>
+            </div>
+            
+            <div class="project-card" data-category="biomedical" data-modal-target="modal-innovative-devices">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut1.jpg'); background-size: cover; background-position: center;"></div>
+                <h3>Innovative MDs for Visual Impairment</h3>
+                <p>Comprehensive state-of-the-art report on non-implantable and neuroprosthetic medical devices for the blind.</p>
+            </div>
+            
+            <div class="project-card" data-category="programming software" data-modal-target="modal-ludo-game">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo5.png'); background-size: cover; background-position: center;"></div>
+                <h3>Ludo Game | Petits Chevaux Implementation</h3>
+                <p>Full Java implementation of the classic board game, featuring graphic and console modes, and scoring history.</p>
+            </div>
+
+            <div class="project-card" data-category="cad design" data-modal-target="modal-paddle-valve">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve.jpg'); background-size: cover; background-position: center;"></div>
+                <h3>Paddleboard Safety Valve</h3>
+                <p>Developed and prototyped a pressure-regulating valve system for stand-up paddleboards.</p>
+            </div>
+            
+            <div class="project-card" data-category="cad biomedical" data-modal-target="modal-syringe-packaging">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png'); background-size: cover; background-position: center;"></div>
+                <h3>Syringe & Packaging System</h3>
+                <p>Full CAD modeling of a safety needle and a custom 7-unit thermal packaging box for veterinarians.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="subtitle-text">Feel free to contact me for an internship, project collaboration, or any technical discussion.</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in touch</h3>
+                <p>I'm available to discuss collaboration, new projects, or any technical challenge.</p>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Besançon, France</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p><a href="mailto:l.girardet23@gmail.com" class="contact-link">l.girardet23@gmail.com</a></p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p><a href="tel:+33620870890" class="contact-link">+33 (0)6 20 87 08 90</a></p>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-linkedin"></i>
+                    <p><a href="https://www.linkedin.com/in/lucas-girardet-79057217a/" target="_blank" class="contact-link">Lucas Girardet on LinkedIn</a></p>
+                </div>
+            </div>
+            <form class="contact-form" action="VOTRE_LIEN_FORMULAIRE_DE_CONTACT" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject">
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <div class="footer">
+        <p>&copy; 2025 Lucas Girardet. All rights reserved.</p>
+    </div>
+
+    <div class="chat-widget">
+        <i class="fas fa-comment-dots"></i> Chat
+    </div>
+
+    <div id="modal-bachelor-showcase" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Bachelor's Projects Showcase</h2>
+            <p class="modal-subtitle">A selection of individual works realized during my undergraduate degree in Engineering Sciences to master CAD and manufacturing techniques.</p>
+            <p class="modal-category">Category: CAD / Prototyping (Individual Projects)</p>
+            
+            <div class="modal-gallery">
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/goodie1.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/goodie1.png" alt="Goodie Project - Laser-cut part">
+                    <p class="image-caption">1. Goodie Project: CAD modeling and laser cutting (PMMA).</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/goodie2.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/goodie2.png" alt="Goodie Project - Base and Assembly">
+                    <p class="image-caption">2. Goodie Project: Base and close assembly to achieve a tight fit.</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Sphere1.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Sphere1.png" alt="Sphere Project - Layered assembly">
+                    <p class="image-caption">3. Sphere Project: Final layered assembly (Plywood).</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Sphere2.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Sphere2.png" alt="Sphere Project - CAD design detail">
+                    <p class="image-caption">4. Sphere Project: CAD detail showing the calculated layers (Catia V5).</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Sphere3.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Sphere3.png" alt="Sphere Project - Internal axis">
+                    <p class="image-caption">5. Sphere Project: Cross-section showing the assembly axis and layers.</p>
+                </div>
+            </div>
+            
+            <div class="modal-description">
+                
+                <h3 style="margin-top: 10px; color: var(--color-dark);">Project Goal 🎯</h3>
+                <p class="modal-text-paragraph">
+                    These are examples of projects conducted during my Bachelor's studies in Engineering. The goal was to develop **practical proficiency in Computer-Aided Design (CAD), 3D modeling **, and techniques like **rapid prototyping (laser cutting) and machining**. The main objective was to integrate <strong>manufacturing constraints</strong> (such as play, tight fit, and tolerancing) directly into the design phase.
+                </p>
+                
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Project 1: Goodie Design & Manufacturing (PMMA)</h3>
+                <p class="modal-text-paragraph">
+                    The goal was to design and manufacture a two-part promotional item (*goodie*) in PMMA (polymethyl methacrylate) using laser cutting.
+                    <ul>
+                        <li><strong>CAD:</strong> Modeling of the plate and the base in Catia, including the use of *Sketch Tracer* to integrate a personalized logo.</li>
+                        <li><strong>Key Challenge:</strong> Ensuring a <strong>tight, secure fit</strong> of the plate into the base.</li>
+                        <li><strong>Solution:</strong> The actual thickness of the PMMA plate was measured (2.8mm instead of 3mm nominal). The slot in the base was precisely adjusted from 3mm to **2.7mm** in the laser machine's software to compensate for material thickness variation and achieve the desired tight fit.</li>
+                    </ul>
+                </p>
+                
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Project 2: Layered Sphere Prototyping (Plywood)</h3>
+                <p class="modal-text-paragraph">
+                    This project focused on recreating a 40mm diameter sphere from 3mm thick plywood plates by stacking laser-cut circular layers.
+                    <ul>
+                        <li><strong>Strategy:</strong> Determining the number of layers (15 final layers) and calculating the diameter of each successive disc to closely approximate a spherical shape.</li>
+                        <li><strong>Key Challenge:</strong> Ensuring a **tight, secure fit** between the discs and the central assembly axis.</li>
+                        <li><strong>Solution:</strong> The central axis was modeled in Catia. The diameter of the inner holes in the discs was adjusted to **2.55mm** (for a theoretical 2.5mm axis). This precise adjustment ensured the required tight fit for a stable stacking of the layers.</li>
+                    </ul>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-innovative-devices" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Innovative MDs for Visual Impairment</h2>
+            <p class="modal-subtitle">State-of-the-Art Report on innovative medical devices for people with blindness or near blindness.</p>
+            <p class="modal-category">Category: Biomedical Engineering (Group Project)</p>
+            
+            <div class="modal-gallery">
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut1.jpg')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut1.jpg" alt="Rapport de projet sur les DMs innovants pour déficients visuels - Page de Couverture">
+                    <p class="image-caption">1. Project Report Cover Page.</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/projetTut2.jpg')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projetTut2.jpg" alt="Schéma du globe oculaire et du système visuel">
+                    <p class="image-caption">2. **Anatomical Diagram of the Human Eyeball.**</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/projetTut3.jpg')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projetTut3.jpg" alt="Exemple de dispositif de substitution sensorielle The vOICe">
+                    <p class="image-caption">3. **The vOICe: Auditory-to-Visual Sensory Substitution** (Non-Implantable).</p>
+                </div>
+            </div>
+            
+            <div class="modal-description">
+                
+                <h3 style="margin-top: 10px; color: var(--color-dark);">Goal of the Project 🎯</h3>
+                <p class="modal-text-paragraph">
+                    The main goal of this project was to conduct a comprehensive state-of-the-art review of **innovative Medical Devices (MD)** aimed at people with blindness or near blindness. The ambition was to determine how these cutting-edge technologies can promote **inclusion** and **autonomy** in the daily lives of patients.
+                </p>
+                
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Abstract (English) 🇬🇧</h3>
+                <p class="modal-text-paragraph">
+                    After exposing the anatomical aspect of the visual system and associated pathologies, this report presents a complete state-of-the-art of **innovative medical devices (MD) for people with blindness or near blindness**, with an objective of **inclusion and autonomy**. It distinguishes two main families: **non-implantable devices** (connected glasses, smart canes, or GPS assistants), and **plantable devices** (visual neuroprostheses). The document analyzes their functioning, clinical maturity, and performance. Particular attention is paid to technological innovations (**AI**, image processing, brain-machine interfaces) and regulatory issues (CE marking, EU regulation 2017/745). While non-implantable devices are readily available and improve daily life, implantable devices, though complex and mostly experimental, are followed with special attention as they promise to **"restore a visual sensation"**. The study concludes by suggesting that the integration of new technologies should respect ethical, social, and environmental values.
+                </p>
+                
+                <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
+                    <i class="fas fa-users" style="color: var(--color-primary); margin-right: 5px;"></i> **Group Project:** Realized by Odile Slifi, Lucas Girardet, and Lucas Dordor (ISIFC 1A).
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-ludo-game" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Software Project: Ludo Game (Jeu des Petits Chevaux)</h2>
+            <p class="modal-subtitle">Full implementation of the classic French board game in Java.</p>
+            <p class="modal-category">Category: Programming / Software Development</p>
+            
+            <div class="modal-gallery">
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo5.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo5.png" alt="Graphical view of the Ludo game board">
+                    <p class="image-caption">1. Overview of the Graphical User Interface (GUI).</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo1.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo1.png" alt="Main menu and game modes selection">
+                    <p class="image-caption">2. Main Menu and Selection of Game Modes.</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo2.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo2.png" alt="Solo mode and difficulty selection">
+                    <p class="image-caption">3. Solo Mode Setup: Player Name and Difficulty Selection.</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo3.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo3.png" alt="Two player mode setup">
+                    <p class="image-caption">4. Two-Player Race Mode Setup.</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo4.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo4.png" alt="Console mode display of the game">
+                    <p class="image-caption">5. In-Game View (Console Mode).</p>
+                </div>
+            </div>
+            
+            <div class="modal-description">
+                <p class="modal-text-paragraph">
+                    This academic project involved the comprehensive implementation of the classic French board game, <em>Jeu des Petits Chevaux</em> (similar to Ludo), in Java. The project was developed by Lucas Girardet, in collaboration with a colleague, as part of the Algorithmic and Programming coursework.
+                </p>
+                <p class="modal-text-paragraph">
+                    The application features both a <strong>non-graphic (console) version</strong> and a <strong>graphical user interface (GUI) version</strong>. The game supports two primary modes: a <strong>Solo mode</strong> (where the player must reach the finish line in a minimum number of turns) and a <strong>Two-player Race mode</strong> (the first player to reach the final square wins).
+                </p>
+                <p class="modal-text-paragraph">
+                    Players can select between three difficulty levels—<strong>Beginner, Pro, and Legend</strong>—which dynamically adjust the size of the game board and the maximum number of allowed moves in Solo mode. The game also includes special squares that act as <strong>Bonus or Penalty</strong> zones, allowing players to jump ahead or be sent back.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-paddle-valve" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Paddleboard Pressure-Regulating Valve</h2>
+            <p class="modal-subtitle">Details on the pressure-regulating valve project.</p>
+            <p class="modal-category">Category: CAD / Design</p>
+            <div class="modal-gallery">
+                 <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve-details.jpg')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/votre-image-paddle-valve-details.jpg" alt="Valve Mechanism">
+                    <p class="image-caption">Detailed view of the internal pressure regulation mechanism.</p>
+                </div>
+            </div>
+            <div class="modal-description">
+                <p class="modal-text-paragraph">
+                    As part of my Bachelor's engineering project, I co-led the design, prototyping, and validation of a pressure-regulating valve system for inflatable stand-up paddleboards. The objective was to automatically prevent overinflation caused by solar heating during use. The project involved a full design cycle from needs analysis to final assembly using CAD modeling, 3D printing, and machining techniques.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-syringe-packaging" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">CAD Project: Syringe & Packaging System</h2>
+            <p class="modal-subtitle">Full modeling from single parts to final assembly, including design validation.</p>
+            <p class="modal-category">Category: CAD / Biomedical Engineering</p>
+            <div class="modal-gallery">
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png" alt="Detailed view of the syringe">
+                    <p class="image-caption">1. Detailed view of the syringe (CAD modeling).</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue2.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue2.png" alt="Closed box with syringes inside">
+                    <p class="image-caption">2. Closed packaging box, containing the syringes.</p>
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue3.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue3.png" alt="Open box showing the packaging">
+                </div>
+                <div class="modal-image-item" onclick="showFullScreen('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue4.png')">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue4.png" alt="Needle with safety cap">
+                    <p class="image-caption">4. Modeling of the needle with its safety cap.</p>
+                </div>
+            </div>
+            <div class="modal-description">
+                <p class="modal-text-paragraph">
+                    This project was completed in collaboration with a colleague to meet the specific needs of veterinarians during herd vaccination campaigns, focusing on safety and practical weekly conditioning.
+                </p>
+                <p class="modal-text-paragraph">
+                    My initial step involved the <strong>CAD modeling of the needle and its safety cap</strong>, first as a single "monoblock" part, then broken down into its industrial components: the biocompatible metal cannula and the plastic insert. This decomposition was essential for accurately representing the manufacturing constraints.
+                </p>
+                <p class="modal-text-paragraph">
+                    The second phase focused on <strong>packaging design</strong>. I modeled a simple, secure box in Polystyrene to hold seven complete, unassembled syringe-needle sets. The choice of Polystyrene addresses the manufacturer's requirement for thermal insulation during transport.
+                </p>
+                <p class="modal-text-paragraph">
+                    <strong>Validation</strong> was carried out through assembly checks (syringe + capped needle) and a cross-section view of the final packaging containing all seven sets, ensuring <strong>zero interference</strong> between the parts during transport.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="fullscreenImageModal" class="fullscreen-modal">
+        <span class="fullscreen-modal-close">&times;</span>
+        <img class="fullscreen-modal-content" id="fullImage">
+    </div>
+
+    <script>
+        // Pour la modale fullscreen image
+        function showFullScreen(imgSrc) {
+            const modal = document.getElementById('fullscreenImageModal');
+            const fullImage = document.getElementById('fullImage');
+            fullImage.src = imgSrc;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('is-visible');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        function closeModal(modal) {
+            if (modal) {
+                modal.classList.remove('is-visible');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Projet : ouverture modale
+            const projectsGrid = document.querySelector('.projects-grid');
+            if (projectsGrid) {
+                projectsGrid.addEventListener('click', (event) => {
+                    const card = event.target.closest('.project-card');
+                    if (card) {
+                        const targetId = card.getAttribute('data-modal-target');
+                        if (targetId) {
+                            openModal(targetId);
+                        }
+                    }
+                });
+            }
+
+            // Fermeture modale projet
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                const closeBtn = modal.querySelector('.close-btn');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', (e) => {
+                        closeModal(modal);
+                    });
+                }
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal(modal);
+                    }
+                });
+            });
+
+            // Fermeture modale image 
+            document.querySelector('.fullscreen-modal-close').addEventListener('click', () => {
+                document.getElementById('fullscreenImageModal').style.display = 'none';
+                document.body.style.overflow = '';
+            });
+            document.getElementById('fullscreenImageModal').addEventListener('click', (e) => {
+                if (e.target === document.getElementById('fullscreenImageModal')) {
+                    document.getElementById('fullscreenImageModal').style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // FILTERS LOGIC (to make sure the new order works)
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove 'active' class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add 'active' class to the clicked button
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        const categories = card.getAttribute('data-category');
+                        
+                        if (filter === 'all' || categories.includes(filter)) {
+                            card.style.display = 'block'; // Show card
+                            setTimeout(() => card.style.opacity = '1', 10);
+                        } else {
+                            card.style.opacity = '0'; // Hide card
+                            setTimeout(() => card.style.display = 'none', 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
