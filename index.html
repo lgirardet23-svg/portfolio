@@ -1,719 +1,619 @@
-:root {
-    --color-primary: #3498db; 
-    --color-secondary: #f39c12; 
-    --color-dark: #333;
-    --color-light: #f9f9f9;
-    --color-grey: #eee;
-    --color-white: #fff;
-    --font-family: 'Poppins', sans-serif; 
-    --max-width: 1200px;
-    --border-radius: 12px;
-}
-
-/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: var(--font-family); 
-    line-height: 1.6;
-    color: var(--color-dark);
-}
-
-h1, h2, h3 {
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 2.5em;
-    text-align: center;
-    margin-bottom: 0.5em;
-    color: var(--color-dark);
-}
-
-p.subtitle-text {
-    text-align: center;
-    color: #666;
-    margin-bottom: 3em;
-    font-weight: 400;
-}
-
-a {
-    text-decoration: none;
-    color: var(--color-dark);
-}
-
-/* CORRECTION: Rétablissement du padding initial pour les titres de section (60px) */
-.section-padding {
-    padding: 60px 20px; 
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-.section-grey {
-    background-color: var(--color-grey);
-}
-
-.highlight {
-    color: var(--color-primary);
-}
-
-/* --- Navigation Bar --- */
-.navbar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    background-color: var(--color-white); 
-}
-
-.navbar .logo {
-    font-size: 1.8em;
-    font-weight: 700;
-}
-
-.navbar nav a {
-    margin-left: 25px;
-    font-weight: 500;
-    font-size: 1.05em;
-}
-
-.btn-contact {
-    padding: 8px 15px;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* --- Hero Section --- */
-.hero-section {
-    background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Biomedical.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    position: relative; 
-    background-color: #003366; 
-    color: var(--color-white);
-    height: 90vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-}
-
-/* Filtre sombre plus opaque (0.65) */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.65); 
-    z-index: 1; 
-}
-
-.hero-content {
-    position: relative; 
-    z-index: 2;
-    max-width: 800px;
-}
-
-.hero-content h1 {
-    font-size: 4em;
-    margin-bottom: 0.2em;
-}
-
-.hero-content p {
-    font-size: 1.4em;
-    margin-bottom: 1.5em;
-    font-weight: 300;
-}
-
-.hero-buttons a {
-    margin: 0 10px;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: 600;
-    display: inline-block;
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.hero-buttons a:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-}
-
-.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: 2px solid var(--color-primary);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--color-white);
-    border: 2px solid var(--color-white);
-}
-
-/* --- About Section (Correction de l'alignement et espacement) --- */
-.about-content {
-    display: flex;
-    gap: 60px; 
-    align-items: flex-start;
-    text-align: left;
-    /* On retire la marge spécifique, l'espacement sera géré par .section-padding */
-    margin-top: 0; 
-    margin-bottom: 0; 
-}
-
-.about-text-column {
-    flex: 3; 
-    font-size: 1.1em;
-    /* CORRECTION: Augmentation du padding à gauche à 60px */
-    padding-right: 20px; 
-    padding-left: 60px; 
-    margin-left: 0; 
-}
-
-.about-text-column p {
-    margin-bottom: 20px;
-    text-align: justify; 
-}
-
-.about-image-column {
-    flex: 2; 
-    display: flex;
-    justify-content: center; 
-    align-items: flex-start;
-    padding-top: 10px;
-}
-
-.profile-image-placeholder {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 5px solid var(--color-primary);
-    box-shadow: 0 0 0 10px rgba(52, 152, 219, 0.2);
-    flex-shrink: 0;
-}
-
-/* --- Education Section (Cards) --- */
-.education-cards .cards-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.education-cards .card {
-    background-color: var(--color-white);
-    border-radius: var(--border-radius);
-    padding: 25px;
-    flex: 1;
-    min-width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-}
-
-.education-cards .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.education-cards .card i {
-    font-size: 2.5em;
-    color: var(--color-primary);
-    margin-bottom: 10px;
-}
-
-.education-cards .card h3 {
-    margin-bottom: 5px;
-    color: #003366;
-}
-
-.education-cards .card p {
-    font-size: 0.95em;
-    color: #666;
-}
-
-/* --- Skills Section --- */
-.skills-container {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-    margin-top: 30px;
-}
-
-.skills-column {
-    flex: 1;
-    min-width: 200px;
-    background-color: var(--color-white);
-    padding: 20px;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--color-primary); 
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skills-column:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-.skills-column h3 {
-    color: #003366;
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--color-primary);
-    padding-bottom: 5px;
-}
-
-.skills-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.skills-list li {
-    font-size: 1em;
-    color: #333333;
-    padding: 5px 0;
-    line-height: 1.5;
-}
-
-/* --- Projects Section --- */
-.project-filters {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.filter-btn {
-    background-color: var(--color-white);
-    color: var(--color-dark);
-    border: 1px solid #ccc;
-    padding: 8px 15px;
-    margin: 0 5px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    font-weight: 500;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border-color: var(--color-primary);
-}
-
-.projects-grid {
-    display: flex; 
-    gap: 30px;
-    overflow-x: auto; 
-    padding-bottom: 20px; 
-    scroll-snap-type: x mandatory; 
-    -webkit-overflow-scrolling: touch; 
-}
-
-.project-card {
-    width: 350px; 
-    min-height: 400px; 
-    flex-shrink: 0; 
-    scroll-snap-align: start; 
-    background-color: var(--color-white);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s;
-    text-align: left;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-.project-image-placeholder {
-    width: 100%;
-    height: 200px;
-    background-color: #ccc;
-    background-size: cover;
-    background-position: center;
-    border-bottom: 1px solid #eee;
-}
-
-.project-card h3 {
-    padding: 15px 20px 0;
-    font-size: 1.4em;
-    color: #003366;
-}
-
-.project-card p {
-    padding: 5px 20px 20px;
-    color: #666;
-    font-size: 0.95em;
-}
-
-/* --- Modal Styles (for Project Details) --- */
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;  
-    background-color: rgba(0,0,0,0.6);  
-    padding-top: 50px;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.modal.is-visible {
-    display: block;
-    opacity: 1;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;  
-    padding: 30px;
-    border: 1px solid #888;
-    width: 90%;
-    max-width: 1000px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-title {
-    color: var(--color-primary);
-    text-align: left;
-    margin-bottom: 5px;
-    font-size: 2em;
-}
-
-.modal-subtitle {
-    color: #666;
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-}
-
-.modal-category {
-    font-style: italic;
-    color: #999;
-    margin-bottom: 25px;
-}
-
-/* Galerie modale en défilement horizontal avec taille d'image réduite */
-.modal-gallery {
-    display: flex; 
-    gap: 20px;
-    overflow-x: auto; 
-    padding-bottom: 10px; 
-    scroll-snap-type: x mandatory; 
-    margin-bottom: 30px;
-    justify-content: flex-start;
-}
-
-.modal-image-item {
-    cursor: pointer;
-    max-width: 180px; 
-    flex-shrink: 0; 
-    scroll-snap-align: start;
-    background-color: var(--color-grey);
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.modal-image-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.modal-image-item img {
-    width: 100%;
-    height: auto; 
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.image-caption {
-    font-size: 0.9em;
-    color: #888;
-    margin-top: 5px;
-    text-align: center;
-}
-
-.modal-description {
-    text-align: justify;
-}
-
-.modal-text-paragraph {
-    margin-bottom: 15px;
-}
-
-/* --- Contact Section --- */
-.contact-container {
-    display: flex;
-    gap: 40px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.contact-info {
-    flex: 1;
-}
-
-.contact-info h3 {
-    color: var(--color-primary);
-    margin-bottom: 15px;
-    font-size: 1.6em;
-}
-
-.contact-info p {
-    margin-bottom: 10px;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.info-item i {
-    color: var(--color-primary);
-    margin-right: 15px;
-    font-size: 1.2em;
-    width: 20px; 
-    text-align: center;
-}
-
-.contact-link {
-    color: var(--color-dark);
-    transition: color 0.3s;
-}
-
-.contact-link:hover {
-    color: var(--color-primary);
-    text-decoration: underline;
-}
-
-.contact-form {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-family: var(--font-family);
-    font-size: 1em;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-/* Bouton "Send Message" plus gros */
-.contact-form button {
-    cursor: pointer;
-    font-weight: 600;
-    padding: 12px 20px; 
-    min-height: 45px; 
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: none;
-    border-radius: 6px;
-    transition: background-color 0.3s;
-}
-
-.contact-form button:hover {
-    background-color: #2980b9; 
-}
-
-/* --- Footer --- */
-.footer {
-    background-color: #003366;
-    color: var(--color-white);
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
-}
-
-/* --- STYLES pour la Modale d'Agrandissement (Fullscreen) --- */
-.fullscreen-modal {
-    display: none; 
-    position: fixed; 
-    z-index: 9999; 
-    left: 0;
-    top: 0;
-    width: 100%;  
-    height: 100%;  
-    background-color: rgba(0, 0, 0, 0.9);  
-    align-items: center; 
-    justify-content: center; 
-    transition: opacity 0.3s ease;
-}
-
-.fullscreen-modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;  
-    max-height: 90%;
-    object-fit: contain;
-}
-
-.fullscreen-modal-close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.fullscreen-modal-close:hover,
-.fullscreen-modal-close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* --- MEDIA QUERIES (Responsive Design) --- */
-@media (max-width: 1024px) {
-    .navbar nav {
-        display: none;  
-    }
-    .hero-content h1 {
-        font-size: 3.5em;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Girardet | Biomedical Engineering Student</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    .project-card {
-        width: 320px; 
-    }
+    <style>
+        :root {
+            /* Assumant une couleur principale pour le highlight, si non définie dans style.css */
+            --color-primary: #ff6b6b; 
+        }
+        .navbar {
+            background-color: #003366; /* Bleu foncé pour la navbar */
+        }
+        .navbar .logo {
+            color: #ffffff; /* Texte du logo en blanc */
+        }
+        .navbar .highlight {
+            color: var(--color-primary); /* Garde la couleur de surbrillance (ex: rouge/orange) */
+        }
+        .navbar a {
+            color: #ffffff; /* Liens de navigation en blanc */
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: lightgray;
+        }
+        /* Assurer que le bouton contact conserve son style s'il a une couleur de fond différente */
+        .navbar .btn-contact { 
+            color: #003366; /* Le texte du bouton est en bleu foncé pour contraster avec le fond clair du bouton (si défini par style.css) */
+            background-color: #ffffff; /* Par exemple, fond blanc pour le bouton */
+            border: 1px solid #ffffff;
+        }
+        .navbar .btn-contact:hover {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">L.<span class="highlight">G</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+        </nav>
+        <a href="#contact" class="btn-contact">Contact Me</a>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Hi, I'm Lucas <span class="highlight">Girardet</span></h1>
+            <p>Biomedical Engineering Student, dedicated to Innovation in Medical Technology and Mechanical Design.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">View Portfolio</a>
+                <a href="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Resume Lucas Girardet.pdf" class="btn-secondary" target="_blank">Download Resume</a> 
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text-column">
+                <p>
+                    As a biomedical engineering student, I am passionate about new medical technologies, mechanical design, and industrial innovation. Throughout my studies, I have developed solid knowledge in medical devices, as well as strong skills in CAD, technical analysis, and mechanical engineering.
+                </p>
+                <p>
+                    Curious, ambitious, and motivated, I am always seeking opportunities to apply and strengthen my competencies as an engineer, in a real-world research or innovation environment, and further develop my biomedical and technical expertise.
+                </p>
+            </div>
+            <div class="about-image-column">
+                <div class="profile-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/profile-pic.png'); background-size: cover; background-position: center;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section-padding section-grey education-cards">
+        <h2 class="section-title">Education</h2>
+        <p class="subtitle-text">My academic path in Biomedical Engineering.</p>
+        <div class="cards-container">
+            <div class="card card-isifc">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Engineering Degree</h3>
+                <p>ISIFC | Engineering School in Biomedical Technologies</p>
+                <p>Besançon, France | 2024 - Present</p>
+            </div>
+            <div class="card card-dublin">
+                <i class="fas fa-plane-departure"></i>
+                <h3>Erasmus+ Semester</h3>
+                <p>Technological University of Dublin</p>
+                <p>Dublin, Ireland | Jan - June 2024</p>
+            </div>
+            <div class="card card-bachelor">
+                <i class="fas fa-microscope"></i>
+                <h3>Bachelor's Degree in Engineering Sciences</h3>
+                <p>University of Franche-Comté</p>
+                <p>Besançon, France | 2022 - 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padding">
+        <h2 class="section-title">Skills & Expertise</h2>
+        <p class="subtitle-text">Technical and professional skills developed during my studies.</p>
+        <div class="skills-container">
+            <div class="skills-column">
+                <h3>CAD & Mechanical Design</h3>
+                <ul class="skills-list">
+                    <li>SolidWorks</li>
+                    <li>Catia V5</li>
+                    <li>PTC Creo</li>
+                    <li>Technical Drawings</li>
+                    <li>3D Printing & Machining</li>
+                </ul>
+            </div>
+            <div class="skills-column">
+                <h3>Programming & Software</h3>
+                <ul class="skills-list">
+                    <li>MATLAB</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>ROS2 / C++</li>
+                    <li>Data Analysis</li>
+                </ul>
+            </div>
+            <div class="skills-column">
+                <h3>Professional Skills</h3>
+                <ul class="skills-list">
+                    <li>Technical Problem Solving</li>
+                    <li>Quality Control</li>
+                    <li>Industrial Processes</li>
+                    <li>Teamwork & Reliability</li>
+                    <li>Organization & Initiative</li>
+                </ul>
+            </div>
+            <div class="skills-column">
+                <h3>Languages</h3>
+                <ul class="skills-list">
+                    <li>French (Native)</li>
+                    <li>English (C1 - Fluent)</li>
+                    <li>Spanish (B1)</li>
+                    <li>Italian (Notions)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-padding section-grey">
+        <h2 class="section-title">My Projects</h2>
+        <p class="subtitle-text">A selection of my technical and design works.</p>
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="biomedical">Biomedical</button>
+            <button class="filter-btn" data-filter="cad">CAD / Design</button>
+            <button class="filter-btn" data-filter="programming">Programming</button>
+        </div>
+        <div class="projects-grid">
+            
+            <div class="project-card" data-category="cad design" data-modal-target="modal-bachelor-showcase">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/universite-de-franche-comte1-1200x766.jpg'); background-size: cover; background-position: center;"></div>
+                <h3>Bachelor's Projects Showcase</h3>
+                <p>A collection of CAD, Machining, and Prototyping projects from my engineering undergraduate degree.</p>
+            </div>
+            
+            <div class="project-card" data-category="biomedical" data-modal-target="modal-innovative-devices">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut1.jpg'); background-size: cover; background-position: center;"></div>
+                <h3>Innovative MDs for Visual Impairment</h3>
+                <p>Comprehensive state-of-the-art report on non-implantable and neuroprosthetic medical devices for the blind.</p>
+            </div>
+            
+            <div class="project-card" data-category="programming software" data-modal-target="modal-ludo-game">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo5.png'); background-size: cover; background-position: center;"></div>
+                <h3>Ludo Game | Petits Chevaux Implementation</h3>
+                <p>Full Java implementation of the classic board game, featuring graphic and console modes, and scoring history.</p>
+            </div>
+
+            <div class="project-card" data-category="cad design" data-modal-target="modal-paddle-valve">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/projet1.png'); background-size: cover; background-position: center;"></div>
+                <h3>Paddleboard Safety Valve</h3>
+                <p>Passive valve system to automatically prevent overinflation of stand-up paddleboards due to solar heating.</p>
+            </div>
+            
+            <div class="project-card" data-category="cad biomedical" data-modal-target="modal-syringe-packaging">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png'); background-size: cover; background-position: center;"></div>
+                <h3>Syringe & Packaging System</h3>
+                <p>Full CAD modeling of a safety needle and a custom 7-unit thermal packaging box for veterinarians.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="subtitle-text">Feel free to contact me for an internship, project collaboration, or any technical discussion.</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in touch</h3>
+                <p>I'm available to discuss collaboration, new projects, or any technical challenge.</p>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Besançon, France</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p><a href="mailto:l.girardet23@gmail.com" class="contact-link">l.girardet23@gmail.com</a></p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p><a href="tel:+33620870890" class="contact-link">+33 (0)6 20 87 08 90</a></p>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-linkedin"></i>
+                    <p><a href="https://www.linkedin.com/in/lucas-girardet-79057217a/" target="_blank" class="contact-link">Lucas Girardet on LinkedIn</a></p>
+                </div>
+            </div>
+            <form class="contact-form" action="https://formsubmit.co/l.girardet23@gmail.com" method="POST">
+                <input type="hidden" name="_next" value="https://lgirardet23-svg.github.io/portfolio/#contact">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject">
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
     
-    .about-text-column {
-        /* On réduit le padding horizontal sur les grands mobiles/tablettes */
-        padding-left: 20px; 
-        padding-right: 20px;
-    }
-}
+    <div class="footer">
+        <p>&copy; 2025 Lucas Girardet. All rights reserved.</p>
+    </div>
 
-@media (max-width: 768px) {
-    .hero-section {
-        height: 80vh;  
-    }
+    <div id="modal-bachelor-showcase" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Bachelor's Projects Showcase</h2>
+            <p class="modal-subtitle">A selection of individual works realized during my undergraduate degree in Engineering Sciences to master CAD and manufacturing techniques.</p>
+            <p class="modal-category">Category: CAD / Prototyping (Individual Projects)</p>
+            
+            <div class="modal-gallery">
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/goodie1.png" alt="Goodie Project - Laser-cut part">
+                    <p class="image-caption">1. Goodie Project: CAD modeling and laser cutting (PMMA).</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/goodie2.png" alt="Goodie Project - Base and Assembly">
+                    <p class="image-caption">2. Goodie Project: Base and close assembly to achieve a tight fit.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Sphere1.png" alt="Sphere Project - Layered assembly">
+                    <p class="image-caption">3. Sphere Project: Cross-section showing the assembly axis and layers.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Sphere2.png" alt="Sphere Project - CAD design detail">
+                    <p class="image-caption">4. Sphere Project: CAD detail showing the calculated layers (Catia V5).</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Sphere3.png" alt="Sphere Project - Internal axis">
+                    <p class="image-caption">5. Sphere Project: Final layered assembly (Plywood).</p>
+                </div>
+            </div>
+            
+            <div class="modal-description">
+                
+                <h3 style="margin-top: 10px; color: var(--color-dark);">Project Goal 🎯</h3>
+                <p class="modal-text-paragraph">
+                    These are examples of projects conducted during my Bachelor's studies in Engineering. The goal was to develop **practical proficiency in Computer-Aided Design (CAD), 3D modeling **, and techniques like **rapid prototyping (laser cutting) and machining**. The main objective was to integrate <strong>manufacturing constraints</strong> (such as play, tight fit, and tolerancing) directly into the design phase.
+                </p>
+                
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Project 1: Goodie Design & Manufacturing (PMMA)</h3>
+                <p class="modal-text-paragraph">
+                    The goal was to design and manufacture a two-part promotional item (*goodie*) in PMMA (polymethyl methacrylate) using laser cutting.
+                    <ul>
+                        <li><strong>CAD:</strong> Modeling of the plate and the base in Catia, including the use of *Sketch Tracer* to integrate a personalized logo.</li>
+                        <li><strong>Key Challenge:</strong> Ensuring a <strong>tight, secure fit</strong> of the plate into the base.</li>
+                        <li><strong>Solution:</strong> The actual thickness of the PMMA plate was measured (2.8mm instead of 3mm nominal). The slot in the base was precisely adjusted from 3mm to **2.7mm** in the laser machine's software to compensate for material thickness variation and achieve the desired tight fit.</li>
+                    </ul>
+                </p>
+                
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Project 2: Layered Sphere Prototyping (Plywood)</h3>
+                <p class="modal-text-paragraph">
+                    This project focused on recreating a 40mm diameter sphere from 3mm thick plywood plates by stacking laser-cut circular layers.
+                    <ul>
+                        <li><strong>Strategy:</strong> Determining the number of layers (15 final layers) and calculating the diameter of each successive disc to closely approximate a spherical shape.</li>
+                        <li><strong>Key Challenge:</strong> Ensuring a **tight, secure fit** between the discs and the central assembly axis.</li>
+                        <li><strong>Solution:</strong> The central axis was modeled in Catia. The diameter of the inner holes in the discs was adjusted to **2.55mm** (for a theoretical 2.5mm axis). This precise adjustment ensured the required tight fit for a stable stacking of the layers.</li>
+                    </ul>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-innovative-devices" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Innovative MDs for Visual Impairment</h2>
+            <p class="modal-subtitle">State-of-the-Art Report on innovative medical devices for people with blindness or near blindness.</p>
+            <p class="modal-category">Category: Biomedical Engineering (Group Project)</p>
+            
+            <div class="modal-gallery">
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut1.jpg" alt="Rapport de projet sur les DMs innovants pour déficients visuels - Page de Couverture">
+                    <p class="image-caption">1. Project Report Cover Page.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projetTut2.png" alt="Schéma du globe oculaire et du système visuel">
+                    <p class="image-caption">2. **Anatomical Diagram of the Human Eyeball.**</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projetTut3.png" alt="Exemple de dispositif de substitution sensorielle The vOICe">
+                    <p class="image-caption">3. **The vOICe: Auditory-to-Visual Sensory Substitution** (Non-Implantable).</p>
+                </div>
+            </div>
+            
+            <div class="modal-description">
+                
+                <h3 style="margin-top: 10px; color: var(--color-dark);">Goal of the Project 🎯</h3>
+                <p class="modal-text-paragraph">
+                    The main goal of this project was to conduct a comprehensive state-of-the-art review of **innovative Medical Devices (MD)** aimed at people with blindness or near blindness. The ambition was to determine how these cutting-edge technologies can promote **inclusion** and **autonomy** in the daily lives of patients.
+                </p>
+                
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Abstract </h3>
+                <p class="modal-text-paragraph">
+                    After exposing the anatomical aspect of the visual system and associated pathologies, this report presents a complete state-of-the-art of **innovative medical devices (MD) for people with blindness or near blindness**, with an objective of **inclusion and autonomy**. It distinguishes two main families: **non-implantable devices** (connected glasses, smart canes, or GPS assistants), and **implantable devices** (visual neuroprostheses). The document analyzes their functioning, clinical maturity, and performance. Particular attention is paid to technological innovations (**AI**, image processing, brain-machine interfaces) and regulatory issues (CE marking, EU regulation 2017/745). While non-implantable devices are readily available and improve daily life, implantable devices, though complex and mostly experimental, are followed with special attention as they promise to **"restore a visual sensation"**. The study concludes by suggesting that the integration of new technologies should respect ethical, social, and environmental values.
+                </p>
+                
+                <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
+                    <i class="fas fa-users" style="color: var(--color-primary); margin-right: 5px;"></i> **Group Project:** Realized by Odile Slifi, Lucas Girardet, and Lucas Dordor (ISIFC 1A).
+                </p>
+            </div>
+        </div>
+    </div>
     
-    .hero-section h1 {
-        font-size: 3em;
-    }
-
-    /* About Section */
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .about-text-column {
-        padding-right: 0;
-        padding-left: 0; 
-        text-align: left; 
-    }
-
-    .about-text-column p {
-        text-align: left; 
-    }
-
-    .about-image-column {
-        order: -1;  
-        margin-bottom: 30px;
-        justify-content: center; 
-        align-items: center;
-    }
-
-    /* Education */
-    .education-cards .cards-container {
-        flex-direction: column;
-    }
-
-    /* Skills */
-    .skills-container {
-        flex-direction: column;
-    }
-
-    /* Contact */
-    .contact-container {
-        flex-direction: column;
-    }
+    <div id="modal-ludo-game" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Software Project: Ludo Game (Jeu des Petits Chevaux)</h2>
+            <p class="modal-subtitle">Full implementation of the classic French board game in Java.</p>
+            <p class="modal-category">Category: Programming / Software Development</p>
+            
+            <div class="modal-gallery">
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo5.png" alt="Graphical view of the Ludo game board">
+                    <p class="image-caption">1. Overview of the Graphical User Interface (GUI).</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo1.png" alt="Main menu and game modes selection">
+                    <p class="image-caption">2. Main Menu and Selection of Game Modes.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo2.png" alt="Solo mode and difficulty selection">
+                    <p class="image-caption">3. Solo Mode Setup: Player Name and Difficulty Selection.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo3.png" alt="Two player mode setup">
+                    <p class="image-caption">4. Two-Player Race Mode Setup.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo4.png" alt="Console mode display of the game">
+                    <p class="image-caption">5. In-Game View (Console Mode).</p>
+                </div>
+            </div>
+            
+            <div class="modal-description">
+                <p class="modal-text-paragraph">
+                    This academic project involved the comprehensive implementation of the classic French board game, <em>Jeu des Petits Chevaux</em> (similar to Ludo), in Java. The project was developed by Lucas Girardet, in collaboration with a colleague, as part of the Algorithmic and Programming coursework.
+                </p>
+                <p class="modal-text-paragraph">
+                    The application features both a <strong>non-graphic (console) version</strong> and a <strong>graphical user interface (GUI) version</strong>. The game supports two primary modes: a <strong>Solo mode</strong> (where the player must reach the finish line in a minimum number of turns) and a <strong>Two-player Race mode</strong> (the first player to reach the final square wins).
+                </p>
+                <p class="modal-text-paragraph">
+                    Players can select between three difficulty levels—<strong>Beginner, Pro, and Legend</strong>—which dynamically adjust the size of the game board and the maximum number of allowed moves in Solo mode. The game also includes special squares that act as <strong>Bonus or Penalty</strong> zones, allowing players to jump ahead or be sent back.
+                </p>
+            </div>
+        </div>
+    </div>
     
-    .contact-info {
-        margin-bottom: 20px;
-    }
-    
-    .contact-info p {
-        text-align: center;
-    }
+    <div id="modal-paddle-valve" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Paddleboard Pressure-Regulating Valve</h2>
+            <p class="modal-subtitle">Design and prototyping of an essential safety system to prevent overinflation in inflatable paddleboards.</p>
+            <p class="modal-category">Category: CAD / Design (Group Project)</p>
+            <div class="modal-gallery">
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projet1.png" alt="CAD Model of the valve system - closed">
+                    <p class="image-caption">1. Final CAD model of the complete valve system (closed view).</p>
+                </div>
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Projet2.png" alt="CAD Model of the valve system - open">
+                    <p class="image-caption">2. Internal CAD view showing the piston mechanism and spring housing.</p>
+                </div>
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Projet3.png" alt="3D Printed Prototype of the housing">
+                    <p class="image-caption">3. 3D-printed prototype of the valve body, ready for assembly.</p>
+                </div>
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Projet4.png" alt="Physical Prototype of the internal mechanism">
+                    <p class="image-caption">4. Physical prototype of the internal pressure regulation mechanism.</p>
+                </div>
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projet5.jpg" alt="Project Report Poster">
+                    <p class="image-caption">5. Project summary poster, including methodology and results.</p>
+                </div>
+            </div>
+            <div class="modal-description">
+                <p class="modal-text-paragraph">
+                    This project involved the complete design, prototyping, and validation of a **passive pressure-regulating valve** for inflatable stand-up paddleboards. The primary goal was to create a robust and reliable system capable of automatically releasing excess air pressure. This prevents damage to the board, which can occur when internal pressure rises due to sun exposure and heat, while the user is out on the water.
+                </p>
+                 <h3 style="margin-top: 10px; color: var(--color-dark);">Technical Objectives & Challenges 🎯</h3>
+                <p class="modal-text-paragraph">
+                    The core challenge was to design a valve that maintains a precise maximum pressure (e.g., 15 PSI) using a mechanical spring system, while remaining **watertight** and easy to integrate.
+                </p>
+                 <h3 style="margin-top: 20px; color: var(--color-dark);">Key Stages & Technologies Employed 🛠️</h3>
+                <p class="modal-text-paragraph">
+                    <ul>
+                        <li><strong>Conceptual Design:</strong> Analysis of pressure/temperature effects on inflatable structures and spring mechanics calculation to define the release threshold.</li>
+                        <li><strong>CAD Modeling (Catia V5):</strong> Detailed modeling of the valve housing and all moving parts (piston, gaskets, spring seat), focusing on high-precision assembly.</li>
+                        <li><strong>Prototyping:</strong> Used **3D printing** (FDM) for the housing and small parts. **Machining** was considered for the final production of high-stress components.</li>
+                        <li><strong>Validation & Iteration:</strong> Bench testing of the prototype revealed initial **leakage issues** around the joint plane, leading to a crucial re-design phase focusing on gasket integration and surface finish to ensure reliable pressure retention.</li>
+                    </ul>
+                </p>
+                 <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
+                    <i class="fas fa-users" style="color: var(--color-primary); margin-right: 5px;"></i> **Group Project:** Realized by Lucas Girardet and Lucas Ambéis Matéo (L2 Mécanique 2022/2023).
+                </p>
+            </div>
+        </div>
+    </div>
 
-    .info-item {
-        justify-content: center;
-    }
+    <div id="modal-syringe-packaging" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">CAD Project: Syringe & Packaging System</h2>
+            <p class="modal-subtitle">Full modeling from single parts to final assembly, including design validation.</p>
+            <p class="modal-category">Category: CAD / Biomedical Engineering</p>
+            <div class="modal-gallery">
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png" alt="Detailed view of the syringe">
+                    <p class="image-caption">1. Detailed view of the syringe (CAD modeling).</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue2.png" alt="Closed box with syringes inside">
+                    <p class="image-caption">2. Closed packaging box, containing the syringes.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue3.png" alt="Open box showing the packaging">
+                    <p class="image-caption">3. Open box showing the packaging.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue4.png" alt="Needle with safety cap">
+                    <p class="image-caption">4. Modeling of the needle with its safety cap.</p>
+                </div>
+            </div>
+            <div class="modal-description">
+                <p class="modal-text-paragraph">
+                    This project was completed in collaboration with a colleague to meet the specific needs of veterinarians during herd vaccination campaigns, focusing on safety and practical weekly conditioning.
+                </p>
+                <p class="modal-text-paragraph">
+                    My initial step involved the <strong>CAD modeling of the needle and its safety cap</strong>, first as a single "monoblock" part, then broken down into its industrial components: the biocompatible metal cannula and the plastic insert. This decomposition was essential for accurately representing the manufacturing constraints.
+                </p>
+                <p class="modal-text-paragraph">
+                    The second phase focused on <strong>packaging design</strong>. I modeled a simple, secure box in Polystyrene to hold seven complete, unassembled syringe-needle sets. The choice of Polystyrene addresses the manufacturer's requirement for thermal insulation during transport.
+                </p>
+                <p class="modal-text-paragraph">
+                    <strong>Validation</strong> was carried out through assembly checks (syringe + capped needle) and a cross-section view of the final packaging containing all seven sets, ensuring <strong>zero interference</strong> between the parts during transport.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="fullscreenImageModal" class="fullscreen-modal">
+        <span class="fullscreen-modal-close">&times;</span>
+        <img class="fullscreen-modal-content" id="fullImage">
+    </div>
 
-    .project-card {
-        width: 280px; 
-    }
-    
-    .modal-image-item {
-        max-width: 100px;
-    }
-}
+    <script>
+        // Fonctions pour les modales
+        function showFullScreen(imgSrc) {
+            console.log('showFullScreen called with src:', imgSrc); // Debugging
+            const modal = document.getElementById('fullscreenImageModal');
+            const fullImage = document.getElementById('fullImage');
+            if (modal && fullImage) {
+                fullImage.src = imgSrc;
+                modal.style.display = 'flex';
+                modal.style.opacity = '1';
+                modal.style.visibility = 'visible';
+                document.body.style.overflow = 'hidden';
+                console.log('Fullscreen modal opened'); // Debugging
+            } else {
+                console.error('Fullscreen modal or image element not found');
+            }
+        }
 
-@media (max-width: 600px) {
-    .navbar {
-        padding: 15px 20px;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-    
-    .skills-column {
-        min-width: unset;
-    }
-}
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('is-visible');
+                document.body.style.overflow = 'hidden';
+                console.log(`Modal ${modalId} opened`); // Debugging
+            }
+        }
+
+        function closeModal(modal) {
+            if (modal) {
+                modal.classList.remove('is-visible');
+                document.body.style.overflow = '';
+                console.log('Modal closed'); // Debugging
+            }
+        }
+
+        function closeFullscreenModal() {
+            const fullscreenModal = document.getElementById('fullscreenImageModal');
+            if (fullscreenModal) {
+                fullscreenModal.style.display = 'none';
+                fullscreenModal.style.opacity = '0';
+                fullscreenModal.style.visibility = 'hidden';
+                document.body.style.overflow = '';
+                console.log('Fullscreen modal closed'); // Debugging
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Projet : ouverture modale
+            const projectsGrid = document.querySelector('.projects-grid');
+            if (projectsGrid) {
+                projectsGrid.addEventListener('click', (event) => {
+                    const card = event.target.closest('.project-card');
+                    if (card) {
+                        const targetId = card.getAttribute('data-modal-target');
+                        if (targetId) {
+                            openModal(targetId);
+                        }
+                    }
+                });
+            }
+
+            // Fermeture modale projet
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                const closeBtn = modal.querySelector('.close-btn');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', () => {
+                        closeModal(modal);
+                        closeFullscreenModal(); // Ensure fullscreen modal is closed when project modal closes
+                    });
+                }
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal(modal);
+                        closeFullscreenModal(); // Ensure fullscreen modal is closed
+                    }
+                });
+            });
+
+            // Fermeture modale image
+            const fullscreenModal = document.getElementById('fullscreenImageModal');
+            const fullscreenCloseBtn = document.querySelector('.fullscreen-modal-close');
+            if (fullscreenCloseBtn) {
+                fullscreenCloseBtn.addEventListener('click', () => {
+                    closeFullscreenModal();
+                });
+            }
+            if (fullscreenModal) {
+                fullscreenModal.addEventListener('click', (e) => {
+                    if (e.target === fullscreenModal) {
+                        closeFullscreenModal();
+                    }
+                });
+            }
+
+            // Ajout de l'écouteur d'événements pour les images des modales
+            const modalImageItems = document.querySelectorAll('.modal-image-item');
+            modalImageItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const img = item.querySelector('img');
+                    if (img) {
+                        console.log('Image clicked:', img.src); // Debugging
+                        showFullScreen(img.src);
+                    } else {
+                        console.error('No image found in modal-image-item');
+                    }
+                });
+            });
+
+            // FILTERS LOGIC
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        const categories = card.getAttribute('data-category');
+                        
+                        if (filter === 'all' || categories.includes(filter)) {
+                            card.style.display = 'block';
+                            setTimeout(() => card.style.opacity = '1', 10);
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => card.style.display = 'none', 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
