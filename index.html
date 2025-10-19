@@ -142,7 +142,6 @@
             </div>
             <div class="skills-column">
                 <h3>Languages</h3>
-                <თ
                 <ul class="skills-list">
                     <li>French (Native)</li>
                     <li>English (C1 - Fluent)</li>
@@ -484,11 +483,19 @@
     <script>
         // Fonctions pour les modales
         function showFullScreen(imgSrc) {
+            console.log('showFullScreen called with src:', imgSrc); // Debugging
             const modal = document.getElementById('fullscreenImageModal');
             const fullImage = document.getElementById('fullImage');
-            fullImage.src = imgSrc;
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+            if (modal && fullImage) {
+                fullImage.src = imgSrc;
+                modal.style.display = 'flex';
+                modal.style.opacity = '1';
+                modal.style.visibility = 'visible';
+                document.body.style.overflow = 'hidden';
+                console.log('Fullscreen modal opened'); // Debugging
+            } else {
+                console.error('Fullscreen modal or image element not found');
+            }
         }
 
         function openModal(modalId) {
@@ -496,6 +503,7 @@
             if (modal) {
                 modal.classList.add('is-visible');
                 document.body.style.overflow = 'hidden';
+                console.log(`Modal ${modalId} opened`); // Debugging
             }
         }
 
@@ -503,6 +511,18 @@
             if (modal) {
                 modal.classList.remove('is-visible');
                 document.body.style.overflow = '';
+                console.log('Modal closed'); // Debugging
+            }
+        }
+
+        function closeFullscreenModal() {
+            const fullscreenModal = document.getElementById('fullscreenImageModal');
+            if (fullscreenModal) {
+                fullscreenModal.style.display = 'none';
+                fullscreenModal.style.opacity = '0';
+                fullscreenModal.style.visibility = 'hidden';
+                document.body.style.overflow = '';
+                console.log('Fullscreen modal closed'); // Debugging
             }
         }
 
@@ -528,11 +548,13 @@
                 if (closeBtn) {
                     closeBtn.addEventListener('click', () => {
                         closeModal(modal);
+                        closeFullscreenModal(); // Ensure fullscreen modal is closed when project modal closes
                     });
                 }
                 modal.addEventListener('click', (e) => {
                     if (e.target === modal) {
                         closeModal(modal);
+                        closeFullscreenModal(); // Ensure fullscreen modal is closed
                     }
                 });
             });
@@ -542,15 +564,13 @@
             const fullscreenCloseBtn = document.querySelector('.fullscreen-modal-close');
             if (fullscreenCloseBtn) {
                 fullscreenCloseBtn.addEventListener('click', () => {
-                    fullscreenModal.style.display = 'none';
-                    document.body.style.overflow = '';
+                    closeFullscreenModal();
                 });
             }
             if (fullscreenModal) {
                 fullscreenModal.addEventListener('click', (e) => {
                     if (e.target === fullscreenModal) {
-                        fullscreenModal.style.display = 'none';
-                        document.body.style.overflow = '';
+                        closeFullscreenModal();
                     }
                 });
             }
@@ -558,10 +578,13 @@
             // Ajout de l'écouteur d'événements pour les images des modales
             const modalImageItems = document.querySelectorAll('.modal-image-item');
             modalImageItems.forEach(item => {
-                item.addEventListener('click', () => {
+                item.addEventListener('click', (e) => {
                     const img = item.querySelector('img');
                     if (img) {
+                        console.log('Image clicked:', img.src); // Debugging
                         showFullScreen(img.src);
+                    } else {
+                        console.error('No image found in modal-image-item');
                     }
                 });
             });
