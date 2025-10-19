@@ -169,7 +169,7 @@ a {
 .about-content {
     display: flex;
     gap: 60px; 
-    /* CORRECTION : Centrage vertical de l'image par rapport au texte */
+    /* Centrage vertical de l'image par rapport au texte */
     align-items: center; 
     text-align: left;
     margin-top: 0; 
@@ -179,7 +179,7 @@ a {
 .about-text-column {
     flex: 3; 
     font-size: 1.1em;
-    /* CORRECTION : Décalage du texte à gauche (60px) */
+    /* Décalage du texte à gauche (60px) */
     padding-right: 20px; 
     padding-left: 60px; 
     margin-left: 0; 
@@ -193,10 +193,10 @@ a {
 .about-image-column {
     flex: 2; 
     display: flex;
+    /* Centre l'image horizontalement */
     justify-content: center; 
-    /* Assure le centrage du contenu dans la colonne image */
+    /* CORRECTION : Centre l'image verticalement dans sa propre colonne */
     align-items: center; 
-    /* SUPPRIMÉ : L'ancien padding-top manuel est retiré, car le centrage vertical est géré par le parent (.about-content) */
     padding-top: 0; 
 }
 
