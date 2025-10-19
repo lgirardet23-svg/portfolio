@@ -5,7 +5,6 @@
     --color-light: #f9f9f9;
     --color-grey: #eee;
     --color-white: #fff;
-    /* Correction de la déclaration de la police */
     --font-family: 'Poppins', sans-serif; 
     --max-width: 1200px;
     --border-radius: 12px;
@@ -47,7 +46,7 @@ a {
     color: var(--color-dark);
 }
 
-/* CORRECTION: Augmentation du padding vertical pour toutes les sections (uniformité) */
+/* CORRECTION: Rétablissement du padding initial pour les titres de section (60px) */
 .section-padding {
     padding: 60px 20px; 
     max-width: var(--max-width);
@@ -74,7 +73,7 @@ a {
     padding: 15px 40px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    background-color: var(--color-white); /* Assurez une couleur de fond pour le sticky */
+    background-color: var(--color-white); 
 }
 
 .navbar .logo {
@@ -166,21 +165,23 @@ a {
     border: 2px solid var(--color-white);
 }
 
-/* --- About Section (CORRECTION: Marge et padding pour décoller le texte) --- */
+/* --- About Section (Correction de l'alignement et espacement) --- */
 .about-content {
     display: flex;
     gap: 60px; 
     align-items: flex-start;
     text-align: left;
-    margin-bottom: 40px; 
+    /* On retire la marge spécifique, l'espacement sera géré par .section-padding */
+    margin-top: 0; 
+    margin-bottom: 0; 
 }
 
 .about-text-column {
     flex: 3; 
     font-size: 1.1em;
-    /* CORRECTION: Augmentation significative du padding à gauche pour décoller le texte */
+    /* CORRECTION: Augmentation du padding à gauche à 60px */
     padding-right: 20px; 
-    padding-left: 80px; 
+    padding-left: 60px; 
     margin-left: 0; 
 }
 
@@ -246,7 +247,7 @@ a {
     color: #666;
 }
 
-/* --- Skills Section (Cartes plus visibles) --- */
+/* --- Skills Section --- */
 .skills-container {
     display: flex;
     gap: 20px;
@@ -260,7 +261,6 @@ a {
     background-color: var(--color-white);
     padding: 20px;
     border-radius: var(--border-radius);
-    /* Bordure et ombre plus prononcées */
     border: 1px solid var(--color-primary); 
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
