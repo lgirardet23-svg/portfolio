@@ -46,7 +46,7 @@ a {
     color: var(--color-dark);
 }
 
-/* CORRECTION: Rétablissement du padding initial pour les titres de section (60px) */
+/* Espacement vertical uniforme pour tous les titres de section (60px) */
 .section-padding {
     padding: 60px 20px; 
     max-width: var(--max-width);
@@ -169,9 +169,9 @@ a {
 .about-content {
     display: flex;
     gap: 60px; 
-    align-items: flex-start;
+    /* CORRECTION : Centrage vertical de l'image par rapport au texte */
+    align-items: center; 
     text-align: left;
-    /* On retire la marge spécifique, l'espacement sera géré par .section-padding */
     margin-top: 0; 
     margin-bottom: 0; 
 }
@@ -179,7 +179,7 @@ a {
 .about-text-column {
     flex: 3; 
     font-size: 1.1em;
-    /* CORRECTION: Augmentation du padding à gauche à 60px */
+    /* CORRECTION : Décalage du texte à gauche (60px) */
     padding-right: 20px; 
     padding-left: 60px; 
     margin-left: 0; 
@@ -194,8 +194,10 @@ a {
     flex: 2; 
     display: flex;
     justify-content: center; 
-    align-items: flex-start;
-    padding-top: -10px;
+    /* Assure le centrage du contenu dans la colonne image */
+    align-items: center; 
+    /* SUPPRIMÉ : L'ancien padding-top manuel est retiré, car le centrage vertical est géré par le parent (.about-content) */
+    padding-top: 0; 
 }
 
 .profile-image-placeholder {
@@ -649,6 +651,7 @@ a {
         flex-direction: column;
         text-align: center;
         gap: 30px;
+        align-items: center; /* Maintenu pour le centrage en mode colonne */
     }
 
     .about-text-column {
