@@ -49,7 +49,7 @@ a {
 
 /* CORRECTION: Augmentation du padding vertical pour toutes les sections (uniformité) */
 .section-padding {
-    padding: 80px 20px; 
+    padding: 60px 20px; 
     max-width: var(--max-width);
     margin: 0 auto;
 }
@@ -180,7 +180,7 @@ a {
     font-size: 1.1em;
     /* CORRECTION: Augmentation significative du padding à gauche pour décoller le texte */
     padding-right: 20px; 
-    padding-left: 40px; 
+    padding-left: 80px; 
     margin-left: 0; 
 }
 
