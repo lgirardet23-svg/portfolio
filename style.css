@@ -92,9 +92,8 @@ a {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* --- Hero Section (CORRECTIONS: Image de fond avec URL externe) --- */
+/* --- Hero Section (CORRECTIONS: Filtre plus sombre) --- */
 .hero-section {
-    /* CORRECTION: Utilisation de l'URL GitHub fournie */
     background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Biomedical.jpg'); 
     background-size: cover; 
     background-position: center; 
@@ -109,6 +108,7 @@ a {
     padding: 0 20px;
 }
 
+/* CORRECTION: Calque sombre plus opaque (0.5 au lieu de 0.4) pour plus de lisibilité */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -116,7 +116,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: rgba(0, 0, 0, 0.5); 
     z-index: 1; 
 }
 
@@ -163,16 +163,17 @@ a {
     border: 2px solid var(--color-white);
 }
 
-/* --- About Section --- */
+/* --- About Section (CORRECTION: Rétablissement des proportions et débordement) --- */
 .about-content {
     display: flex;
     gap: 40px;
-    align-items: flex-start; /* AJOUTÉ: Aide à l'alignement pour éviter le débordement */
+    align-items: center; /* Rétabli à 'center' pour l'alignement vertical du texte */
     text-align: left;
+    margin-bottom: 30px; /* Ajout d'une marge pour s'assurer qu'il ne déborde pas */
 }
 
 .about-text-column {
-    flex: 2;
+    flex: 2; /* Rétabli la proportion 2/3 */
     font-size: 1.1em;
 }
 
@@ -181,13 +182,10 @@ a {
 }
 
 .about-image-column {
-    flex: 1;
+    flex: 1; /* Rétabli la proportion 1/3 */
     display: flex;
     justify-content: flex-start; 
-    /* CORRECTION: Ajout de marge inférieure pour éviter le débordement sur la section suivante */
-    margin-bottom: 0; 
-    padding-bottom: 0;
-    line-height: 0; /* Pour réduire l'espace sous l'image */
+    /* Suppression des styles spécifiques pour le débordement, la correction est dans .about-content */
 }
 
 .profile-image-placeholder {
@@ -197,8 +195,8 @@ a {
     overflow: hidden;
     border: 5px solid var(--color-primary);
     box-shadow: 0 0 0 10px rgba(52, 152, 219, 0.2);
-    /* S'assurer que l'image à l'intérieur ne déborde pas */
-    display: block; 
+    /* Assure que l'image elle-même est bien contenue */
+    flex-shrink: 0;
 }
 
 /* --- Education Section (Cards) --- */
@@ -311,9 +309,8 @@ a {
 }
 
 .project-card {
-    /* CORRECTION: Remise des proportions initiales (plus carrées/compactes) */
-    width: 350px; /* Largeur fixe */
-    min-height: 400px; /* Hauteur minimale pour éviter qu'elles soient trop allongées */
+    width: 350px; 
+    min-height: 400px; 
     flex-shrink: 0; 
     scroll-snap-align: start; 
     background-color: var(--color-white);
@@ -418,20 +415,21 @@ a {
     margin-bottom: 25px;
 }
 
-/* CORRECTION: Passage de la galerie modale en défilement horizontal */
+/* Correction: Galerie modale en défilement horizontal avec taille d'image réduite */
 .modal-gallery {
-    display: flex; /* Utilisation de Flexbox pour le défilement */
+    display: flex; 
     gap: 20px;
-    overflow-x: auto; /* Active le défilement horizontal */
-    padding-bottom: 10px; /* Espace pour la barre de défilement si elle apparaît */
+    overflow-x: auto; 
+    padding-bottom: 10px; 
     scroll-snap-type: x mandatory; 
     margin-bottom: 30px;
+    justify-content: flex-start; /* Aligne au début pour le défilement */
 }
 
 .modal-image-item {
     cursor: pointer;
-    min-width: 180px; /* Largeur minimale pour forcer le défilement */
-    flex-shrink: 0; /* Empêche les images de rétrécir */
+    max-width: 180px; /* CORRECTION: Rétablit la taille des conteneurs d'image */
+    flex-shrink: 0; 
     scroll-snap-align: start;
     background-color: var(--color-grey);
     padding: 10px;
@@ -447,11 +445,10 @@ a {
 
 .modal-image-item img {
     width: 100%;
-    height: auto;
+    height: auto; /* Permet à l'image de s'adapter à la max-width de 180px */
     border-radius: 8px;
     object-fit: cover;
 }
-/* FIN CORRECTION MODAL-GALLERY */
 
 .image-caption {
     font-size: 0.9em;
@@ -600,7 +597,7 @@ a {
     }
     
     .project-card {
-        width: 320px; /* Ajustement sur tablette */
+        width: 320px; 
     }
 }
 
@@ -621,7 +618,7 @@ a {
     .about-image-column {
         order: -1;  
         margin-bottom: 30px;
-        justify-content: center; /* Centrer à nouveau sur petit écran */
+        justify-content: center; 
     }
 
     /* Education */
@@ -652,7 +649,11 @@ a {
     }
 
     .project-card {
-        width: 280px; /* Réduit encore la taille sur mobile */
+        width: 280px; 
+    }
+    
+    .modal-image-item {
+        max-width: 100px; /* Rétablit la taille des images modales pour mobile */
     }
 }
 
