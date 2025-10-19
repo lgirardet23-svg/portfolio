@@ -195,7 +195,7 @@ a {
     display: flex;
     justify-content: center; 
     align-items: flex-start;
-    padding-top: 0px;
+    padding-top: -10px;
 }
 
 .profile-image-placeholder {
