@@ -96,7 +96,7 @@ a {
 
 /* --- Hero Section (Correction: Image de fond) --- */
 .hero-section {
-    background-image: url('Biomedical.jpg'); /* CORRECTION: Image biomédicale en fond */
+    background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Biomedical.jpg'); /* CORRECTION: Image biomédicale en fond */
     background-size: cover; /* Assure que l'image couvre tout l'espace */
     background-position: center; /* Centre l'image */
     position: relative; /* Pour positionner le calque sombre */
