@@ -94,11 +94,15 @@ a {
     /* Les couleurs du bouton sont définies dans <style> de index.html */
 }
 
-/* --- Hero Section --- */
+/* --- Hero Section (Correction: Image de fond) --- */
 .hero-section {
-    background-color: #003366; /* Bleu foncé, comme la navbar */
+    background-image: url('Biomedical.jpg'); /* CORRECTION: Image biomédicale en fond */
+    background-size: cover; /* Assure que l'image couvre tout l'espace */
+    background-position: center; /* Centre l'image */
+    position: relative; /* Pour positionner le calque sombre */
+    background-color: #003366; /* Couleur de secours */
     color: var(--color-white);
-    height: 90vh; /* Hauteur pour un effet "full screen" */
+    height: 90vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,7 +110,21 @@ a {
     padding: 0 20px;
 }
 
+/* AJOUTÉ: Calque sombre pour la lisibilité du texte */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Calque noir semi-transparent */
+    z-index: 1; 
+}
+
 .hero-content {
+    position: relative; /* AJOUTÉ: Assure que le contenu est au-dessus du calque */
+    z-index: 2; /* AJOUTÉ: Assure que le contenu est au-dessus du calque */
     max-width: 800px;
 }
 
@@ -167,7 +185,7 @@ a {
 .about-image-column {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* CORRECTION: Aligne l'image à gauche */
 }
 
 .profile-image-placeholder {
@@ -280,12 +298,18 @@ a {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex; /* CORRECTION: Utilise flexbox pour le défilement horizontal */
     gap: 30px;
+    overflow-x: auto; /* AJOUTÉ: Active le défilement horizontal */
+    padding-bottom: 20px; /* AJOUTÉ: Espace pour la barre de défilement */
+    scroll-snap-type: x mandatory; /* Pour un arrêt net sur chaque carte */
+    -webkit-overflow-scrolling: touch; /* Améliore le défilement sur iOS */
 }
 
 .project-card {
+    min-width: 350px; /* CORRECTION: Largeur minimale pour forcer le défilement */
+    flex-shrink: 0; /* CORRECTION: Empêche la carte de rétrécir */
+    scroll-snap-align: start; /* Point d'arrêt pour le snap */
     background-color: var(--color-white);
     border-radius: var(--border-radius);
     overflow: hidden;
@@ -330,8 +354,8 @@ a {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.6); 
+    overflow: auto;  
+    background-color: rgba(0,0,0,0.6);  
     padding-top: 50px;
     opacity: 0;
     transition: opacity 0.3s;
@@ -344,7 +368,7 @@ a {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto; 
+    margin: 5% auto;  
     padding: 30px;
     border: 1px solid #888;
     width: 90%;
@@ -515,17 +539,15 @@ a {
 }
 
 /* --- CORRECTION: STYLES pour la Modale d'Agrandissement (Fullscreen) --- */
-/* Le positionnement 'fixed' est ESSENTIEL pour que la modale s'affiche par-dessus tout, y compris le scroll de la page. */
-
 .fullscreen-modal {
     display: none; /* Caché par défaut. Rendu 'flex' par JS au clic */
     position: fixed; /* FIXE la modale à la fenêtre, résout le problème de scroll */
     z-index: 9999; /* Très haut pour être au-dessus de tout */
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0, 0, 0, 0.9); 
+    width: 100%;  
+    height: 100%;  
+    background-color: rgba(0, 0, 0, 0.9);  
     align-items: center; /* Centrage vertical */
     justify-content: center; /* Centrage horizontal */
     transition: opacity 0.3s ease;
@@ -534,7 +556,7 @@ a {
 .fullscreen-modal-content {
     margin: auto;
     display: block;
-    max-width: 90%; 
+    max-width: 90%;  
     max-height: 90%;
     object-fit: contain;
 }
@@ -560,7 +582,7 @@ a {
 /* --- MEDIA QUERIES (Responsive Design) --- */
 @media (max-width: 1024px) {
     .navbar nav {
-        display: none; 
+        display: none;  
     }
     .hero-content h1 {
         font-size: 3.5em;
@@ -569,7 +591,7 @@ a {
 
 @media (max-width: 768px) {
     .hero-section {
-        height: 80vh; 
+        height: 80vh;  
     }
     
     .hero-section h1 {
@@ -582,7 +604,7 @@ a {
     }
 
     .about-image-column {
-        order: -1; 
+        order: -1;  
         margin-bottom: 30px;
     }
 
@@ -614,7 +636,9 @@ a {
     }
 
     .projects-grid {
-        grid-template-columns: 1fr;
+        /* Maintient le balayage horizontal sur mobile en forçant une seule colonne */
+        display: flex; 
+        overflow-x: auto; 
     }
 
     .modal-content {
