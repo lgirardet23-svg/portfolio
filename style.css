@@ -5,7 +5,7 @@
     --color-light: #f9f9f9;
     --color-grey: #eee;
     --color-white: #fff;
-    --font-family: 'Poppins', sans-serif;
+    --font-family: 'Poppins', sans-serif';
     --max-width: 1200px;
     --border-radius: 12px;
 }
@@ -92,7 +92,7 @@ a {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* --- Hero Section (CORRECTIONS: Filtre plus sombre) --- */
+/* --- Hero Section (CORRECTION: Filtre plus opaque) --- */
 .hero-section {
     background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Biomedical.jpg'); 
     background-size: cover; 
@@ -108,7 +108,7 @@ a {
     padding: 0 20px;
 }
 
-/* CORRECTION: Calque sombre plus opaque (0.5 au lieu de 0.4) pour plus de lisibilité */
+/* CORRECTION: Calque sombre plus opaque (0.65 au lieu de 0.5) */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -116,7 +116,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.65); 
     z-index: 1; 
 }
 
@@ -163,29 +163,33 @@ a {
     border: 2px solid var(--color-white);
 }
 
-/* --- About Section (CORRECTION: Rétablissement des proportions et débordement) --- */
+/* --- About Section (CORRECTION: Espacement et alignement du texte) --- */
 .about-content {
     display: flex;
-    gap: 40px;
-    align-items: center; /* Rétabli à 'center' pour l'alignement vertical du texte */
+    gap: 60px; /* Augmentation de l'espacement */
+    align-items: flex-start; /* Aligne le début des colonnes */
     text-align: left;
-    margin-bottom: 30px; /* Ajout d'une marge pour s'assurer qu'il ne déborde pas */
+    margin-bottom: 40px; /* Augmentation de la marge inférieure */
 }
 
 .about-text-column {
-    flex: 2; /* Rétabli la proportion 2/3 */
+    flex: 3; /* Donne plus d'espace au texte (3/5) */
     font-size: 1.1em;
+    /* CORRECTION: Ajout de padding ou marge pour décoller le texte */
+    padding-right: 20px; 
 }
 
 .about-text-column p {
     margin-bottom: 20px;
+    text-align: justify; /* Justification du texte pour un rendu plus propre */
 }
 
 .about-image-column {
-    flex: 1; /* Rétabli la proportion 1/3 */
+    flex: 2; /* Donne moins d'espace à l'image (2/5) */
     display: flex;
-    justify-content: flex-start; 
-    /* Suppression des styles spécifiques pour le débordement, la correction est dans .about-content */
+    justify-content: center; 
+    align-items: flex-start; /* Aligne l'image en haut de sa colonne */
+    padding-top: 10px;
 }
 
 .profile-image-placeholder {
@@ -195,7 +199,6 @@ a {
     overflow: hidden;
     border: 5px solid var(--color-primary);
     box-shadow: 0 0 0 10px rgba(52, 152, 219, 0.2);
-    /* Assure que l'image elle-même est bien contenue */
     flex-shrink: 0;
 }
 
@@ -238,7 +241,7 @@ a {
     color: #666;
 }
 
-/* --- Skills Section --- */
+/* --- Skills Section (CORRECTION: Cartes plus visibles) --- */
 .skills-container {
     display: flex;
     gap: 20px;
@@ -252,7 +255,15 @@ a {
     background-color: var(--color-white);
     padding: 20px;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    /* CORRECTION: Bordure et ombre plus prononcées */
+    border: 1px solid var(--color-primary); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 .skills-column h3 {
@@ -273,6 +284,7 @@ a {
     padding: 5px 0;
     line-height: 1.5;
 }
+/* FIN CORRECTION SKILLS */
 
 /* --- Projects Section --- */
 .project-filters {
@@ -415,7 +427,7 @@ a {
     margin-bottom: 25px;
 }
 
-/* Correction: Galerie modale en défilement horizontal avec taille d'image réduite */
+/* Galerie modale en défilement horizontal avec taille d'image réduite */
 .modal-gallery {
     display: flex; 
     gap: 20px;
@@ -423,12 +435,12 @@ a {
     padding-bottom: 10px; 
     scroll-snap-type: x mandatory; 
     margin-bottom: 30px;
-    justify-content: flex-start; /* Aligne au début pour le défilement */
+    justify-content: flex-start;
 }
 
 .modal-image-item {
     cursor: pointer;
-    max-width: 180px; /* CORRECTION: Rétablit la taille des conteneurs d'image */
+    max-width: 180px; 
     flex-shrink: 0; 
     scroll-snap-align: start;
     background-color: var(--color-grey);
@@ -445,7 +457,7 @@ a {
 
 .modal-image-item img {
     width: 100%;
-    height: auto; /* Permet à l'image de s'adapter à la max-width de 180px */
+    height: auto; 
     border-radius: 8px;
     object-fit: cover;
 }
@@ -610,15 +622,27 @@ a {
         font-size: 3em;
     }
 
+    /* About Section */
     .about-content {
         flex-direction: column;
         text-align: center;
+        gap: 30px;
+    }
+
+    .about-text-column {
+        padding-right: 0;
+        text-align: left; /* Rétablit l'alignement à gauche pour le texte */
+    }
+
+    .about-text-column p {
+        text-align: left; /* Assure que les paragraphes sont alignés à gauche */
     }
 
     .about-image-column {
         order: -1;  
         margin-bottom: 30px;
         justify-content: center; 
+        align-items: center;
     }
 
     /* Education */
@@ -653,7 +677,7 @@ a {
     }
     
     .modal-image-item {
-        max-width: 100px; /* Rétablit la taille des images modales pour mobile */
+        max-width: 100px;
     }
 }
 
