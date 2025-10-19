@@ -5,7 +5,8 @@
     --color-light: #f9f9f9;
     --color-grey: #eee;
     --color-white: #fff;
-    --font-family: 'Poppins', sans-serif';
+    /* CORRECTION: La police était mal déclarée, j'ai corrigé l'apostrophe */
+    --font-family: 'Poppins', sans-serif; 
     --max-width: 1200px;
     --border-radius: 12px;
 }
@@ -18,7 +19,8 @@
 }
 
 body {
-    font-family: var(--font-family);
+    /* CORRECTION: Assure l'application de la police Poppins */
+    font-family: var(--font-family); 
     line-height: 1.6;
     color: var(--color-dark);
 }
@@ -92,7 +94,7 @@ a {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* --- Hero Section (CORRECTION: Filtre plus opaque) --- */
+/* --- Hero Section --- */
 .hero-section {
     background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Biomedical.jpg'); 
     background-size: cover; 
@@ -108,7 +110,7 @@ a {
     padding: 0 20px;
 }
 
-/* CORRECTION: Calque sombre plus opaque (0.65 au lieu de 0.5) */
+/* CORRECTION: Filtre sombre plus opaque (0.65) */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -163,32 +165,34 @@ a {
     border: 2px solid var(--color-white);
 }
 
-/* --- About Section (CORRECTION: Espacement et alignement du texte) --- */
+/* --- About Section (CORRECTION: Marge et padding pour décoller le texte) --- */
 .about-content {
     display: flex;
-    gap: 60px; /* Augmentation de l'espacement */
-    align-items: flex-start; /* Aligne le début des colonnes */
+    gap: 60px; 
+    align-items: flex-start;
     text-align: left;
-    margin-bottom: 40px; /* Augmentation de la marge inférieure */
+    margin-bottom: 40px; 
 }
 
 .about-text-column {
-    flex: 3; /* Donne plus d'espace au texte (3/5) */
+    flex: 3; 
     font-size: 1.1em;
-    /* CORRECTION: Ajout de padding ou marge pour décoller le texte */
+    /* CORRECTION: Ajout de marges pour décoller du bord gauche */
     padding-right: 20px; 
+    padding-left: 20px; 
+    margin-left: 0; 
 }
 
 .about-text-column p {
     margin-bottom: 20px;
-    text-align: justify; /* Justification du texte pour un rendu plus propre */
+    text-align: justify; 
 }
 
 .about-image-column {
-    flex: 2; /* Donne moins d'espace à l'image (2/5) */
+    flex: 2; 
     display: flex;
     justify-content: center; 
-    align-items: flex-start; /* Aligne l'image en haut de sa colonne */
+    align-items: flex-start;
     padding-top: 10px;
 }
 
@@ -241,7 +245,7 @@ a {
     color: #666;
 }
 
-/* --- Skills Section (CORRECTION: Cartes plus visibles) --- */
+/* --- Skills Section --- */
 .skills-container {
     display: flex;
     gap: 20px;
@@ -255,7 +259,6 @@ a {
     background-color: var(--color-white);
     padding: 20px;
     border-radius: var(--border-radius);
-    /* CORRECTION: Bordure et ombre plus prononcées */
     border: 1px solid var(--color-primary); 
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -284,7 +287,6 @@ a {
     padding: 5px 0;
     line-height: 1.5;
 }
-/* FIN CORRECTION SKILLS */
 
 /* --- Projects Section --- */
 .project-filters {
@@ -544,10 +546,23 @@ a {
     resize: vertical;
 }
 
+/* CORRECTION: Bouton "Send Message" plus gros */
 .contact-form button {
     cursor: pointer;
     font-weight: 600;
+    padding: 12px 20px; /* Ajout de padding vertical */
+    min-height: 45px; /* Hauteur minimale */
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
 }
+
+.contact-form button:hover {
+    background-color: #2980b9; /* Bleu légèrement plus foncé au survol */
+}
+/* FIN CORRECTION BOUTON */
 
 /* --- Footer --- */
 .footer {
@@ -611,6 +626,11 @@ a {
     .project-card {
         width: 320px; 
     }
+    
+    .about-text-column {
+        /* Assure que la correction de l'alignement reste */
+        padding-left: 10px; 
+    }
 }
 
 @media (max-width: 768px) {
@@ -631,11 +651,12 @@ a {
 
     .about-text-column {
         padding-right: 0;
-        text-align: left; /* Rétablit l'alignement à gauche pour le texte */
+        padding-left: 0; /* Réinitialisation pour le centrage si la section padding est suffisante */
+        text-align: left; 
     }
 
     .about-text-column p {
-        text-align: left; /* Assure que les paragraphes sont alignés à gauche */
+        text-align: left; 
     }
 
     .about-image-column {
