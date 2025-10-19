@@ -72,7 +72,6 @@ a {
     padding: 15px 40px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    /* Les couleurs de la navbar sont définies dans <style> de index.html */
 }
 
 .navbar .logo {
@@ -91,15 +90,16 @@ a {
     border-radius: 6px;
     font-weight: 600;
     transition: background-color 0.3s, color 0.3s;
-    /* Les couleurs du bouton sont définies dans <style> de index.html */
 }
 
-/* --- Hero Section (Correction: Image de fond) --- */
+/* --- Hero Section (CORRECTIONS: Image de fond avec URL externe) --- */
 .hero-section {
-    background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Biomedical.jpg'); /* CORRECTION: Image biomédicale en fond */
-    background-size: cover; /* Assure que l'image couvre tout l'espace */
-    background-position: center; /* Centre l'image */
-    position: relative; /* Pour positionner le calque sombre */
+    /* CORRECTION: Utilisation de l'URL GitHub fournie */
+    background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Biomedical.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    position: relative; 
+    background-color: #003366; 
     color: var(--color-white);
     height: 90vh; 
     display: flex;
@@ -109,7 +109,6 @@ a {
     padding: 0 20px;
 }
 
-/* AJOUTÉ: Calque sombre pour la lisibilité du texte */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -117,13 +116,13 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Calque noir semi-transparent */
+    background-color: rgba(0, 0, 0, 0.4); 
     z-index: 1; 
 }
 
 .hero-content {
-    position: relative; /* AJOUTÉ: Assure que le contenu est au-dessus du calque */
-    z-index: 2; /* AJOUTÉ: Assure que le contenu est au-dessus du calque */
+    position: relative; 
+    z-index: 2;
     max-width: 800px;
 }
 
@@ -168,7 +167,7 @@ a {
 .about-content {
     display: flex;
     gap: 40px;
-    align-items: center;
+    align-items: flex-start; /* AJOUTÉ: Aide à l'alignement pour éviter le débordement */
     text-align: left;
 }
 
@@ -184,7 +183,11 @@ a {
 .about-image-column {
     flex: 1;
     display: flex;
-    justify-content: flex-start; /* CORRECTION: Aligne l'image à gauche */
+    justify-content: flex-start; 
+    /* CORRECTION: Ajout de marge inférieure pour éviter le débordement sur la section suivante */
+    margin-bottom: 0; 
+    padding-bottom: 0;
+    line-height: 0; /* Pour réduire l'espace sous l'image */
 }
 
 .profile-image-placeholder {
@@ -194,6 +197,8 @@ a {
     overflow: hidden;
     border: 5px solid var(--color-primary);
     box-shadow: 0 0 0 10px rgba(52, 152, 219, 0.2);
+    /* S'assurer que l'image à l'intérieur ne déborde pas */
+    display: block; 
 }
 
 /* --- Education Section (Cards) --- */
@@ -297,18 +302,20 @@ a {
 }
 
 .projects-grid {
-    display: flex; /* CORRECTION: Utilise flexbox pour le défilement horizontal */
+    display: flex; 
     gap: 30px;
-    overflow-x: auto; /* AJOUTÉ: Active le défilement horizontal */
-    padding-bottom: 20px; /* AJOUTÉ: Espace pour la barre de défilement */
-    scroll-snap-type: x mandatory; /* Pour un arrêt net sur chaque carte */
-    -webkit-overflow-scrolling: touch; /* Améliore le défilement sur iOS */
+    overflow-x: auto; 
+    padding-bottom: 20px; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
 }
 
 .project-card {
-    min-width: 350px; /* CORRECTION: Largeur minimale pour forcer le défilement */
-    flex-shrink: 0; /* CORRECTION: Empêche la carte de rétrécir */
-    scroll-snap-align: start; /* Point d'arrêt pour le snap */
+    /* CORRECTION: Remise des proportions initiales (plus carrées/compactes) */
+    width: 350px; /* Largeur fixe */
+    min-height: 400px; /* Hauteur minimale pour éviter qu'elles soient trop allongées */
+    flex-shrink: 0; 
+    scroll-snap-align: start; 
     background-color: var(--color-white);
     border-radius: var(--border-radius);
     overflow: hidden;
@@ -346,7 +353,7 @@ a {
 
 /* --- Modal Styles (for Project Details) --- */
 .modal {
-    display: none; /* Caché par défaut */
+    display: none; 
     position: fixed;
     z-index: 2000;
     left: 0;
@@ -411,17 +418,21 @@ a {
     margin-bottom: 25px;
 }
 
+/* CORRECTION: Passage de la galerie modale en défilement horizontal */
 .modal-gallery {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex; /* Utilisation de Flexbox pour le défilement */
     gap: 20px;
-    justify-content: center;
+    overflow-x: auto; /* Active le défilement horizontal */
+    padding-bottom: 10px; /* Espace pour la barre de défilement si elle apparaît */
+    scroll-snap-type: x mandatory; 
     margin-bottom: 30px;
 }
 
 .modal-image-item {
     cursor: pointer;
-    max-width: 180px;
+    min-width: 180px; /* Largeur minimale pour forcer le défilement */
+    flex-shrink: 0; /* Empêche les images de rétrécir */
+    scroll-snap-align: start;
     background-color: var(--color-grey);
     padding: 10px;
     border-radius: 8px;
@@ -440,6 +451,7 @@ a {
     border-radius: 8px;
     object-fit: cover;
 }
+/* FIN CORRECTION MODAL-GALLERY */
 
 .image-caption {
     font-size: 0.9em;
@@ -488,7 +500,7 @@ a {
     color: var(--color-primary);
     margin-right: 15px;
     font-size: 1.2em;
-    width: 20px; /* Assure l'alignement */
+    width: 20px; 
     text-align: center;
 }
 
@@ -537,18 +549,18 @@ a {
     font-size: 0.9em;
 }
 
-/* --- CORRECTION: STYLES pour la Modale d'Agrandissement (Fullscreen) --- */
+/* --- STYLES pour la Modale d'Agrandissement (Fullscreen) --- */
 .fullscreen-modal {
-    display: none; /* Caché par défaut. Rendu 'flex' par JS au clic */
-    position: fixed; /* FIXE la modale à la fenêtre, résout le problème de scroll */
-    z-index: 9999; /* Très haut pour être au-dessus de tout */
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
     left: 0;
     top: 0;
     width: 100%;  
     height: 100%;  
     background-color: rgba(0, 0, 0, 0.9);  
-    align-items: center; /* Centrage vertical */
-    justify-content: center; /* Centrage horizontal */
+    align-items: center; 
+    justify-content: center; 
     transition: opacity 0.3s ease;
 }
 
@@ -586,6 +598,10 @@ a {
     .hero-content h1 {
         font-size: 3.5em;
     }
+    
+    .project-card {
+        width: 320px; /* Ajustement sur tablette */
+    }
 }
 
 @media (max-width: 768px) {
@@ -605,6 +621,7 @@ a {
     .about-image-column {
         order: -1;  
         margin-bottom: 30px;
+        justify-content: center; /* Centrer à nouveau sur petit écran */
     }
 
     /* Education */
@@ -634,34 +651,8 @@ a {
         justify-content: center;
     }
 
-    .projects-grid {
-        /* Maintient le balayage horizontal sur mobile en forçant une seule colonne */
-        display: flex; 
-        overflow-x: auto; 
-    }
-
-    .modal-content {
-        width: 95%;
-        margin: 20px auto;
-        padding: 20px;
-    }
-    
-    .modal-gallery {
-        gap: 10px;
-    }
-    
-    .modal-image-item {
-        max-width: 100px;
-    }
-    
-    .modal-title {
-        font-size: 1.5em;
-    }
-    
-    .fullscreen-modal-close {
-        font-size: 30px;
-        top: 10px;
-        right: 20px;
+    .project-card {
+        width: 280px; /* Réduit encore la taille sur mobile */
     }
 }
 
