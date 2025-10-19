@@ -5,7 +5,7 @@
     --color-light: #f9f9f9;
     --color-grey: #eee;
     --color-white: #fff;
-    /* CORRECTION: La police était mal déclarée, j'ai corrigé l'apostrophe */
+    /* Correction de la déclaration de la police */
     --font-family: 'Poppins', sans-serif; 
     --max-width: 1200px;
     --border-radius: 12px;
@@ -19,7 +19,6 @@
 }
 
 body {
-    /* CORRECTION: Assure l'application de la police Poppins */
     font-family: var(--font-family); 
     line-height: 1.6;
     color: var(--color-dark);
@@ -48,8 +47,9 @@ a {
     color: var(--color-dark);
 }
 
+/* CORRECTION: Augmentation du padding vertical pour toutes les sections (uniformité) */
 .section-padding {
-    padding: 60px 20px;
+    padding: 80px 20px; 
     max-width: var(--max-width);
     margin: 0 auto;
 }
@@ -74,6 +74,7 @@ a {
     padding: 15px 40px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    background-color: var(--color-white); /* Assurez une couleur de fond pour le sticky */
 }
 
 .navbar .logo {
@@ -110,7 +111,7 @@ a {
     padding: 0 20px;
 }
 
-/* CORRECTION: Filtre sombre plus opaque (0.65) */
+/* Filtre sombre plus opaque (0.65) */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -177,9 +178,9 @@ a {
 .about-text-column {
     flex: 3; 
     font-size: 1.1em;
-    /* CORRECTION: Ajout de marges pour décoller du bord gauche */
+    /* CORRECTION: Augmentation significative du padding à gauche pour décoller le texte */
     padding-right: 20px; 
-    padding-left: 20px; 
+    padding-left: 40px; 
     margin-left: 0; 
 }
 
@@ -245,7 +246,7 @@ a {
     color: #666;
 }
 
-/* --- Skills Section --- */
+/* --- Skills Section (Cartes plus visibles) --- */
 .skills-container {
     display: flex;
     gap: 20px;
@@ -259,6 +260,7 @@ a {
     background-color: var(--color-white);
     padding: 20px;
     border-radius: var(--border-radius);
+    /* Bordure et ombre plus prononcées */
     border: 1px solid var(--color-primary); 
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -546,12 +548,12 @@ a {
     resize: vertical;
 }
 
-/* CORRECTION: Bouton "Send Message" plus gros */
+/* Bouton "Send Message" plus gros */
 .contact-form button {
     cursor: pointer;
     font-weight: 600;
-    padding: 12px 20px; /* Ajout de padding vertical */
-    min-height: 45px; /* Hauteur minimale */
+    padding: 12px 20px; 
+    min-height: 45px; 
     background-color: var(--color-primary);
     color: var(--color-white);
     border: none;
@@ -560,9 +562,8 @@ a {
 }
 
 .contact-form button:hover {
-    background-color: #2980b9; /* Bleu légèrement plus foncé au survol */
+    background-color: #2980b9; 
 }
-/* FIN CORRECTION BOUTON */
 
 /* --- Footer --- */
 .footer {
@@ -628,8 +629,9 @@ a {
     }
     
     .about-text-column {
-        /* Assure que la correction de l'alignement reste */
-        padding-left: 10px; 
+        /* On réduit le padding horizontal sur les grands mobiles/tablettes */
+        padding-left: 20px; 
+        padding-right: 20px;
     }
 }
 
@@ -651,7 +653,7 @@ a {
 
     .about-text-column {
         padding-right: 0;
-        padding-left: 0; /* Réinitialisation pour le centrage si la section padding est suffisante */
+        padding-left: 0; 
         text-align: left; 
     }
 
