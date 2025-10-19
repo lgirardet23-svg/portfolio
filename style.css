@@ -692,19 +692,20 @@ a {
     .hero-buttons a {
         margin: 0;
     }
-    /* --- CORRECTION ESSENTIELLE: STYLES pour la Modale d'Agrandissement (Fullscreen) --- */
-/* Le positionnement 'fixed' est crucial pour que la modale s'affiche par-dessus tout et au centre de la fenêtre. */
+   /* --- CORRECTION FINALE: STYLES pour la Modale d'Agrandissement (Fullscreen) --- */
+/* Placez ce bloc à la toute fin de style.css pour garantir la priorité (specificity) */
+
 .fullscreen-modal {
-    display: none; /* Rendu 'flex' par JS au clic */
-    position: fixed; /* FIXE la modale à la fenêtre, résout le problème de scroll */
-    z-index: 9999; /* Très haut pour être au-dessus de tout */
+    display: none; /* Crucial: Rendu 'flex' par JS au clic pour centrer */
+    position: fixed; /* ESSENTIEL: Fixe la modale par rapport à la fenêtre (viewport), même au scroll */
+    z-index: 9999; /* Très haute valeur pour être au-dessus de tout le reste, y compris les autres modales (z-index: 2000) */
     left: 0;
     top: 0;
     width: 100%; 
     height: 100%; 
     background-color: rgba(0, 0, 0, 0.9); /* Fond noir semi-transparent */
-    align-items: center; /* Centrage vertical */
-    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical de l'image */
+    justify-content: center; /* Centrage horizontal de l'image */
     transition: opacity 0.3s ease;
 }
 
@@ -713,7 +714,7 @@ a {
     display: block;
     max-width: 90%; 
     max-height: 90%;
-    object-fit: contain; /* L'image s'ajuste sans être coupée */
+    object-fit: contain; /* L'image s'ajuste au conteneur sans être coupée */
 }
 
 .fullscreen-modal-close {
@@ -733,6 +734,17 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Optionnel mais recommandé pour les petits écrans */
+@media (max-width: 768px) {
+    .fullscreen-modal-close {
+        font-size: 30px;
+        top: 10px;
+        right: 20px;
+    }
+}
+
+
 }
 
 .fullscreen-modal-close:hover {
