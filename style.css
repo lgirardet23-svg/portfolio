@@ -53,22 +53,86 @@ a {
 }
 
 .section-grey {
-    background-color: var(--color-light);
+    background-color: var(--color-grey);
 }
 
 .highlight {
-    color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
-/* --- BUTTONS & NAV --- */
-.btn-primary, .btn-secondary, .btn-contact {
-    display: inline-block;
-    padding: 10px 25px;
-    border-radius: 5px;
+/* --- Navigation Bar --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* Les couleurs de la navbar sont définies dans <style> de index.html */
+}
+
+.navbar .logo {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.navbar nav a {
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 1.05em;
+}
+
+.btn-contact {
+    padding: 8px 15px;
+    border-radius: 6px;
     font-weight: 600;
     transition: background-color 0.3s, color 0.3s;
+    /* Les couleurs du bouton sont définies dans <style> de index.html */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: #003366; /* Bleu foncé, comme la navbar */
+    color: var(--color-white);
+    height: 90vh; /* Hauteur pour un effet "full screen" */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    cursor: pointer;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 0.2em;
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    margin-bottom: 1.5em;
+    font-weight: 300;
+}
+
+.hero-buttons a {
+    margin: 0 10px;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-block;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.hero-buttons a:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
 .btn-primary {
@@ -77,522 +141,274 @@ a {
     border: 2px solid var(--color-primary);
 }
 
-.btn-primary:hover {
-    background-color: #2980b9;
-    border-color: #2980b9;
-}
-
 .btn-secondary {
     background-color: transparent;
     color: var(--color-white);
     border: 2px solid var(--color-white);
 }
 
-.btn-secondary:hover {
-    background-color: var(--color-white);
-    color: var(--color-primary);
-}
-
-.btn-contact {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: none;
-    padding: 12px 28px;
-    margin-left: 15px;
-}
-
-/* --- NAVIGATION BAR --- */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background-color: var(--color-white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    z-index: 1000;
-}
-
-.navbar .logo {
-    font-size: 1.5em;
-    font-weight: 700;
-}
-
-.navbar nav a {
-    margin-left: 30px;
-    font-weight: 600;
-}
-
-.navbar nav a:hover {
-    color: var(--color-primary);
-}
-
-
-/* --- HOME / HERO SECTION --- */
-.hero-section {
-    position: relative;
-    padding-top: 80px; 
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--color-white);
-    
-    /* Image de fond avec l'URL RAW */
-    background: linear-gradient(rgba(44,62,80,0.7), rgba(32,51,71,0.7)), url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Biomedical.jpg'); 
-    
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-content {
-    max-width: 800px;
-    padding: 20px;
-    position: relative; 
-    z-index: 10;
-}
-
-.hero-section h1 {
-    font-size: 4.5em;
-    margin-bottom: 0.1em;
-}
-
-.hero-section p {
-    font-size: 1.2em;
-    margin-bottom: 2em;
-    font-weight: 300;
-}
-
-.hero-buttons a {
-    margin: 0 10px;
-}
-
-/* --- ABOUT ME SECTION --- */
-.about-section {
-    padding: 100px 20px 60px;
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
+/* --- About Section --- */
 .about-content {
     display: flex;
-    gap: 50px;
-    align-items: flex-start;
+    gap: 40px;
+    align-items: center;
+    text-align: left;
 }
 
 .about-text-column {
     flex: 2;
+    font-size: 1.1em;
+}
+
+.about-text-column p {
+    margin-bottom: 20px;
 }
 
 .about-image-column {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .profile-image-placeholder {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background-color: var(--color-primary); 
+    overflow: hidden;
     border: 5px solid var(--color-primary);
-    
-    /* Photo de profil avec l'URL RAW */
-    background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/profile-pic.png'); 
-    
-    background-size: cover;
-    background-position: center;
+    box-shadow: 0 0 0 10px rgba(52, 152, 219, 0.2);
 }
 
-/* --- EDUCATION --- */
-.cards-container {
+/* --- Education Section (Cards) --- */
+.education-cards .cards-container {
     display: flex;
+    gap: 20px;
     justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap; 
-    max-width: var(--max-width); 
-    margin: 0 auto;
 }
 
 .education-cards .card {
-    max-width: 350px; 
-}
-
-.card {
     background-color: var(--color-white);
-    padding: 30px;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    width: 100%;
-    transition: transform 0.3s;
 }
 
-.card:hover {
+.education-cards .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.card i {
+.education-cards .card i {
     font-size: 2.5em;
-    margin-bottom: 15px;
+    color: var(--color-primary);
+    margin-bottom: 10px;
 }
 
-/* Card specific colors */
-.card-isifc { background-color: #e3f2fd; }
-.card-isifc i { color: #2196f3; }
+.education-cards .card h3 {
+    margin-bottom: 5px;
+    color: #003366;
+}
 
-.card-dublin { background-color: #fce4ec; }
-.card-dublin i { color: #e91e63; }
+.education-cards .card p {
+    font-size: 0.95em;
+    color: #666;
+}
 
-.card-bachelor { background-color: #e8f5e9; }
-.card-bachelor i { color: #4caf50; }
-
-
-/* --- SKILLS & EXPERTISE SECTION (List Layout) --- */
+/* --- Skills Section --- */
 .skills-container {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin: 0 auto;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 30px;
 }
 
 .skills-column {
-    background-color: var(--color-white);
-    padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     flex: 1;
-    min-width: 200px; 
+    min-width: 200px;
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .skills-column h3 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: var(--color-primary);
+    color: #003366;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 5px;
 }
 
 .skills-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
+    padding-left: 0;
 }
 
 .skills-list li {
-    padding: 8px 0;
-    border-bottom: 1px dashed var(--color-grey);
-    font-weight: 500;
+    font-size: 1em;
+    color: #333333;
+    padding: 5px 0;
+    line-height: 1.5;
 }
 
-.skills-list li:last-child {
-    border-bottom: none;
-}
-
-/* The .level CSS is kept but not used anymore as the span is removed. */
-.skills-list .level { 
-    font-weight: 400;
-    color: #666;
-    float: right;
-}
-
-/* --- PROJECTS SECTION (Horizontal Scroll) --- */
+/* --- Projects Section --- */
 .project-filters {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .filter-btn {
-    padding: 10px 20px;
-    margin: 0 5px;
-    border: 2px solid var(--color-grey);
     background-color: var(--color-white);
-    border-radius: 8px;
-    font-weight: 600;
+    color: var(--color-dark);
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 20px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    font-weight: 500;
 }
 
-.filter-btn.active, .filter-btn:hover {
+.filter-btn:hover,
+.filter-btn.active {
     background-color: var(--color-primary);
     color: var(--color-white);
     border-color: var(--color-primary);
 }
 
-/* Hides the card when filtered (used by JS) */
-.project-card.hidden {
-    display: none !important;
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-/* Cliquable card style */
 .project-card {
-    cursor: pointer; 
     background-color: var(--color-white);
-    padding: 0; 
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    width: 100%;
-    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s;
+    text-align: left;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* SCROLL CONTAINER CSS */
-.projects-grid {
-    display: flex; 
-    overflow-x: scroll; 
-    scroll-snap-type: x mandatory;
-    gap: 30px;
-    padding-bottom: 20px; 
-    -webkit-overflow-scrolling: touch; 
-}
-
-/* Individual Project Card in the scroll container */
-.projects-grid .project-card {
-    min-width: 300px; 
-    max-width: 300px;
-    flex-shrink: 0; 
-    scroll-snap-align: start;
-    display: block; 
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 .project-image-placeholder {
+    width: 100%;
     height: 200px;
-    background-color: #ddd; 
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid #eee;
 }
 
 .project-card h3 {
-    padding: 15px 20px 5px;
-    font-size: 1.3em;
-    text-align: left;
+    padding: 15px 20px 0;
+    font-size: 1.4em;
+    color: #003366;
 }
 
 .project-card p {
-    padding: 0 20px 20px;
+    padding: 5px 20px 20px;
     color: #666;
-    text-align: left;
+    font-size: 0.95em;
 }
 
-
-/* --- CONTACT SECTION --- */
-.contact-container {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.contact-info {
-    flex: 1;
-    text-align: left;
-    background-color: var(--color-white);
-    padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.contact-info h3 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-.contact-info p {
-    margin-bottom: 30px;
-    text-align: left;
-}
-
-/* MODIFICATION HERE: increased margin-bottom for spacing */
-.info-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 25px; 
-}
-
-.info-item i {
-    font-size: 1.2em;
-    color: var(--color-primary);
-    margin-right: 15px;
-    min-width: 20px; 
-}
-
-.info-item p {
-    margin: 0;
-}
-
-.contact-link {
-    color: var(--color-dark);
-    font-weight: 500;
-}
-
-.contact-link:hover {
-    color: var(--color-primary);
-}
-
-.contact-form {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background-color: var(--color-white);
-    padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.contact-form input, .contact-form textarea {
-    padding: 15px;
-    border: 1px solid var(--color-grey);
-    border-radius: 8px;
-    font-family: var(--font-family);
-    font-size: 1em;
-    transition: border-color 0.3s;
-}
-
-.contact-form input:focus, .contact-form textarea:focus {
-    border-color: var(--color-primary);
-    outline: none;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-/* --- FOOTER & WIDGET --- */
-.footer {
-    background-color: var(--color-dark);
-    color: var(--color-white);
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
-}
-
-.chat-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-    padding: 15px 20px;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    font-weight: 600;
-    transition: transform 0.3s;
-    z-index: 1000;
-}
-
-.chat-widget:hover {
-    transform: scale(1.05);
-}
-
-.chat-widget i {
-    margin-right: 8px;
-}
-
-/* --- MODAL STYLES --- */
+/* --- Modal Styles (for Project Details) --- */
 .modal {
-    display: none; /* Cache par défaut */
+    display: none; /* Caché par défaut */
     position: fixed;
-    z-index: 2000; /* Assure qu'il est au-dessus de tout */
+    z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7); /* Fond sombre transparent */
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.6); 
     padding-top: 50px;
     opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+    transition: opacity 0.3s;
 }
 
-/* NOTE: on change display:block -> display:flex ici pour centrer proprement la modale */
 .modal.is-visible {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     opacity: 1;
-    visibility: visible;
 }
 
 .modal-content {
-    background-color: var(--color-white);
-    margin: 10% auto; 
+    background-color: #fefefe;
+    margin: 5% auto; 
     padding: 30px;
-    border-radius: var(--border-radius);
-    max-width: 800px;
-    /* --- AJOUTS: empêche le débordement vertical --- */
-    max-height: 90vh;
-    overflow-y: auto;
-    box-sizing: border-box;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
-
-.modal-content h2.modal-title {
-    text-align: left;
-    margin-bottom: 5px;
-    font-size: 2em;
-}
-
-.modal-subtitle {
-    text-align: left;
-    color: var(--color-primary);
-    font-style: italic;
-    margin-bottom: 10px;
-}
-
-.modal-category {
-    text-align: left;
-    font-weight: 600;
-    color: #666;
-    margin-bottom: 20px;
-}
-
 
 .close-btn {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 25px;
 }
 
 .close-btn:hover,
 .close-btn:focus {
-    color: var(--color-dark);
+    color: #000;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-title {
+    color: var(--color-primary);
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 2em;
+}
+
+.modal-subtitle {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.modal-category {
+    font-style: italic;
+    color: #999;
+    margin-bottom: 25px;
 }
 
 .modal-gallery {
     display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    padding-bottom: 15px; 
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
     margin-bottom: 30px;
-    border-top: 1px solid var(--color-grey);
-    padding-top: 20px;
 }
 
 .modal-image-item {
-    flex-shrink: 0; 
-    width: 250px;
-    text-align: center;
-    cursor: pointer; /* Added cursor for better UX when clicking for fullscreen */
+    cursor: pointer;
+    max-width: 180px;
+    background-color: var(--color-grey);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.modal-image-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .modal-image-item img {
@@ -617,11 +433,137 @@ a {
     margin-bottom: 15px;
 }
 
+/* --- Contact Section --- */
+.contact-container {
+    display: flex;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info-item i {
+    color: var(--color-primary);
+    margin-right: 15px;
+    font-size: 1.2em;
+    width: 20px; /* Assure l'alignement */
+    text-align: center;
+}
+
+.contact-link {
+    color: var(--color-dark);
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: var(--font-family);
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #003366;
+    color: var(--color-white);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* --- CORRECTION: STYLES pour la Modale d'Agrandissement (Fullscreen) --- */
+/* Le positionnement 'fixed' est ESSENTIEL pour que la modale s'affiche par-dessus tout, y compris le scroll de la page. */
+
+.fullscreen-modal {
+    display: none; /* Caché par défaut. Rendu 'flex' par JS au clic */
+    position: fixed; /* FIXE la modale à la fenêtre, résout le problème de scroll */
+    z-index: 9999; /* Très haut pour être au-dessus de tout */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    align-items: center; /* Centrage vertical */
+    justify-content: center; /* Centrage horizontal */
+    transition: opacity 0.3s ease;
+}
+
+.fullscreen-modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%; 
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.fullscreen-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.fullscreen-modal-close:hover,
+.fullscreen-modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 /* --- MEDIA QUERIES (Responsive Design) --- */
 @media (max-width: 1024px) {
     .navbar nav {
         display: none; 
+    }
+    .hero-content h1 {
+        font-size: 3.5em;
     }
 }
 
@@ -644,10 +586,17 @@ a {
         margin-bottom: 30px;
     }
 
+    /* Education */
+    .education-cards .cards-container {
+        flex-direction: column;
+    }
+
+    /* Skills */
     .skills-container {
         flex-direction: column;
     }
 
+    /* Contact */
     .contact-container {
         flex-direction: column;
     }
@@ -664,90 +613,45 @@ a {
         justify-content: center;
     }
 
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
     .modal-content {
-        margin: 5% 10px;
-        max-width: 95%;
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
     }
-
+    
     .modal-gallery {
-        flex-direction: row; 
-        flex-wrap: nowrap;
-        overflow-x: scroll;
+        gap: 10px;
     }
-
+    
     .modal-image-item {
-        width: 180px; 
+        max-width: 100px;
+    }
+    
+    .modal-title {
+        font-size: 1.5em;
+    }
+    
+    .fullscreen-modal-close {
+        font-size: 30px;
+        top: 10px;
+        right: 20px;
     }
 }
 
-@media (max-width: 500px) {
-    .hero-section h1 {
+@media (max-width: 600px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .hero-content h1 {
         font-size: 2.5em;
     }
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+    
+    .skills-column {
+        min-width: unset;
     }
-    .hero-buttons a {
-        margin: 0;
-    }
-   /* --- CORRECTION FINALE: STYLES pour la Modale d'Agrandissement (Fullscreen) --- */
-/* Placez ce bloc à la toute fin de style.css pour garantir la priorité (specificity) */
-
-.fullscreen-modal {
-    display: none; /* Crucial: Rendu 'flex' par JS au clic pour centrer */
-    position: fixed; /* ESSENTIEL: Fixe la modale par rapport à la fenêtre (viewport), même au scroll */
-    z-index: 9999; /* Très haute valeur pour être au-dessus de tout le reste, y compris les autres modales (z-index: 2000) */
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0, 0, 0, 0.9); /* Fond noir semi-transparent */
-    align-items: center; /* Centrage vertical de l'image */
-    justify-content: center; /* Centrage horizontal de l'image */
-    transition: opacity 0.3s ease;
-}
-
-.fullscreen-modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%; 
-    max-height: 90%;
-    object-fit: contain; /* L'image s'ajuste au conteneur sans être coupée */
-}
-
-.fullscreen-modal-close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.fullscreen-modal-close:hover,
-.fullscreen-modal-close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Optionnel mais recommandé pour les petits écrans */
-@media (max-width: 768px) {
-    .fullscreen-modal-close {
-        font-size: 30px;
-        top: 10px;
-        right: 20px;
-    }
-}
-
-
-}
-
-.fullscreen-modal-close:hover {
-    color: var(--color-primary);
-}
 }
