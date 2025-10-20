@@ -48,7 +48,7 @@ a {
 
 /* Espacement vertical uniforme pour tous les titres de section (60px) */
 .section-padding {
-    padding: 60px 20px; 
+    padding: 50px 20px; 
     max-width: var(--max-width);
     margin: 0 auto;
 }
