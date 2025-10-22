@@ -719,4 +719,9 @@ a {
     .skills-column {
         min-width: unset;
     }
+    /* --- Correction de l'ancrage de la barre de navigation --- */
+/* Ajoute une marge au-dessus des ancres lors du défilement pour qu'elles ne soient pas cachées par la navbar */
+#home, #about, #education, #skills, #projects, #contact {
+    scroll-margin-top: 80px; 
+}
 }
