@@ -67,6 +67,7 @@ a {
     top: 0;
     left: 0;
     width: 100%;
+    /* REMPLACEMENT : Suppression de height: 70px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -74,15 +75,32 @@ a {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     background-color: var(--color-white); 
-    /* CORRECTION : Définir la hauteur pour un calcul d'ancrage fiable (15+15+~40=70) */
-    height: 70px;
 }
 
-/* --- CORRECTION : Appliquer la marge d'ancrage pour compenser la navbar (80px > 70px) --- */
+.navbar .logo {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.navbar nav a {
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 1.05em;
+}
+
+.btn-contact {
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* --- Correction de l'ancrage de la barre de navigation --- */
+/* Applique une marge lors de l'ancrage pour compenser la navbar (hauteur estimée à ~70px) */
 #home, #about, #education, #skills, #projects, #contact {
     scroll-margin-top: 80px; 
 }
-/* ------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------- */
 
 /* --- Hero Section --- */
 .hero-section {
