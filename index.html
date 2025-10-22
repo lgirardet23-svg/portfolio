@@ -11,10 +11,12 @@
     <style>
         :root {
             /* Assumant une couleur principale pour le highlight, si non définie dans style.css */
-            --color-primary: #ff6b6b; 
+            --color-primary: #3498db; /* Conservé comme dans style.css fourni */
         }
         .navbar {
             background-color: #003366; /* Bleu foncé pour la navbar */
+            /* Ajouté pour la cohérence et la résolution du décalage */
+            height: 70px;
         }
         .navbar .logo {
             color: #ffffff; /* Texte du logo en blanc */
@@ -37,6 +39,11 @@
         }
         .navbar .btn-contact:hover {
             background-color: lightgray;
+        }
+        
+        /* Correction de l'ancrage (ajouté ici pour être intégré à l'index si style.css est ignoré) */
+        #home, #about, #education, #skills, #projects, #contact {
+            scroll-margin-top: 80px; 
         }
     </style>
 </head>
@@ -169,6 +176,12 @@
                 <p>Research Internship focused on ROS2 development and biomechanical control systems for medical robotics.</p>
             </div>
             
+            <div class="project-card" data-category="cad biomedical" data-modal-target="modal-niceteeth-project">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Logo_isifc.jpeg'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+                <h3>NiceTeeth: Brushing Quality Control (In Progress)</h3>
+                <p>Design and feasibility study of an opto-mechatronic device for real-time intra-oral self-examination.</p>
+            </div>
+            
             <div class="project-card" data-category="biomedical" data-modal-target="modal-innovative-devices">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut1.jpg'); background-size: cover; background-position: center;"></div>
                 <h3>Innovative MDs for Visual Impairment</h3>
@@ -182,7 +195,7 @@
             </div>
 
             <div class="project-card" data-category="cad design" data-modal-target="modal-pingpong-tensegrity">
-                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Tens.png'); background-size: cover; background-position: center;"></div>
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Tens.jpg'); background-size: cover; background-position: center;"></div>
                 <h3>Tensegrity Ping-Pong Table</h3>
                 <p>CAD modeling of a full-size ping-pong table structure based on the principle of Tensegrity.</p>
             </div>
@@ -192,16 +205,19 @@
                 <h3>Véliable: The Folding Bicycle</h3>
                 <p>Conceptual CAD design of an urban folding bicycle frame focusing on compactness and ease of transport.</p>
             </div>            
+            
             <div class="project-card" data-category="cad design" data-modal-target="modal-paddle-valve">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/projet1.png'); background-size: cover; background-position: center;"></div>
                 <h3>Paddleboard Safety Valve</h3>
                 <p>Passive valve system to automatically prevent overinflation of stand-up paddleboards due to solar heating.</p>
             </div>
-             <div class="project-card" data-category="cad design" data-modal-target="modal-bachelor-showcase">
+            
+            <div class="project-card" data-category="cad design" data-modal-target="modal-bachelor-showcase">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/universite-de-franche-comte1-1200x766.jpg'); background-size: cover; background-position: center;"></div>
                 <h3>Bachelor's Projects Showcase</h3>
                 <p>A collection of CAD, Machining, and Prototyping projects from my engineering undergraduate degree.</p>
             </div>
+            
             <div class="project-card" data-category="programming software" data-modal-target="modal-ludo-game">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Algo5.png'); background-size: cover; background-position: center;"></div>
                 <h3>Ludo Game | Petits Chevaux Implementation</h3>
@@ -250,41 +266,17 @@
         <p>&copy; 2025 Lucas Girardet. All rights reserved.</p>
     </footer>
     
- <div id="modal-veliable-bicycle" class="modal">
+    <div id="modal-niceteeth-project" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h2 class="modal-title">Véliable: The Folding Bicycle</h2>
-            <p class="modal-subtitle">Conceptual CAD design and kinematic study of a novel folding bicycle frame.</p>
-            <p class="modal-category">Category: CAD / Mechanical Design</p>
+            <h2 class="modal-title">NiceTeeth: Brushing Quality Control (In Progress)</h2>
+            <p class="modal-subtitle">Design and Feasibility Study of an Opto-Mechatronic Intra-Oral Examination Device (ISIFC Project).</p>
+            <p class="modal-category">Category: CAD / Biomedical Engineering / Mechatronics</p>
             
             <div class="modal-gallery">
                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Veliable_inspo.png" alt="Inspiration photo of a folding bike">
-                    <p class="image-caption">1. Design inspiration: existing urban folding bike.</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/VeliableProfile.jpg" alt="Véliable bicycle frame profile">
-                    <p class="image-caption">2. Final CAD render of the Véliable frame structure.</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Veliable3.png" alt="Folding mechanism view 2">
-                    <p class="image-caption">3. CAD render of the rear section of the frame.</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Veliable1.png" alt="Pivot and component identification">
-                    <p class="image-caption">4. Kinematic scheme showing pivot points and major components.</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Veliable5.jpg" alt="Folding mechanism view 1">
-                    <p class="image-caption">5. Frame in its folded position, highlighting the compact nature of the design.</p>
-                </div>
-                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Veliable4.png" alt="Inspiration photo of a folding bike">
-                    <p class="image-caption">6. Detailed CAD view of a main folding joint (pivot) component.</p>
-                    </div>
-                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Poster_Véliable.jpg" alt="Project poster with methodology">
-                    <p class="image-caption">7. Project poster detailing the methodology (needs analysis, CAD, research).</p>
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Logo_isifc.jpeg" alt="NiceTeeth Project Cover Image">
+                    <p class="image-caption">1. ISIFC Project.</p>
                 </div>
             </div>
             
@@ -292,26 +284,32 @@
                 
                 <h3 style="margin-top: 10px; color: var(--color-dark);">Project Goal 🎯</h3>
                 <p class="modal-text-paragraph">
-                    The objective of this CAD design project was to create a novel **folding bicycle frame** with minimal bulk when folded, prioritizing easy transport and storage for urban commuters. The frame needed to be foldable quickly to adapt to different modes of transport (bus, train, car).
+                    The core objective is to design a **modern device for controlling the quality of brushing and inter-dental cleaning** in children and adults. This device must offer the user information on the real condition of every visible surface of each tooth and inter-dental space. The study involves analyzing the feasibility of using an **optical device with screen feedback** (via a smartphone, tablet, or dedicated screen).
                 </p>
                 
-                <h3 style="margin-top: 20px; color: var(--color-dark);">Key Stages & Technologies Employed 🛠️</h3>
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Technical Requirements (F1-F9) 🛠️</h3>
                 <p class="modal-text-paragraph">
+                    The project must adhere to the following key specifications (Cahier des Charges):
                     <ul>
-                        <li>**Needs Definition:** An initial phase was dedicated to defining the need, functional analysis, and identifying key design constraints (e.g., small size, speed of folding, transport ease).</li>
-                        <li>**CAD Modeling and Dimensioning:** The entire frame was modeled in CAD, including the definition of **four primary pivot joints** (`Liaison pivot 1` to `Liaison pivot 4`) to enable the folding mechanism.</li>
-                        <li>**Kinematic Study:** The movement was studied to ensure that the folding mechanism achieved the most compact form possible, particularly by folding the fork (`Fourche`) and the seat tube (`Tube reliant le cadre a la selle`) alongside the carbon frame (`Cadre en carbone`).</li>
-                        <li>**Research and Optimization:** A research phase focused on different types of folding hinges (e.g., Allen key, lever) to ensure secure, efficient, and reliable locking for a durable product.</li>
+                        <li>**F1: Examination: The opto-mechatronic device must allow for the oral exploration of all 32 teeth (numbered 11 to 48...).</li>
+                        <li>**F2: Usability: The device must be compatible with single-hand use (either hand).</li>
+                        <li>**F3: Observation: The system must include a sub-system for observation of all dental surfaces and a sub-system for high-resolution display/visualization.</li>
+                        <li>**F4: Power: Power must be supplied via a standard USB cord.</li>
+                        <li>**F5: Safety: The system must be ergonomic so as not to injure the user.</li>
+                        <li>**F6: Bulk: The system's footprint/size must be as small as possible.</li>
+                        <li>**F7: Environment: The system must be transportable and function in a bathroom setting.</li>
+                        <li>**F8: Data Management: Acquisition must be as fast as possible, and the display must allow for post-processing for optimal management, archiving, and interpretation of information.</li>
+                        <li>**F9: Eco-Design: Particular attention must be paid to eco-design (sharing, collective, family use).</li>
                     </ul>
                 </p>
-                 <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
-                    <i class="fas fa-tools" style="color: var(--color-primary); margin-right: 5px;"></i> **Technology Focus:** CAD Modeling (Catia/SolidWorks), Kinematic Analysis, Mechanical Joints Design.
+                <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
+                    <i class="fas fa-microscope" style="color: var(--color-primary); margin-right: 5px;"></i> **Context:** ISIFC 2nd-year Design Project (Autumn-Winter 2025-2026).
                 </p>
             </div>
         </div>
     </div>
-
- <div id="modal-robotics-internship" class="modal">
+    
+    <div id="modal-robotics-internship" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2 class="modal-title">Robotics in Neurosurgery (Incoming)</h2>
@@ -329,26 +327,137 @@
                 
                 <h3 style="margin-top: 10px; color: var(--color-dark);">Project Goal 🎯</h3>
                 <p class="modal-text-paragraph">
-                    The main objective of this research internship is to design and implement an **advanced control system** for a neurosurgical robot. This work aims to enhance the robot's **trajectory precision** and **maneuverability** during highly delicate surgical procedures. This is a critical step in translating robotic assistance from simulation to clinical practice.
+                    The primary objective of this research experience is to assist in the development of a novel **surgical navigation** system. This project aims to assess and establish the baseline accuracy (surgical metrology) of a **magnetic tracking system** (a "GPS for surgery") when used in conjunction with a medical robot.
                 </p>
                 
                 <h3 style="margin-top: 20px; color: var(--color-dark);">Key Stages & Technologies Employed 🛠️</h3>
                 <p class="modal-text-paragraph">
                     <ul>
-                        <li>**Experimental Design:** Collaborating with other students in designing experiments, collecting data, and performing numerical analysis.</li>
+                        <li>**Experimental Design:** Assisting graduate students in designing experiments, collecting data, and performing numerical analysis.</li>
                         <li>**Technical Evaluation:** Evaluating the accuracy of the magnetic tracker in the presence of the surgical robot.</li>
                         <li>**Core Focus:** The project combines a surgical robot, magnetic tracking, and X-ray fluoroscopy.</li>
-                        <li>**Technology Focus:** ROS2, Python/C++, Robotics, Biomechanics, Medical Imaging, System Integration.</li>
-                </ul>
+                        <li>**Technology Focus:** **ROS2**, **Python/C++**, Robotics, Biomechanics, Medical Imaging, System Integration.</li>
+                    </ul>
                 </p>
                  <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
-                    <i class="fas fa-university" style="color: var(--color-primary); margin-right: 5px;"></i> **Hosting Institution:** Western University, Canada.
+                    <i class="fas fa-university" style="color: var(--color-primary); margin-right: 5px;"></i> **Hosting Institution:** Western University, Canada | **Duration:** 6 weeks (Jan 5 - Feb 15, 2026).
                 </p>
 
             </div>
         </div>
     </div>
- <div id="modal-pingpong-tensegrity" class="modal">
+    <div id="modal-innovative-devices" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Innovative MDs for Visual Impairment</h2>
+            <p class="modal-subtitle">State-of-the-Art Report on innovative medical devices for people with blindness or near blindness.</p>
+            <p class="modal-category">Category: Biomedical Engineering (Group Project)</p>
+            
+            <div class="modal-gallery">
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut1.jpg" alt="Rapport de projet sur les DMs innovants pour déficients visuels - Page de Couverture">
+                    <p class="image-caption">1. Project Report Cover Page.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projetTut2.png" alt="Schéma du globe oculaire et du système visuel">
+                    <p class="image-caption">2. **Anatomical Diagram of the Human Eyeball.**</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut4.jpg" alt="Diagram of the retinal layers and visual system cells">
+                    <p class="image-caption">3. **Diagram of the retinal layers and visual system cells** (Rod, Cone, Ganglion cells, etc.).</p>
+                </div>
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut5.png" alt="WHO classification of visual impairment in 5 categories">
+                    <p class="image-caption">4. **Classification of visual impairment in 5 categories according to the WHO (World Health Organization)**.</p>
+                </div>
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut6.png" alt="Comparison diagram of different auditory pathways (airborne and bone conduction)">
+                    <p class="image-caption">5. **Comparison diagram of different auditory pathways** (airborne and bone conduction).</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projetTut3.png" alt="Exemple de dispositif de substitution sensorielle The vOICe">
+                    <p class="image-caption">6. **The vOICe: Auditory-to-Visual Sensory Substitution** (Non-Implantable).</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut7.png" alt="Summary table of non-implantable medical devices for profound to total visual impairment">
+                    <p class="image-caption">7. **Summary table of non-implantable medical devices** for profound to total visual impairment.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut8.png" alt="Simplified eye diagram with different retinal neuroprosthesis implantation sites">
+                    <p class="image-caption">8. **Simplified eye diagram with different retinal neuroprosthesis implantation sites** (epiretinal, subretinal, or supra-choroidal).</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut9.png" alt="Images perceived by patients with a retinal implant at 16, 256 and 1000 electrodes">
+                    <p class="image-caption">9. **Images perceived by patients with a retinal implant** at 16 (a), 256 (b) and 1000 electrodes (c).</p>
+                </div>
+            </div>
+            
+            <div class="modal-description">
+                
+                <h3 style="margin-top: 10px; color: var(--color-dark);">Goal of the Project 🎯</h3>
+                <p class="modal-text-paragraph">
+                    The main goal of this project was to conduct a comprehensive state-of-the-art review of **innovative Medical Devices (MD)** aimed at people with blindness or near blindness. The ambition was to determine how these cutting-edge technologies can promote **inclusion** and **autonomy** in the daily lives of patients.
+                </p>
+                
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Abstract </h3>
+                <p class="modal-text-paragraph">
+                    After exposing the anatomical aspect of the visual system and associated pathologies, this report presents a complete state-of-the-art of **innovative medical devices (MD) for people with blindness or near blindness**, with an objective of **inclusion and autonomy**. It distinguishes two main families: **non-implantable devices** (connected glasses, smart canes, or GPS assistants), and **implantable devices** (visual neuroprostheses). The document analyzes their functioning, clinical maturity, and performance. Particular attention is paid to technological innovations (**AI**, image processing, brain-machine interfaces) and regulatory issues (CE marking, EU regulation 2017/745). While non-implantable devices are readily available and improve daily life, implantable devices, though complex and mostly experimental, are followed with special attention as they promise to **"restore a visual sensation"**. The study concludes by suggesting that the integration of new technologies should respect ethical, social, and environmental values.
+                </p>
+                
+                <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
+                    <i class="fas fa-users" style="color: var(--color-primary); margin-right: 5px;"></i> **Group Project:** Realized by Odile Slifi, Lucas Girardet, and Lucas Dordor (ISIFC 1A).
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="modal-syringe-packaging" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Syringe & Packaging System</h2>
+            <p class="modal-subtitle">Full modeling from single parts to final assembly, including design validation.</p>
+            <p class="modal-category">Category: CAD / Biomedical Engineering (Group Project)</p>
+            <div class="modal-gallery">
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png" alt="Detailed view of the syringe">
+                    <p class="image-caption">1. Detailed view of the syringe (CAD modeling).</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue2.png" alt="Closed box with syringes inside">
+                    <p class="image-caption">2. Closed packaging box, containing the syringes.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue3.png" alt="Open box showing the packaging">
+                    <p class="image-caption">3. Open box showing the packaging.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue4.png" alt="Needle with safety cap">
+                    <p class="image-caption">4. Modeling of the needle with its safety cap.</p>
+                </div>
+            </div>
+            <div class="modal-description">
+                
+                 <h3 style="margin-top: 10px; color: var(--color-dark);">Project Goal 🎯</h3>
+                <p class="modal-text-paragraph">
+                    This project was completed to meet the specific needs of veterinarians during herd vaccination campaigns, focusing on **safety** and **practical weekly conditioning** of medical supplies. The goal was to design a complete system: a safety needle and its associated thermal packaging.
+                </p>
+                
+                 <h3 style="margin-top: 20px; color: var(--color-dark);">Key Stages & Technologies Employed 🛠️</h3>
+                <p class="modal-text-paragraph">
+                    <ul>
+                         <li>**Needle Design (Monobloc & Multi-part):** The initial design was based on the standard **20-Gauge** (0.91mm outer diameter, 4cm length) used for bovine subcutaneous injections. The modeling progressed from a "monobloc" concept to the final assembly of two distinct parts: the **biocompatible metal cannula** and the **plastic insert (hub)**.</li>
+                         <li>**Safety Cap Mechanism:** A rotating safety cap was designed with minimal support zones (`crans`) that engage the plastic insert only when turned to a specific alignment. This system allows the cap to be removed without detaching the needle for injection (Phase 2), and subsequently reattached and rotated to safely lock and remove the used needle for disposal (Phase 3).</li>
+                         <li>**Packaging Modeling:** A simple, secure box was modeled in Polystyrene to ensure thermal insulation during transport, a requirement essential for vaccine integrity. The box was dimensioned to hold seven complete, non-assembled syringe-needle sets.</li>
+                         <li>**Validation:** The final packaging was validated through assembly checks and a cross-section view to confirm zero interference between the seven sets when the box is closed.</li>
+                    </ul>
+                </p>
+                
+                 <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
+                    <i class="fas fa-users" style="color: var(--color-primary); margin-right: 5px;"></i> **Group Project:** Realized by Lucas Girardet and Schoen Elise (ISIFC 1A).
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="modal-pingpong-tensegrity" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2 class="modal-title">Tensegrity Ping-Pong Table</h2>
@@ -365,7 +474,7 @@
                     <p class="image-caption">2. Design sketches showing the plateau and base dimensions (in cm).</p>
                      </div>
                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Tens.png" alt="Render of the Tensegrity Ping-Pong Table">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Tens.jpg" alt="Render of the Tensegrity Ping-Pong Table">
                     <p class="image-caption">3. Final 3D render of the Tensegrity Table (Overview).</p>
                 </div>
                  <div class="modal-image-item">
@@ -412,7 +521,117 @@
             </div>
         </div>
     </div>
- <div id="modal-bachelor-showcase" class="modal">
+    <div id="modal-veliable-bicycle" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Véliable: The Folding Bicycle</h2>
+            <p class="modal-subtitle">Conceptual CAD design and kinematic study of a novel folding bicycle frame.</p>
+            <p class="modal-category">Category: CAD / Mechanical Design</p>
+            
+            <div class="modal-gallery">
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/VeliableProfile.jpg" alt="Véliable bicycle frame profile">
+                    <p class="image-caption">1. Final CAD render of the Véliable frame structure.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Veliable5.jpg" alt="Folding mechanism view 1">
+                    <p class="image-caption">2. Frame in its folded position, highlighting the compact nature of the design.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Veliable3.png" alt="Rear frame CAD detail">
+                    <p class="image-caption">3. CAD render of the rear section of the frame.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Veliable4.png" alt="Detailed CAD view of a folding joint">
+                    <p class="image-caption">4. Detailed CAD view of a main folding joint (pivot) component.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Veliable1.png" alt="Pivot and component identification">
+                    <p class="image-caption">5. Kinematic scheme showing pivot points and major components.</p>
+                </div>
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Veliable_inspo.jpg" alt="Inspiration photo of a folding bike">
+                    <p class="image-caption">6. Design inspiration: existing urban folding bike.</p>
+                </div>
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Poster_Véliable.jpg" alt="Project poster with methodology">
+                    <p class="image-caption">7. Project poster detailing the methodology (needs analysis, CAD, research).</p>
+                </div>
+            </div>
+            
+            <div class="modal-description">
+                
+                <h3 style="margin-top: 10px; color: var(--color-dark);">Project Goal 🎯</h3>
+                <p class="modal-text-paragraph">
+                    The objective of this CAD design project was to create a novel **folding bicycle frame** with minimal bulk when folded, prioritizing easy transport and storage for urban commuters. The frame needed to be foldable quickly to adapt to different modes of transport (bus, train, car).
+                </p>
+                
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Key Stages & Technologies Employed 🛠️</h3>
+                <p class="modal-text-paragraph">
+                    <ul>
+                        <li>**Needs Definition:** An initial phase was dedicated to defining the need, functional analysis, and identifying key design constraints (e.g., small size, speed of folding, transport ease).</li>
+                        <li>**CAD Modeling and Dimensioning:** The entire frame was modeled in CAD, including the definition of **four primary pivot joints** to enable the folding mechanism.</li>
+                        <li>**Kinematic Study:** The movement was studied to ensure that the folding mechanism achieved the most compact form possible, particularly by folding the fork and the seat tube alongside the carbon frame.</li>
+                        <li>**Research and Optimization:** A research phase focused on different types of folding hinges (e.g., Allen key, lever) to ensure secure, efficient, and reliable locking for a durable product.</li>
+                    </ul>
+                </p>
+                 <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
+                    <i class="fas fa-tools" style="color: var(--color-primary); margin-right: 5px;"></i> **Technology Focus:** CAD Modeling (Catia/SolidWorks), Kinematic Analysis, Mechanical Joints Design.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="modal-paddle-valve" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Paddleboard Pressure-Regulating Valve</h2>
+            <p class="modal-subtitle">Design and prototyping of an essential safety system to prevent overinflation in inflatable paddleboards.</p>
+            <p class="modal-category">Category: CAD / Design (Group Project)</p>
+            <div class="modal-gallery">
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projet1.png" alt="CAD Model of the valve system - closed">
+                    <p class="image-caption">1. Final CAD model of the complete valve system (closed view).</p>
+                </div>
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Projet2.png" alt="CAD Model of the valve system - open">
+                    <p class="image-caption">2. Internal CAD view showing the piston mechanism and spring housing.</p>
+                </div>
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Projet3.png" alt="3D Printed Prototype of the housing">
+                    <p class="image-caption">3. 3D-printed prototype of the valve body, ready for assembly.</p>
+                </div>
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Projet4.png" alt="Physical Prototype of the internal mechanism">
+                    <p class="image-caption">4. Physical prototype of the internal pressure regulation mechanism.</p>
+                </div>
+                 <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projet5.jpg" alt="Project Report Poster">
+                    <p class="image-caption">5. Project summary poster, including methodology and results.</p>
+                </div>
+            </div>
+            <div class="modal-description">
+                
+                <h3 style="margin-top: 10px; color: var(--color-dark);">Project Goal 🎯</h3>
+                <p class="modal-text-paragraph">
+                    This project involved the complete design, prototyping, and validation of a **passive pressure-regulating valve** for inflatable stand-up paddleboards. The primary goal was to create a robust and reliable system capable of automatically releasing excess air pressure. This prevents damage to the board, which can occur when internal pressure rises due to sun exposure and heat, while the user is out on the water.
+                </p>
+                 <h3 style="margin-top: 20px; color: var(--color-dark);">Key Stages & Technologies Employed 🛠️</h3>
+                <p class="modal-text-paragraph">
+                    The core challenge was to design a valve that maintains a precise maximum pressure (e.g., 15 PSI) using a mechanical spring system, while remaining **watertight** and easy to integrate.
+                    <ul>
+                        <li><strong>Conceptual Design:</strong> Analysis of pressure/temperature effects on inflatable structures and spring mechanics calculation to define the release threshold.</li>
+                        <li><strong>CAD Modeling (Catia V5):</strong> Detailed modeling of the valve housing and all moving parts (piston, gaskets, spring seat), focusing on high-precision assembly.</li>
+                        <li><strong>Prototyping:</strong> Used **3D printing** (FDM) for the housing and small parts. **Machining** was considered for the final production of high-stress components.</li>
+                        <li><strong>Validation & Iteration:</strong> Bench testing of the prototype revealed initial **leakage issues** around the joint plane, leading to a crucial re-design phase focusing on gasket integration and surface finish to ensure reliable pressure retention.</li>
+                    </ul>
+                </p>
+                 <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
+                    <i class="fas fa-users" style="color: var(--color-primary); margin-right: 5px;"></i> **Group Project:** Realized by Lucas Girardet and Ambéis Matéo (L2 Mécanique 2022/2023).
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="modal-bachelor-showcase" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2 class="modal-title">Bachelor's Projects Showcase</h2>
@@ -472,72 +691,6 @@
             </div>
         </div>
     </div>
-
-    <div id="modal-innovative-devices" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 class="modal-title">Innovative MDs for Visual Impairment</h2>
-            <p class="modal-subtitle">State-of-the-Art Report on innovative medical devices for people with blindness or near blindness.</p>
-            <p class="modal-category">Category: Biomedical Engineering (Group Project)</p>
-            
-            <div class="modal-gallery">
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut1.jpg" alt="Rapport de projet sur les DMs innovants pour déficients visuels - Page de Couverture">
-                    <p class="image-caption">1. Project Report Cover Page.</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projetTut2.png" alt="Schéma du globe oculaire et du système visuel">
-                    <p class="image-caption">2. **Anatomical Diagram of the Human Eyeball.**</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut4.png" alt="Diagram of the retinal layers and visual system cells">
-                    <p class="image-caption">3. **Diagram of the retinal layers and visual system cells** (Rod, Cone, Ganglion cells, etc.).</p>
-                </div>
-                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut5.png" alt="WHO classification of visual impairment in 5 categories">
-                    <p class="image-caption">4. **Classification of visual impairment in 5 categories according to the WHO (World Health Organization)**.</p>
-                </div>
-                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut6.png" alt="Comparison diagram of different auditory pathways (airborne and bone conduction)">
-                    <p class="image-caption">5. **Comparison diagram of different auditory pathways** (airborne and bone conduction).</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projetTut3.png" alt="Exemple de dispositif de substitution sensorielle The vOICe">
-                    <p class="image-caption">6. **The vOICe: Auditory-to-Visual Sensory Substitution** (Non-Implantable).</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut7.png" alt="Summary table of non-implantable medical devices for profound to total visual impairment">
-                    <p class="image-caption">7. **Summary table of non-implantable medical devices** for profound to total visual impairment.</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut8.png" alt="Simplified eye diagram with different retinal neuroprosthesis implantation sites">
-                    <p class="image-caption">8. **Simplified eye diagram with different retinal neuroprosthesis implantation sites** (epiretinal, subretinal, or supra-choroidal).</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut9.png" alt="Images perceived by patients with a retinal implant at 16, 256 and 1000 electrodes">
-                    <p class="image-caption">9. **Images perceived by patients with a retinal implant** at 16 (a), 256 (b) and 1000 electrodes (c).</p>
-                </div>
-            </div>
-            
-            <div class="modal-description">
-                
-                <h3 style="margin-top: 10px; color: var(--color-dark);">Goal of the Project 🎯</h3>
-                <p class="modal-text-paragraph">
-                    The main goal of this project was to conduct a comprehensive state-of-the-art review of **innovative Medical Devices (MD)** aimed at people with blindness or near blindness. The ambition was to determine how these cutting-edge technologies can promote **inclusion** and **autonomy** in the daily lives of patients.
-                </p>
-                
-                <h3 style="margin-top: 20px; color: var(--color-dark);">Abstract </h3>
-                <p class="modal-text-paragraph">
-                    After exposing the anatomical aspect of the visual system and associated pathologies, this report presents a complete state-of-the-art of **innovative medical devices (MD) for people with blindness or near blindness**, with an objective of **inclusion and autonomy**. It distinguishes two main families: **non-implantable devices** (connected glasses, smart canes, or GPS assistants), and **implantable devices** (visual neuroprostheses). The document analyzes their functioning, clinical maturity, and performance. Particular attention is paid to technological innovations (**AI**, image processing, brain-machine interfaces) and regulatory issues (CE marking, EU regulation 2017/745). While non-implantable devices are readily available and improve daily life, implantable devices, though complex and mostly experimental, are followed with special attention as they promise to **"restore a visual sensation"**. The study concludes by suggesting that the integration of new technologies should respect ethical, social, and environmental values.
-                </p>
-                
-                <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
-                    <i class="fas fa-users" style="color: var(--color-primary); margin-right: 5px;"></i> **Group Project:** Realized by Odile Slifi, Lucas Girardet, and Lucas Dordor (ISIFC 1A).
-                </p>
-            </div>
-        </div>
-    </div>
-    
     <div id="modal-ludo-game" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -580,105 +733,6 @@
                     </p>
                     <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
                     <i class="fas fa-code" style="color: var(--color-primary); margin-right: 5px;"></i> **Technology Focus:** Java, Console I/O, Basic GUI (EcranGraphique library), Randomization (`Math.random()`), File Management (I/O).
-                </p>
-            </div>
-        </div>
-    </div>
-    
-    <div id="modal-paddle-valve" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 class="modal-title">Paddleboard Pressure-Regulating Valve</h2>
-            <p class="modal-subtitle">Design and prototyping of an essential safety system to prevent overinflation in inflatable paddleboards.</p>
-            <p class="modal-category">Category: CAD / Design (Group Project)</p>
-            <div class="modal-gallery">
-                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projet1.png" alt="CAD Model of the valve system - closed">
-                    <p class="image-caption">1. Final CAD model of the complete valve system (closed view).</p>
-                </div>
-                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Projet2.png" alt="CAD Model of the valve system - open">
-                    <p class="image-caption">2. Internal CAD view showing the piston mechanism and spring housing.</p>
-                </div>
-                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Projet3.png" alt="3D Printed Prototype of the housing">
-                    <p class="image-caption">3. 3D-printed prototype of the valve body, ready for assembly.</p>
-                </div>
-                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Projet4.png" alt="Physical Prototype of the internal mechanism">
-                    <p class="image-caption">4. Physical prototype of the internal pressure regulation mechanism.</p>
-                </div>
-                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/projet5.jpg" alt="Project Report Poster">
-                    <p class="image-caption">5. Project summary poster, including methodology and results.</p>
-                </div>
-            </div>
-            <div class="modal-description">
-                
-                <h3 style="margin-top: 10px; color: var(--color-dark);">Project Goal 🎯</h3>
-                <p class="modal-text-paragraph">
-                    This project involved the complete design, prototyping, and validation of a **passive pressure-regulating valve** for inflatable stand-up paddleboards. The primary goal was to create a robust and reliable system capable of automatically releasing excess air pressure. This prevents damage to the board, which can occur when internal pressure rises due to sun exposure and heat, while the user is out on the water.
-                </p>
-                 <h3 style="margin-top: 20px; color: var(--color-dark);">Key Stages & Technologies Employed 🛠️</h3>
-                <p class="modal-text-paragraph">
-                    The core challenge was to design a valve that maintains a precise maximum pressure (e.g., 15 PSI) using a mechanical spring system, while remaining **watertight** and easy to integrate.
-                    <ul>
-                        <li><strong>Conceptual Design:</strong> Analysis of pressure/temperature effects on inflatable structures and spring mechanics calculation to define the release threshold.</li>
-                        <li><strong>CAD Modeling (Catia V5):</strong> Detailed modeling of the valve housing and all moving parts (piston, gaskets, spring seat), focusing on high-precision assembly.</li>
-                        <li><strong>Prototyping:</strong> Used **3D printing** (FDM) for the housing and small parts. **Machining** was considered for the final production of high-stress components.</li>
-                        <li><strong>Validation & Iteration:</strong> Bench testing of the prototype revealed initial **leakage issues** around the joint plane, leading to a crucial re-design phase focusing on gasket integration and surface finish to ensure reliable pressure retention.</li>
-                    </ul>
-                </p>
-                 <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
-                    <i class="fas fa-users" style="color: var(--color-primary); margin-right: 5px;"></i> **Group Project:** Realized by Lucas Girardet and Ambéis Matéo (L2 Mécanique 2022/2023).
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-syringe-packaging" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 class="modal-title">Syringe & Packaging System</h2>
-            <p class="modal-subtitle">Full modeling from single parts to final assembly, including design validation.</p>
-            <p class="modal-category">Category: CAD / Biomedical Engineering (Group Project)</p>
-            <div class="modal-gallery">
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue1.png" alt="Detailed view of the syringe">
-                    <p class="image-caption">1. Detailed view of the syringe (CAD modeling).</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue2.png" alt="Closed box with syringes inside">
-                    <p class="image-caption">2. Closed packaging box, containing the syringes.</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue3.png" alt="Open box showing the packaging">
-                    <p class="image-caption">3. Open box showing the packaging.</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/seringue4.png" alt="Needle with safety cap">
-                    <p class="image-caption">4. Modeling of the needle with its safety cap.</p>
-                </div>
-            </div>
-            <div class="modal-description">
-                
-                 <h3 style="margin-top: 10px; color: var(--color-dark);">Project Goal 🎯</h3>
-                <p class="modal-text-paragraph">
-                    This project was completed to meet the specific needs of veterinarians during herd vaccination campaigns, focusing on **safety** and **practical weekly conditioning** of medical supplies. The goal was to design a complete system: a safety needle and its associated thermal packaging.
-                </p>
-                
-                 <h3 style="margin-top: 20px; color: var(--color-dark);">Key Stages & Technologies Employed 🛠️</h3>
-                <p class="modal-text-paragraph">
-                    <ul>
-                         <li>**Needle Design (Monobloc & Multi-part):** The initial design was based on the standard **20-Gauge** (0.91mm outer diameter, 4cm length) used for bovine subcutaneous injections. The modeling progressed from a "monobloc" concept to the final assembly of two distinct parts: the **biocompatible metal cannula** and the **plastic insert (hub)**.</li>
-                         <li>**Safety Cap Mechanism:** A rotating safety cap was designed with minimal support zones (`crans`) that engage the plastic insert only when turned to a specific alignment. This system allows the cap to be removed without detaching the needle for injection (Phase 2), and subsequently reattached and rotated to safely lock and remove the used needle for disposal (Phase 3).</li>
-                         <li>**Packaging Modeling:** A simple, secure box was modeled in Polystyrene to ensure thermal insulation during transport, a requirement essential for vaccine integrity. The box was dimensioned to hold seven complete, non-assembled syringe-needle sets.</li>
-                         <li>**Validation:** The final packaging was validated through assembly checks and a cross-section view to confirm zero interference between the seven sets when the box is closed.</li>
-                    </ul>
-                </p>
-                
-                 <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
-                    <i class="fas fa-users" style="color: var(--color-primary); margin-right: 5px;"></i> **Group Project:** Realized by Lucas Girardet and Schoen Elise (ISIFC 1A).
                 </p>
             </div>
         </div>
