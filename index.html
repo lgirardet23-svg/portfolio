@@ -178,7 +178,7 @@
             
             <div class="project-card" data-category="cad biomedical" data-modal-target="modal-niceteeth-project">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Logo_isifc.jpeg'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
-                <h3>NiceTeeth: Brushing Quality Control <br>(In Progress)</h3>
+                <h3>NiceTeeth: Brushing Quality Control (In Progress)</h3>
                 <p>Design and feasibility study of an opto-mechatronic device for real-time intra-oral self-examination.</p>
             </div>
             
@@ -193,7 +193,12 @@
                 <h3>Syringe & Packaging System</h3>
                 <p>Full CAD modeling of a safety needle and a custom 7-unit thermal packaging box for veterinarians.</p>
             </div>
-
+            
+            <div class="project-card" data-category="cad design" data-modal-target="modal-road-sign-analysis">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD.png'); background-size: cover; background-position: center;"></div>
+                <h3>Road Sign Structural Analysis</h3>
+                <p>FEA and mathematical analysis of a cantilevered post structure carrying two motorway signs under wind and weight loads.</p>
+            </div>
             <div class="project-card" data-category="cad design" data-modal-target="modal-pingpong-tensegrity">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Tens.png'); background-size: cover; background-position: center;"></div>
                 <h3>Tensegrity Ping-Pong Table</h3>
@@ -265,6 +270,68 @@
     <footer class="footer">
         <p>&copy; 2025 Lucas Girardet. All rights reserved.</p>
     </footer>
+    
+    <div id="modal-road-sign-analysis" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Road Sign Structural Analysis</h2>
+            <p class="modal-subtitle">Finite Element Analysis (FEA) and optimization of a cantilevered motorway sign post.</p>
+            <p class="modal-category">Category: CAD, Mechanical Analysis (Erasmus Project)</p>
+            
+            <div class="modal-gallery">
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD1.png" alt="Road sign CAD model with applied forces and boundary conditions">
+                    <p class="image-caption">1. Road Sign Drawing.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD5.png" alt="Road sign CAD model with applied forces and boundary conditions">
+                    <p class="image-caption">2. Creo model showing applied loads (wind, weight) and anchorage.</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD6.png" alt="Creo Max Stress and Deflection results">
+                    <p class="image-caption">3. Creo results showing maximum Von Mises Stress (left) and Deflection (right).</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD3.png" alt="Creo comparison of squared and circular cross sections">
+                    <p class="image-caption">4. Simulation comparing square vs. circular cross-sections (same area).</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD4.png" alt="Creo comparison of hollow and solid cross sections">
+                    <p class="image-caption">5. Simulation comparing hollow vs. solid circular cross-sections (same area).</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD7.png" alt="Stress analysis at pole base">
+                    <p class="image-caption">6. Close-up of Von Mises stress and table of results at the pole base (Points A-D).</p>
+                </div>
+                <div class="modal-image-item">
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD2.png" alt="Summary table of stress results">
+                    <p class="image-caption">7. Summary table comparing Creo, Ansys, and Mathematical stress results.</p>
+                </div>
+            </div>
+            
+            <div class="modal-description">
+                
+                <h3 style="margin-top: 10px; color: var(--color-dark);">Project Goal 🎯</h3>
+                <p class="modal-text-paragraph">
+                    [cite_start]The objective was to design and analyze a lightweight cantilevered steel post structure capable of supporting two motorway road signs[cite: 785]. [cite_start]The design had to minimize weight [cite: 789] [cite_start]while enduring complex loads, including compressive, torsional, bending, and shear stresses, primarily caused by the signs' weight and a maximum wind speed of 100 km/h (473 N/m²)[cite: 786, 788, 792].
+                </p>
+                
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Key Stages & Technologies Employed 🛠️</h3>
+                <p class="modal-text-paragraph">
+                    <ul>
+                        [cite_start]<li>**FEA Modeling:** The structure was modeled in CAD (Creo) and analyzed using both **Creo Mechanica** and **Ansys FEA**[cite: 780, 781, 723]. [cite_start]The final material selected was **Structural Steel** due to its strength-to-weight ratio and resistance to deflection[cite: 833, 834].</li>
+                        <li>**Optimization Study:** Simulations were conducted to optimize the cross-sectional shape for minimal stress and weight. [cite_start]The circular cross-section showed **lower Von Mises stress (10.66 MPa)** compared to the square cross-section (11.87 MPa) for the same area[cite: 814].</li>
+                        [cite_start]<li>**Hollow vs. Solid Design:** Further optimization showed that a **hollow circular post** (Outer D=200mm, Inner D=180mm) significantly reduced stress and achieved a total weight of 346 kg[cite: 829, 839].</li>
+                        [cite_start]<li>**Mathematical Validation:** Stress values were calculated mathematically at four highly stressed points at the base of the pole[cite: 724]. [cite_start]The maximum Von Mises stress from the FEA was **73.16 MPa** [cite: 837][cite_start], resulting in a **Safety Factor of 2.9** against the structural steel's yield strength of 250 MPa[cite: 838, 996, 1022].</li>
+                        [cite_start]<li>**Analysis:** The maximum stress was located on the underside of the top 90° angle, which is the predicted point of failure[cite: 837, 1021].</li>
+                    </ul>
+                </p>
+                 <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
+                    <i class="fas fa-university" style="color: var(--color-primary); margin-right: 5px;"></i> **Context:** Mechanical Design Lab, Erasmus Semester at **Technological University Dublin**, Ireland (Jan 2024).
+                </p>
+            </div>
+        </div>
+    </div>
     
     <div id="modal-niceteeth-project" class="modal">
         <div class="modal-content">
