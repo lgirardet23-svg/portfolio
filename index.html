@@ -167,6 +167,7 @@
             <button class="filter-btn" data-filter="biomedical">Biomedical</button>
             <button class="filter-btn" data-filter="cad">CAD / Design</button>
             <button class="filter-btn" data-filter="programming">Programming</button>
+            <button class="filter-btn" data-filter="research">Research</button>
         </div>
         <div class="projects-grid">
             
@@ -178,11 +179,11 @@
             
             <div class="project-card" data-category="cad biomedical" data-modal-target="modal-niceteeth-project">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Logo_isifc.jpeg'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
-                <h3>NiceTeeth: Brushing Quality Control <br />(In Progress)</h3>
+                <h3>NiceTeeth: Brushing Quality Control (In Progress)</h3>
                 <p>Design and feasibility study of an opto-mechatronic device for real-time intra-oral self-examination.</p>
             </div>
             
-            <div class="project-card" data-category="biomedical" data-modal-target="modal-innovative-devices">
+            <div class="project-card" data-category="biomedical research" data-modal-target="modal-innovative-devices">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/ProjetTut1.jpg'); background-size: cover; background-position: center;"></div>
                 <h3>Innovative MDs for Visual Impairment</h3>
                 <p>Comprehensive state-of-the-art report on non-implantable and neuroprosthetic medical devices for the blind.</p>
@@ -195,10 +196,17 @@
             </div>
             
             <div class="project-card" data-category="cad design" data-modal-target="modal-road-sign-analysis">
-                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD.png'); background-size: cover; background-position: center;"></div>
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD1.png'); background-size: cover; background-position: center;"></div>
                 <h3>Road Sign Structural Analysis</h3>
                 <p>FEA and mathematical analysis of a cantilevered post structure carrying two motorway signs under wind and weight loads.</p>
             </div>
+
+            <div class="project-card" data-category="research" data-modal-target="modal-nanomaterials-future">
+                <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/manuf2.png'); background-size: cover; background-position: center;"></div>
+                <h3>Nanomaterials for a Sustainable Future</h3>
+                <p>Research project on the applications of nanomaterials for environmental remediation, focusing on water decontamination.</p>
+            </div>
+            
             <div class="project-card" data-category="cad design" data-modal-target="modal-pingpong-tensegrity">
                 <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Tens.png'); background-size: cover; background-position: center;"></div>
                 <h3>Tensegrity Ping-Pong Table</h3>
@@ -271,41 +279,25 @@
         <p>&copy; 2025 Lucas Girardet. All rights reserved.</p>
     </footer>
     
-    <div id="modal-road-sign-analysis" class="modal">
+    <div id="modal-nanomaterials-future" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h2 class="modal-title">Road Sign Structural Analysis</h2>
-            <p class="modal-subtitle">Finite Element Analysis (FEA) and optimization of a cantilevered motorway sign post.</p>
-            <p class="modal-category">Category: CAD, Mechanical Analysis (Erasmus Project)</p>
+            <h2 class="modal-title">Nanomaterials for a Sustainable Future</h2>
+            <p class="modal-subtitle">Research on the applications of nanomaterials for environmental remediation.</p>
+            <p class="modal-category">Category: Research, Environmental Engineering (Erasmus Project)</p>
             
             <div class="modal-gallery">
                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD1.png" alt="Road sign CAD model with applied forces and boundary conditions">
-                    <p class="image-caption">1. Road Sign Drawing.</p>
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MDposter1.png" alt="Full research poster on nanomaterials for environmental remediation">
+                    <p class="image-caption">1. Overview of the research poster.</p>
                 </div>
                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD5.png" alt="Road sign CAD model with applied forces and boundary conditions">
-                    <p class="image-caption">2. Creo model showing applied loads (wind, weight) and anchorage.</p>
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MDposter3.png" alt="Illustration of air, soil, and water pollution with nanoremediation solutions">
+                    <p class="image-caption">2. Visualizing pollution sources and nanoremediation applications.</p>
                 </div>
                 <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD6.png" alt="Creo Max Stress and Deflection results">
-                    <p class="image-caption">3. Creo results showing maximum Von Mises Stress (left) and Deflection (right).</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD3.png" alt="Creo comparison of squared and circular cross sections">
-                    <p class="image-caption">4. Simulation comparing square vs. circular cross-sections (same area).</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD4.png" alt="Creo comparison of hollow and solid cross sections">
-                    <p class="image-caption">5. Simulation comparing hollow vs. solid circular cross-sections (same area).</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD7.png" alt="Stress analysis at pole base">
-                    <p class="image-caption">6. Close-up of Von Mises stress and table of results at the pole base (Points A-D).</p>
-                </div>
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MD2.png" alt="Summary table of stress results">
-                    <p class="image-caption">7. Summary table comparing Creo, Ansys, and Mathematical stress results.</p>
+                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/MDposter2.png" alt="Photocatalyst mechanism and magnetic nanoparticle recovery">
+                    <p class="image-caption">3. Detailed mechanism of photocatalysis and separation for water treatment.</p>
                 </div>
             </div>
             
@@ -313,21 +305,37 @@
                 
                 <h3 style="margin-top: 10px; color: var(--color-dark);">Project Goal 🎯</h3>
                 <p class="modal-text-paragraph">
-                    The objective was to design and analyze a lightweight cantilevered steel post structure capable of supporting two motorway road signs. The design had to minimize weight while enduring complex loads, including compressive, torsional, bending, and shear stresses, primarily caused by the signs' weight and a maximum wind speed of 100 km/h (473 N/m²).
+                    This research project aimed to explore the potential of **nanomaterials for environmental remediation**, specifically focusing on their applications in addressing air, soil, and water pollution. The goal was to understand how these advanced materials can provide efficient and sustainable solutions to current environmental challenges.
                 </p>
                 
-                <h3 style="margin-top: 20px; color: var(--color-dark);">Key Stages & Technologies Employed 🛠️</h3>
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Abstract & Project Structure 🔬</h3>
                 <p class="modal-text-paragraph">
+                    The project was structured into four main sections:
                     <ul>
-                        <li>**FEA Modeling:** The structure was modeled in CAD (Creo) and analyzed using both **Creo Mechanical** and **Ansys FEA**. The final material selected was **Structural Steel** due to its strength-to-weight ratio and resistance to deflection.</li>
-                        <li>**Optimization Study:** Simulations were conducted to optimize the cross-sectional shape for minimal stress and weight. The circular cross-section showed **lower Von Mises stress (10.66 MPa)** compared to the square cross-section (11.87 MPa) for the same area.</li>
-                        <li>**Hollow vs. Solid Design:** Further optimization showed that a **hollow circular post** (Outer D=200mm, Inner D=180mm) significantly reduced stress and achieved a total weight of 346 kg.</li>
-                        <li>**Mathematical Validation:** Stress values were calculated mathematically at four highly stressed points at the base of the pole. The maximum Von Mises stress from the FEA was **73.16 MPa**, resulting in a **Safety Factor of 2.9** against the structural steel's yield strength of 250 MPa.</li>
-                        <li>**Analysis:** The maximum stress was located on the underside of the top 90° angle, which is the predicted point of failure.</li>
+                        <li>**Introduction:** Addressing global pollution challenges and the role of nanomaterials in sustainable solutions.</li>
+                        <li>**Air Pollution:** Discussing how nanomaterials can combat air pollutants.</li>
+                        <li>**Water Decontamination (My Focus):** Detailing the use of nanomaterials, particularly photocatalysts, for water treatment.</li>
+                        <li>**Nanoremediation (Overall):** Illustrating the broad spectrum of nanoremediation across different environmental matrices.</li>
                     </ul>
                 </p>
-                 <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
-                    <i class="fas fa-university" style="color: var(--color-primary); margin-right: 5px;"></i> **Context:** Mechanical Design Lab, Erasmus Semester at **Technological University Dublin**, Ireland (Jan 2024).
+
+                <h3 style="margin-top: 20px; color: var(--color-dark);">My Contribution: Water Decontamination Focus 🌊</h3>
+                <p class="modal-text-paragraph">
+                    My primary contribution to this project was in the **"Water Decontamination"** section, where I focused on the application of **nanophotocatalysts** for treating wastewater.
+                    <ul>
+                        <li>**The Challenge:** Conventional water treatment methods often struggle with emerging pollutants, such as pharmaceuticals, heavy metals, and microplastics. Nanomaterials offer a promising alternative due to their high reactivity and large surface area.</li>
+                        <li>**Photocatalysis Mechanism:** I explained how nanophotocatalysts (e.g., TiO2, ZnO) work. When exposed to light, these materials generate electron-hole pairs, leading to the formation of highly reactive hydroxyl radicals (•OH) and superoxide radicals (O₂⁻). These radicals effectively break down complex organic pollutants into harmless compounds (CO₂, H₂O). <br> 
+                        <span style="font-size: 0.9em; color: #555;">*See Image 3 (B) for a visual representation of this mechanism.*</span>
+                        </li>
+                        <li>**Magnetic Nanoparticle Composite (MNPC):** I highlighted the use of **Magnetic Nanoparticle Composites (MNPC)**, which integrate photocatalysts with magnetic cores. This innovation addresses a major limitation of traditional photocatalysts: their difficult separation and recovery from treated water. By applying an external magnetic field, MNPCs can be easily removed, making the process more efficient and cost-effective. <br>
+                        <span style="font-size: 0.9em; color: #555;">*See Image 3 (B) for the photocatalyst separation and recovery process.*</span>
+                        </li>
+                        <li>**Pollutants Targeted:** This method is effective against various pollutants, including pesticides, pharmaceuticals, and dyes, making it a versatile solution for advanced wastewater treatment.</li>
+                    </ul>
+                </p>
+                
+                <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
+                    <i class="fas fa-university" style="color: var(--color-primary); margin-right: 5px;"></i> **Context:** Mechanical Engineering Research Project, Erasmus Semester at **Technological University Dublin**, Ireland (Jan 2024).
                 </p>
             </div>
         </div>
@@ -336,7 +344,7 @@
     <div id="modal-niceteeth-project" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h2 class="modal-title">NiceTeeth: Brushing Quality Control <br />(In Progress)</h2>
+            <h2 class="modal-title">NiceTeeth: Brushing Quality Control (In Progress)</h2>
             <p class="modal-subtitle">Design and Feasibility Study of an Opto-Mechatronic Intra-Oral Examination Device (ISIFC Project).</p>
             <p class="modal-category">Category: CAD / Biomedical Engineering / Mechatronics</p>
             
@@ -418,7 +426,7 @@
             <span class="close-btn">&times;</span>
             <h2 class="modal-title">Innovative MDs for Visual Impairment</h2>
             <p class="modal-subtitle">State-of-the-Art Report on innovative medical devices for people with blindness or near blindness.</p>
-            <p class="modal-category">Category: Biomedical Engineering (Group Project)</p>
+            <p class="modal-category">Category: Biomedical Engineering, Research (Group Project)</p>
             
             <div class="modal-gallery">
                 <div class="modal-image-item">
