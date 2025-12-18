@@ -179,9 +179,9 @@
     </div>
     
     <div class="project-card" data-category="cad biomedical" data-modal-target="modal-niceteeth-project">
-        <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/Logo_isifc.jpeg'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
-        <h3>NiceTeeth: Brushing Quality Control <br>(In Progress)</h3>
-        <p>Design and feasibility study of an opto-mechatronic device for real-time intra-oral self-examination.</p>
+        <div class="project-image-placeholder" style="background-image: url('https://raw.githubusercontent.com/lgirardet23-svg/images/main/RTC.png'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+        <h3>RTeethC: Concentric Tube Dental Robot</h3>
+        <p>Design and development of a mechatronic intra-oral camera using Nitinol tubes for 360° dental surface inspection.</p>
     </div>
     
     <div class="project-card" data-category="biomedical research" data-modal-target="modal-innovative-devices">
@@ -424,41 +424,82 @@
     <div id="modal-niceteeth-project" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h2 class="modal-title">NiceTeeth: Brushing Quality Control <br>(In Progress)</h2>
-            <p class="modal-subtitle">Design and Feasibility Study of an Opto-Mechatronic Intra-Oral Examination Device (ISIFC Project).</p>
+            <h2 class="modal-title">RTeethC: Concentric Tube Robot for Dental Inspection</h2>
+            <p class="modal-subtitle">Design and development of an innovative opto-mechatronic device for intra-oral monitoring.</p>
             <p class="modal-category">Category: CAD / Biomedical Engineering / Mechatronics</p>
             
             <div class="modal-gallery">
-                <div class="modal-image-item">
-                    <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Logo_isifc.jpeg" alt="NiceTeeth Project Cover Image">
-                    <p class="image-caption">1. ISIFC Project.</p>
-                </div>
+            <div class="modal-image-item">
+                <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/RTC.png" alt="RTeethC Project Title Page">
+                <p class="image-caption">1. Project title and presentation.</p>
             </div>
+                 <div class="modal-image-item">
+                <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/exemple RTC.png" alt="Exploded View">
+                <p class="image-caption">2. Example of CTR technology application in the biomedical field.</p>
+            </div>
+            <div class="modal-image-item">
+                <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/Schéma initial.jpg" alt="Mechanism Schema">
+                <p class="image-caption">3. Initial kinematic principle: nested pre-curved Nitinol tubes (CTR).</p>
+            </div>
+                <div class="modal-image-item">
+                <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/RTC_intérieur.png" alt="Full CAD Assembly">
+                <p class="image-caption">4. Internal CAD assembly showing the integration of motors, gears, and PCB.</p>
+            </div>
+            <div class="modal-image-item">
+                <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/guide_RTC.png" alt="Tube details">
+                <p class="image-caption">5. Detailed view of the two concentric Nitinol tubes mechanism and their guide.</p>
+            </div>
+            <div class="modal-image-item">
+                <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/RTC_roues.png" alt="Mechanical Drive Detail">
+                <p class="image-caption">6. Mechanical drive: DC motors and gear system for tube control.</p>
+            </div>
+            <div class="modal-image-item">
+                <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/PCB.png" alt="Full CAD Assembly">
+                <p class="image-caption">7. Internal PCB integration showing the ESP32 microcontroller, motor drivers, and USB-C power interface.</p>
+            </div>
+            <div class="modal-image-item">
+                <img src="https://raw.githubusercontent.com/lgirardet23-svg/images/main/RTC_app.jpg" alt="Future Perspectives">
+                <p class="image-caption">8. Future perspectives: AI diagnostics and smart health tracking.</p>
+            </div>
+        </div>
             
             <div class="modal-description">
-                
                 <h3 style="margin-top: 10px; color: var(--color-dark);">Project Goal 🎯</h3>
                 <p class="modal-text-paragraph">
-                    The core objective is to design a modern opto-mechatronic device for controlling the quality of brushing and inter-dental cleaning in children and adults. This device must offer the user information on the real condition of every visible surface of each tooth and inter-dental space. The study involves analyzing the feasibility of using an optical device with screen feedback (via a smartphone, tablet, or dedicated screen).
+                    The <strong>RTeethC</strong> (Robot à Tubes Concentriques) was designed to solve a major oral hygiene issue: the difficulty of visually inspecting hidden areas, such as the back of molars. The objective was to create a cost-effective (< 50€), ergonomic, and high-resolution device that allows users to perform a thorough dental self-examination at home.
                 </p>
                 
-                <h3 style="margin-top: 20px; color: var(--color-dark);">Technical Requirements (F1-F9) 🛠️</h3>
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Technical Solution: Concentric Tube Technology 🛠️</h3>
                 <p class="modal-text-paragraph">
-                    The project must adhere to the following key specifications (Cahier des Charges):
+                    Unlike traditional rigid intra-oral cameras, this device uses <strong>Concentric Tube Robot (CTR)</strong> technology. 
                     <ul>
-                        <li>**F1: Examination: The opto-mechatronic device must allow for the oral exploration of all 32 teeth (numbered 11 to 48...).</li>
-                        <li>**F2: Usability: The device must be compatible with single-hand use (either hand).</li>
-                        <li>**F3: Observation: The system must include a sub-system for observation of all dental surfaces and a sub-system for high-resolution display/visualization.</li>
-                        <li>**F4: Power: Power must be supplied via a standard USB cord.</li>
-                        <li>**F5: Safety: The system must be ergonomic so as not to injure the user.</li>
-                        <li>**F6: Bulk: The system's footprint/size must be as small as possible.</li>
-                        <li>**F7: Environment: The system must be transportable and function in a bathroom setting.</li>
-                        <li>**F8: Data Management: Acquisition must be as fast as possible, and the display must allow for post-processing for optimal management, archiving, and interpretation of information.</li>
-                        <li>**F9: Eco-Design: Particular attention must be paid to eco-design (sharing, collective, family use).</li>
+                        <li><strong>Active Curvature:</strong> Two pre-curved Nitinol (NiTi) tubes are nested within each other. By rotating and translating these tubes relative to one another, the tip of the probe can curve and maneuver around teeth to film "hidden" surfaces.</li>
+                        <li><strong>Opto-Mechatronics:</strong> The device integrates a high-definition CMOS camera module with LED lighting, powered via a standard USB cable to maintain a lightweight profile.</li>
                     </ul>
                 </p>
+
+                <h3 style="margin-top: 20px; color: var(--color-dark);">CAD Design & Manufacturing 💻</h3>
+                <p class="modal-text-paragraph">
+                    The entire mechanical system was modeled to ensure smooth kinematic movement:
+                    <ul>
+                        <li><strong>Mechanical Drive:</strong> Designed using a system of gears and DC micro-motors to control the rotation and translation of the Nitinol tubes.</li>
+                        <li><strong>Ergonomics:</strong> The main casing (ABS plastic) was designed for single-handed use, featuring intuitive dials for real-time control of the probe's curvature.</li>
+                        <li><strong>Industrial Feasibility:</strong> The project included a full manufacturing study, selecting injection molding for large-scale production of the biocompatible nose and casing parts.</li>
+                    </ul>
+                </p>
+
+                <h3 style="margin-top: 20px; color: var(--color-dark);">Future Improvements & Perspectives 🚀</h3>
+                <p class="modal-text-paragraph">
+                    The RTeethC serves as a platform for future smart features:
+                    <ul>
+                        <li><strong>AI Diagnostics:</strong> Integration of computer vision to automatically detect plaque or early-stage cavities.</li>
+                        <li><strong>Gamification:</strong> A dedicated app could provide a "brushing score" to encourage children's dental hygiene.</li>
+                        <li><strong>Health Tracking:</strong> Archiving inspection history to alert users when a professional dental consultation is necessary.</li>
+                    </ul>
+                </p>
+
                 <p class="modal-text-paragraph" style="margin-top: 30px; font-style: italic; font-weight: 500;">
-                    <i class="fas fa-microscope" style="color: var(--color-primary); margin-right: 5px;"></i> **Context:** ISIFC 2nd-year Design Project (Autumn-Winter 2025-2026).
+                    <i class="fas fa-microscope" style="color: var(--color-primary); margin-right: 5px;"></i> **Context:** ISIFC 2nd-year Mechanical Design Project (2025-2026). Realized by Lucas Girardet and Lucas Gaudot.
                 </p>
             </div>
         </div>
